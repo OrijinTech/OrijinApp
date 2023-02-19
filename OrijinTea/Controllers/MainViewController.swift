@@ -65,7 +65,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate{
     
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
+        // Scrolling events
         if (scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height)) {
             //Scrolled to bottom
             UIView.animate(withDuration: 0.3) {
