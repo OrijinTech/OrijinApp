@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>725063357909-sob67hkac60b7icdm6q3qktl67e075an.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.725063357909-sob67hkac60b7icdm6q3qktl67e075an</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAXfWQa8nGLpPVlzh6shfg0uVUoIN8RQsk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>725063357909</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.orijinsoftware.OrijinTea</string>
+	<key>PROJECT_ID</key>
+	<string>orijinteaapp</string>
+	<key>STORAGE_BUCKET</key>
+	<string>orijinteaapp.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:725063357909:ios:1ffc4f1da3881d8b8fd95c</string>
+</dict>
+</plist>

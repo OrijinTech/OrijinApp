@@ -1,0 +1,6 @@
+framework module Pods_OrijinTea {
+  umbrella header "Pods-OrijinTea-umbrella.h"
+
+  export *
+  module * { export * }
+}
