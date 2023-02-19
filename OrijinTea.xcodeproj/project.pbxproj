@@ -1,0 +1,517 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5415EA25299A49B700302EC6 /* BookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5415EA24299A49B700302EC6 /* BookTableViewController.swift */; };
+		54289C9B2992ACD400872E9D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54289C9A2992ACD400872E9D /* Constants.swift */; };
+		54289C9F2993CF2700872E9D /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54289C9E2993CF2700872E9D /* Users.swift */; };
+		5461F2F52997BAC600B66B2E /* ProductTypeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5461F2F42997BAC600B66B2E /* ProductTypeViewCell.swift */; };
+		5461F2F72997C60C00B66B2E /* ProductData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5461F2F62997C60C00B66B2E /* ProductData.swift */; };
+		5488E4EF2991686100788259 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5488E4EE2991686100788259 /* AppDelegate.swift */; };
+		5488E4F12991686100788259 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5488E4F02991686100788259 /* SceneDelegate.swift */; };
+		5488E4F62991686100788259 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5488E4F42991686100788259 /* Main.storyboard */; };
+		5488E4F82991686100788259 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5488E4F72991686100788259 /* Assets.xcassets */; };
+		5488E4FB2991686100788259 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5488E4F92991686100788259 /* LaunchScreen.storyboard */; };
+		5488E50429916E3600788259 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5488E50329916E3600788259 /* LoginViewController.swift */; };
+		5488E50629916E4C00788259 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5488E50529916E4C00788259 /* RegisterViewController.swift */; };
+		5495477B2993E016008E458B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5495477A2993E016008E458B /* MainViewController.swift */; };
+		5495477D2993E0A0008E458B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5495477C2993E0A0008E458B /* ProfileViewController.swift */; };
+		5495477F2993E0FA008E458B /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5495477E2993E0FA008E458B /* CartViewController.swift */; };
+		549547812993E3EE008E458B /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549547802993E3EE008E458B /* BookingViewController.swift */; };
+		549547832993E4CC008E458B /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549547822993E4CC008E458B /* ShopViewController.swift */; };
+		549547852993E98C008E458B /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549547842993E98C008E458B /* InfoViewController.swift */; };
+		549547872993ED59008E458B /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549547862993ED59008E458B /* OrderViewController.swift */; };
+		549547892993F192008E458B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549547882993F192008E458B /* SettingsViewController.swift */; };
+		54EC945C2992A688003C744A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54EC945B2992A688003C744A /* GoogleService-Info.plist */; };
+		A0C7765E83DD7416A3A2A54F /* Pods_OrijinTea.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F54D0CB8D5A0BFD482A94F2D /* Pods_OrijinTea.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4998D1C712EE03762E8750B9 /* Pods-OrijinTea.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrijinTea.release.xcconfig"; path = "Target Support Files/Pods-OrijinTea/Pods-OrijinTea.release.xcconfig"; sourceTree = "<group>"; };
+		5415EA24299A49B700302EC6 /* BookTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewController.swift; sourceTree = "<group>"; };
+		54289C9A2992ACD400872E9D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		54289C9E2993CF2700872E9D /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		5461F2F42997BAC600B66B2E /* ProductTypeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTypeViewCell.swift; sourceTree = "<group>"; };
+		5461F2F62997C60C00B66B2E /* ProductData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductData.swift; sourceTree = "<group>"; };
+		5488E4EB2991686100788259 /* OrijinTea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrijinTea.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5488E4EE2991686100788259 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5488E4F02991686100788259 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5488E4F52991686100788259 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5488E4F72991686100788259 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5488E4FA2991686100788259 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5488E4FC2991686100788259 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5488E50329916E3600788259 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5488E50529916E4C00788259 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		5495477A2993E016008E458B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		5495477C2993E0A0008E458B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		5495477E2993E0FA008E458B /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		549547802993E3EE008E458B /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
+		549547822993E4CC008E458B /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		549547842993E98C008E458B /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		549547862993ED59008E458B /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		549547882993F192008E458B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		54EC945B2992A688003C744A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B85D25A97204776678AEE596 /* Pods-OrijinTea.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrijinTea.debug.xcconfig"; path = "Target Support Files/Pods-OrijinTea/Pods-OrijinTea.debug.xcconfig"; sourceTree = "<group>"; };
+		F54D0CB8D5A0BFD482A94F2D /* Pods_OrijinTea.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrijinTea.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5488E4E82991686100788259 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0C7765E83DD7416A3A2A54F /* Pods_OrijinTea.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		54289C9D2993CF0800872E9D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				54289C9E2993CF2700872E9D /* Users.swift */,
+				5461F2F42997BAC600B66B2E /* ProductTypeViewCell.swift */,
+				5461F2F62997C60C00B66B2E /* ProductData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5488E4E22991686100788259 = {
+			isa = PBXGroup;
+			children = (
+				5488E4ED2991686100788259 /* OrijinTea */,
+				5488E4EC2991686100788259 /* Products */,
+				D027838B96F90DE24DEA1BEF /* Pods */,
+				98237160001B1A2C8043A464 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5488E4EC2991686100788259 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5488E4EB2991686100788259 /* OrijinTea.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5488E4ED2991686100788259 /* OrijinTea */ = {
+			isa = PBXGroup;
+			children = (
+				5488E4EE2991686100788259 /* AppDelegate.swift */,
+				5488E4F02991686100788259 /* SceneDelegate.swift */,
+				54289C9A2992ACD400872E9D /* Constants.swift */,
+				54289C9D2993CF0800872E9D /* Model */,
+				5488E50229916E0900788259 /* Controllers */,
+				5488E4F42991686100788259 /* Main.storyboard */,
+				5488E4F72991686100788259 /* Assets.xcassets */,
+				5488E4F92991686100788259 /* LaunchScreen.storyboard */,
+				5488E4FC2991686100788259 /* Info.plist */,
+				54EC945B2992A688003C744A /* GoogleService-Info.plist */,
+			);
+			path = OrijinTea;
+			sourceTree = "<group>";
+		};
+		5488E50229916E0900788259 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5488E50329916E3600788259 /* LoginViewController.swift */,
+				5488E50529916E4C00788259 /* RegisterViewController.swift */,
+				5495477A2993E016008E458B /* MainViewController.swift */,
+				5495477C2993E0A0008E458B /* ProfileViewController.swift */,
+				5495477E2993E0FA008E458B /* CartViewController.swift */,
+				549547802993E3EE008E458B /* BookingViewController.swift */,
+				549547822993E4CC008E458B /* ShopViewController.swift */,
+				549547842993E98C008E458B /* InfoViewController.swift */,
+				549547862993ED59008E458B /* OrderViewController.swift */,
+				549547882993F192008E458B /* SettingsViewController.swift */,
+				5415EA24299A49B700302EC6 /* BookTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		98237160001B1A2C8043A464 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F54D0CB8D5A0BFD482A94F2D /* Pods_OrijinTea.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D027838B96F90DE24DEA1BEF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B85D25A97204776678AEE596 /* Pods-OrijinTea.debug.xcconfig */,
+				4998D1C712EE03762E8750B9 /* Pods-OrijinTea.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5488E4EA2991686100788259 /* OrijinTea */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5488E4FF2991686100788259 /* Build configuration list for PBXNativeTarget "OrijinTea" */;
+			buildPhases = (
+				F81EABB1CDAB8AFDF2033D2C /* [CP] Check Pods Manifest.lock */,
+				5488E4E72991686100788259 /* Sources */,
+				5488E4E82991686100788259 /* Frameworks */,
+				5488E4E92991686100788259 /* Resources */,
+				69E4FC30BD19AA59B42EB799 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OrijinTea;
+			productName = OrijinTea;
+			productReference = 5488E4EB2991686100788259 /* OrijinTea.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5488E4E32991686100788259 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					5488E4EA2991686100788259 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 5488E4E62991686100788259 /* Build configuration list for PBXProject "OrijinTea" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5488E4E22991686100788259;
+			productRefGroup = 5488E4EC2991686100788259 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5488E4EA2991686100788259 /* OrijinTea */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5488E4E92991686100788259 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5488E4FB2991686100788259 /* LaunchScreen.storyboard in Resources */,
+				54EC945C2992A688003C744A /* GoogleService-Info.plist in Resources */,
+				5488E4F82991686100788259 /* Assets.xcassets in Resources */,
+				5488E4F62991686100788259 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		69E4FC30BD19AA59B42EB799 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OrijinTea/Pods-OrijinTea-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OrijinTea/Pods-OrijinTea-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OrijinTea/Pods-OrijinTea-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F81EABB1CDAB8AFDF2033D2C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OrijinTea-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5488E4E72991686100788259 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5495477B2993E016008E458B /* MainViewController.swift in Sources */,
+				5415EA25299A49B700302EC6 /* BookTableViewController.swift in Sources */,
+				54289C9B2992ACD400872E9D /* Constants.swift in Sources */,
+				549547872993ED59008E458B /* OrderViewController.swift in Sources */,
+				549547832993E4CC008E458B /* ShopViewController.swift in Sources */,
+				5488E50429916E3600788259 /* LoginViewController.swift in Sources */,
+				5488E4EF2991686100788259 /* AppDelegate.swift in Sources */,
+				5488E4F12991686100788259 /* SceneDelegate.swift in Sources */,
+				5461F2F72997C60C00B66B2E /* ProductData.swift in Sources */,
+				54289C9F2993CF2700872E9D /* Users.swift in Sources */,
+				5495477D2993E0A0008E458B /* ProfileViewController.swift in Sources */,
+				549547892993F192008E458B /* SettingsViewController.swift in Sources */,
+				5495477F2993E0FA008E458B /* CartViewController.swift in Sources */,
+				5461F2F52997BAC600B66B2E /* ProductTypeViewCell.swift in Sources */,
+				549547812993E3EE008E458B /* BookingViewController.swift in Sources */,
+				549547852993E98C008E458B /* InfoViewController.swift in Sources */,
+				5488E50629916E4C00788259 /* RegisterViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5488E4F42991686100788259 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5488E4F52991686100788259 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5488E4F92991686100788259 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5488E4FA2991686100788259 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5488E4FD2991686100788259 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5488E4FE2991686100788259 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5488E5002991686100788259 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B85D25A97204776678AEE596 /* Pods-OrijinTea.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NFKF62QWCH;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OrijinTea/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orijinsoftware.OrijinTea;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		5488E5012991686100788259 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4998D1C712EE03762E8750B9 /* Pods-OrijinTea.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NFKF62QWCH;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OrijinTea/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orijinsoftware.OrijinTea;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5488E4E62991686100788259 /* Build configuration list for PBXProject "OrijinTea" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5488E4FD2991686100788259 /* Debug */,
+				5488E4FE2991686100788259 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5488E4FF2991686100788259 /* Build configuration list for PBXNativeTarget "OrijinTea" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5488E5002991686100788259 /* Debug */,
+				5488E5012991686100788259 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5488E4E32991686100788259 /* Project object */;
+}
