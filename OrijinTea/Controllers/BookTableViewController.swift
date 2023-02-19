@@ -10,7 +10,7 @@ import UIKit
 class BookTableViewController: UIViewController{
     
     // Constraints Outlets
-    
+    @IBOutlet weak var stackDist: NSLayoutConstraint!
     @IBOutlet weak var bookTableDist: NSLayoutConstraint!
     
     // Textfield Outlets
@@ -71,15 +71,17 @@ class BookTableViewController: UIViewController{
                 self.bookTableDist.constant = 0
                 //self.pickView.isHidden = true
                 self.pickViewHeight.constant = 0
+                self.stackDist.constant = 100
                 self.view.layoutIfNeeded()
             }
             
         }
-        else{
+        else{ //pick view expanded
             UIView.animate(withDuration: 0.15) {
                 self.bookTableDist.constant = 234
                 //self.pickView.isHidden = false
                 self.pickViewHeight.constant = 260
+                self.stackDist.constant = 30
                 self.view.layoutIfNeeded()
             }
         }

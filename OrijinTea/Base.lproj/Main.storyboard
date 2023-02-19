@@ -278,7 +278,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZXd-mN-fFE">
-                                <rect key="frame" x="-13" y="59" width="396" height="44"/>
+                                <rect key="frame" x="-14" y="59" width="396" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Community" id="bbs-fl-kYJ"/>
@@ -1004,6 +1004,7 @@
                         <outlet property="numPicker" destination="VAW-9I-mcG" id="5k1-IX-ggx"/>
                         <outlet property="pickView" destination="NoF-Ba-izQ" id="fSk-Xt-pwg"/>
                         <outlet property="pickViewHeight" destination="Uy5-rI-kVw" id="arS-JT-FZS"/>
+                        <outlet property="stackDist" destination="lg0-t9-14C" id="oOX-Qp-ZwP"/>
                         <outlet property="timePicker" destination="cho-mG-LEB" id="TNh-xz-4nL"/>
                         <outlet property="timeTxt" destination="Sea-T5-FAf" id="FNe-fF-wxu"/>
                         <segue destination="kfN-tV-Qp1" kind="presentation" identifier="bookTableToVisit" animates="NO" modalPresentationStyle="fullScreen" id="ngJ-Ji-nea"/>
@@ -1129,7 +1130,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lpo-BE-qJD"/>
+        <segue reference="ngJ-Ji-nea"/>
         <segue reference="aeF-A3-q2X"/>
         <segue reference="ZVP-5m-5o3"/>
         <segue reference="4fw-6U-pV6"/>
