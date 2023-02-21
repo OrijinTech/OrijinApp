@@ -6,8 +6,15 @@
 //
 
 import UIKit
+import FirebaseCore
+import FirebaseFirestore
+import FirebaseAuth
+import FirebaseFirestoreSwift
 
 class BookTableViewController: UIViewController{
+    
+    // Database Reference
+    let db = Firestore.firestore()
     
     // Constraints Outlets
     @IBOutlet weak var stackDist: NSLayoutConstraint!
@@ -18,6 +25,7 @@ class BookTableViewController: UIViewController{
     @IBOutlet weak var dateTxt: UITextField!
     @IBOutlet weak var timeTxt: UITextField!
     @IBOutlet weak var durationTxt: UITextField!
+    @IBOutlet weak var errorTxt: UITextField!
     
     // Picker View Outlets
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -105,8 +113,27 @@ class BookTableViewController: UIViewController{
         performSegue(withIdentifier: Constants.bookTableToVisit, sender: self)
     }
     
+    // user pressed the "Book a Table Button"
     @IBAction func bookTableBtn(_ sender: UIButton) {
-        print("Booked a Table")
+        if let messageSender = Auth.auth().currentUser?.email{
+            // Add booking information for the user to Firestore
+            if isFilled(){ // if all required fields are filled
+                let reservation = Reservation(user: messageSender, date: dateTxt.text!, time: timeTxt.text!, duration: durationTxt.text!, numPeople: numOfPeopleTxt.text!)
+                do{
+                    try db.collection(Constants.FStore.reservations).document(messageSender).setData(from:reservation)
+                }
+                catch let error{
+                    print("Error writing city to Firestore: \(error)")
+                }
+            }
+            else{
+                errorTxt.textColor = UIColor.red
+                errorTxt.text = "Please fill in all fields!"
+            }
+            
+            // Update the current occupancy of the tables at Orijin Tea
+            
+        }
     }
 
     @IBAction func cancelPressed(_ sender: UIBarButtonItem) {
@@ -118,6 +145,15 @@ class BookTableViewController: UIViewController{
         datePicker.isHidden = true
         timePicker.isHidden = true
         numPicker.isHidden = true
+    }
+    
+    func isFilled() -> Bool{
+        if timeTxt.text == "" || dateTxt.text == "" || durationTxt.text == "" || numOfPeopleTxt.text == ""{
+            return false
+        }
+        else{
+            return true
+        }
     }
     
     

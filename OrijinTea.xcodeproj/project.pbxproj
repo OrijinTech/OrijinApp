@@ -27,6 +27,7 @@
 		549547852993E98C008E458B /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549547842993E98C008E458B /* InfoViewController.swift */; };
 		549547872993ED59008E458B /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549547862993ED59008E458B /* OrderViewController.swift */; };
 		549547892993F192008E458B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549547882993F192008E458B /* SettingsViewController.swift */; };
+		54D832F129A4D14700A8A036 /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D832F029A4D14700A8A036 /* Reservation.swift */; };
 		54EC945C2992A688003C744A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54EC945B2992A688003C744A /* GoogleService-Info.plist */; };
 		A0C7765E83DD7416A3A2A54F /* Pods_OrijinTea.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F54D0CB8D5A0BFD482A94F2D /* Pods_OrijinTea.framework */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		549547842993E98C008E458B /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		549547862993ED59008E458B /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		549547882993F192008E458B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		54D832F029A4D14700A8A036 /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
 		54EC945B2992A688003C744A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B85D25A97204776678AEE596 /* Pods-OrijinTea.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrijinTea.debug.xcconfig"; path = "Target Support Files/Pods-OrijinTea/Pods-OrijinTea.debug.xcconfig"; sourceTree = "<group>"; };
 		F54D0CB8D5A0BFD482A94F2D /* Pods_OrijinTea.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrijinTea.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +80,7 @@
 				54289C9E2993CF2700872E9D /* Users.swift */,
 				5461F2F42997BAC600B66B2E /* ProductTypeViewCell.swift */,
 				5461F2F62997C60C00B66B2E /* ProductData.swift */,
+				54D832F029A4D14700A8A036 /* Reservation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			files = (
 				5495477B2993E016008E458B /* MainViewController.swift in Sources */,
 				5415EA25299A49B700302EC6 /* BookTableViewController.swift in Sources */,
+				54D832F129A4D14700A8A036 /* Reservation.swift in Sources */,
 				54289C9B2992ACD400872E9D /* Constants.swift in Sources */,
 				549547872993ED59008E458B /* OrderViewController.swift in Sources */,
 				549547832993E4CC008E458B /* ShopViewController.swift in Sources */,

@@ -24,5 +24,14 @@ class Constants{
 // MARK: - View Identifiers
     static let prodTypeCell: String = "prodTypeCell"
     
+// MARK: - FireStore constants
+    struct FStore{
+        static let reservations: String = "reservations"
+        static let users: String = "users"
+        static let tables: String = "tables"
+    }
+
+    
+    
     
 }

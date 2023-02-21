@@ -278,7 +278,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZXd-mN-fFE">
-                                <rect key="frame" x="-14" y="59" width="396" height="44"/>
+                                <rect key="frame" x="-15" y="59" width="396" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Community" id="bbs-fl-kYJ"/>
@@ -1000,6 +1000,7 @@
                         <outlet property="datePicker" destination="iPU-hw-DgJ" id="lkf-yz-FI4"/>
                         <outlet property="dateTxt" destination="70f-eI-kQn" id="WrE-B6-T5D"/>
                         <outlet property="durationTxt" destination="pAV-Ad-J4N" id="PcY-0q-ywc"/>
+                        <outlet property="errorTxt" destination="ThD-A3-v75" id="H5g-HG-DZ2"/>
                         <outlet property="numOfPeopleTxt" destination="Bpz-7G-4Zh" id="hMp-QV-5wZ"/>
                         <outlet property="numPicker" destination="VAW-9I-mcG" id="5k1-IX-ggx"/>
                         <outlet property="pickView" destination="NoF-Ba-izQ" id="fSk-Xt-pwg"/>
