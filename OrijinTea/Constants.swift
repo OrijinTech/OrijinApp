@@ -20,15 +20,35 @@ class Constants{
     static let visitToMain: String = "visitToMain"
     static let bookToBookTable: String = "bookToBookTable"
     static let bookTableToVisit: String = "bookTableToVisit"
+    static let bookTableToComfirm: String = "bookTableToComfirm"
+    static let confirmationToMain: String = "confirmationToMain"
 
 // MARK: - View Identifiers
     static let prodTypeCell: String = "prodTypeCell"
     
 // MARK: - FireStore constants
-    struct FStore{
+    struct FStoreCollection{
         static let reservations: String = "reservations"
-        static let users: String = "users"
         static let tables: String = "tables"
+    }
+    
+    struct FStoreField{
+        // tables
+        struct Table{
+            static let tableNames: String = "name"
+            static let tableEmpty: String = "isEmpty"
+            static let tableID: String = "tableID"
+        }
+
+        // reservations
+        struct Reservation{
+            static let date: String = "date"
+            static let duration: String = "duration"
+            static let tableNumber: String = "tableNumber"
+            static let time: String = "time"
+            static let user: String = "user"
+        }
+
     }
 
     

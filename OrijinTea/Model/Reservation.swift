@@ -13,15 +13,15 @@ class Reservation: Encodable{
     var date: String = ""
     var time: String = ""
     var duration: String = ""
-    var numPeople: String = ""
+    var tableNumber: String = ""
     
     // constructor
-    init(user: String, date: String, time: String, duration: String, numPeople: String) {
+    init(user: String, date: String, time: String, duration: String, tableNumber: String) {
         self.user = user
         self.date = date
         self.time = time
         self.duration = duration
-        self.numPeople = numPeople
+        self.tableNumber = tableNumber
     }
     
 }

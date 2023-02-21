@@ -15,13 +15,14 @@ class BookTableViewController: UIViewController{
     
     // Database Reference
     let db = Firestore.firestore()
+
     
     // Constraints Outlets
     @IBOutlet weak var stackDist: NSLayoutConstraint!
     @IBOutlet weak var bookTableDist: NSLayoutConstraint!
     
     // Textfield Outlets
-    @IBOutlet weak var numOfPeopleTxt: UITextField!
+    @IBOutlet weak var tableTxt: UITextField!
     @IBOutlet weak var dateTxt: UITextField!
     @IBOutlet weak var timeTxt: UITextField!
     @IBOutlet weak var durationTxt: UITextField!
@@ -29,17 +30,19 @@ class BookTableViewController: UIViewController{
     
     // Picker View Outlets
     @IBOutlet weak var datePicker: UIDatePicker!
-    @IBOutlet weak var numPicker: UIPickerView!
+    @IBOutlet weak var tablePicker: UIPickerView!
     @IBOutlet weak var timePicker: UIDatePicker!
+    @IBOutlet weak var durationPicker: UIPickerView!
     
     // View Outlets
     @IBOutlet weak var pickView: UIView!
     @IBOutlet weak var pickViewHeight: NSLayoutConstraint!
+
     
-    
-    let nums = ["1", "2", "3", "4", "5", "6", "more"]
+    var freeTables = [String]()
+    let durations = ["1", "2", "3", "4", "5"]
     var curId = 0
-    let numId = 1
+    let tableID = 1
     let dateId = 2
     let timeId = 3
     let durationId = 4
@@ -49,26 +52,33 @@ class BookTableViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         // delegates
-        numOfPeopleTxt.delegate = self
+        loadTables()
+        tableTxt.delegate = self
         dateTxt.delegate = self
         timeTxt.delegate = self
         durationTxt.delegate = self
-        numPicker.delegate = self
+        tablePicker.delegate = self
+        durationPicker.delegate = self
         // datasources
-        numPicker.dataSource = self
+        tablePicker.dataSource = self
+        durationPicker.dataSource = self
         // setting colors
         datePicker.setValue(UIColor.init(red: 149, green: 145, blue: 85, alpha: 1), forKey: "backgroundColor")
         timePicker.setValue(UIColor.lightGray, forKey: "backgroundColor")
         // tag distribution
-        numOfPeopleTxt.tag = 1
+        tableTxt.tag = 1
         dateTxt.tag = 2
         timeTxt.tag = 3
         durationTxt.tag = 4
+        // pickerView tags
+        tablePicker.tag = 1
+        durationPicker.tag = 2
         // initial graphic states
         performTransform(true)
         // add listeners
         datePicker.addTarget(self, action: #selector(onDateValueChanged(_:)), for: .valueChanged)
         timePicker.addTarget(self, action: #selector(onTimeValueChanged(_:)), for: .valueChanged)
+        // load currently free tables
         
     }
     
@@ -116,11 +126,16 @@ class BookTableViewController: UIViewController{
     // user pressed the "Book a Table Button"
     @IBAction func bookTableBtn(_ sender: UIButton) {
         if let messageSender = Auth.auth().currentUser?.email{
-            // Add booking information for the user to Firestore
             if isFilled(){ // if all required fields are filled
-                let reservation = Reservation(user: messageSender, date: dateTxt.text!, time: timeTxt.text!, duration: durationTxt.text!, numPeople: numOfPeopleTxt.text!)
+                // Add booking information for the user to Firestore
+                let reservation = Reservation(user: messageSender, date: dateTxt.text!, time: timeTxt.text!, duration: durationTxt.text!, tableNumber: tableTxt.text!)
                 do{
-                    try db.collection(Constants.FStore.reservations).document(messageSender).setData(from:reservation)
+                    try db.collection(Constants.FStoreCollection.reservations).document(messageSender).setData(from:reservation)
+                    // update the table occupancy
+                    var tbID = getTableID(tableTxt.text!)
+                    updateTableAvailability(tbID)
+                    // go to confirmation pg
+                    performSegue(withIdentifier: Constants.bookTableToComfirm, sender: self)
                 }
                 catch let error{
                     print("Error writing city to Firestore: \(error)")
@@ -130,9 +145,6 @@ class BookTableViewController: UIViewController{
                 errorTxt.textColor = UIColor.red
                 errorTxt.text = "Please fill in all fields!"
             }
-            
-            // Update the current occupancy of the tables at Orijin Tea
-            
         }
     }
 
@@ -144,11 +156,12 @@ class BookTableViewController: UIViewController{
     func hideAllPicker(){
         datePicker.isHidden = true
         timePicker.isHidden = true
-        numPicker.isHidden = true
+        tablePicker.isHidden = true
+        durationPicker.isHidden = true
     }
     
     func isFilled() -> Bool{
-        if timeTxt.text == "" || dateTxt.text == "" || durationTxt.text == "" || numOfPeopleTxt.text == ""{
+        if timeTxt.text == "" || dateTxt.text == "" || durationTxt.text == "" || tableTxt.text == ""{
             return false
         }
         else{
@@ -160,10 +173,10 @@ class BookTableViewController: UIViewController{
     @IBAction func donePressed(_ sender: UIBarButtonItem) {
         switch curId{
         case 1:
-            let row = numPicker.selectedRow(inComponent: 0)
-            numPicker.selectRow(row, inComponent: 0, animated: false)
-            numOfPeopleTxt.text = nums[row]
-            numOfPeopleTxt.resignFirstResponder()
+            let row = tablePicker.selectedRow(inComponent: 0)
+            tablePicker.selectRow(row, inComponent: 0, animated: false)
+            tableTxt.text = freeTables[row]
+            tableTxt.resignFirstResponder()
             performTransform(true)
         case 2:
             dateTxt.resignFirstResponder()
@@ -172,9 +185,9 @@ class BookTableViewController: UIViewController{
             timeTxt.resignFirstResponder()
             performTransform(true)
         case 4:
-            let row = numPicker.selectedRow(inComponent: 0)
-            numPicker.selectRow(row, inComponent: 0, animated: false)
-            durationTxt.text = nums[row]
+            let row = durationPicker.selectedRow(inComponent: 0)
+            durationPicker.selectRow(row, inComponent: 0, animated: false)
+            durationTxt.text = durations[row]
             durationTxt.resignFirstResponder()
             performTransform(true)
         default:
@@ -183,6 +196,62 @@ class BookTableViewController: UIViewController{
 
     }
     
+    func loadTables(){
+        freeTables = []
+        db.collection(Constants.FStoreCollection.tables).getDocuments { querySnapshot, error in
+            if let e = error{
+                print("Issue retreiving current free tables: \(e)")
+            }
+            else{
+                if let snapDocs = querySnapshot?.documents{
+                    for doc in snapDocs{
+                        let freeTable = doc.data()[Constants.FStoreField.Table.tableEmpty] as! Bool
+                        if freeTable{
+                            self.freeTables.append(doc.data()[Constants.FStoreField.Table.tableNames] as! String)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func getTableID(_ tableN:String) -> String{
+        var tableID = ""
+        db.collection(Constants.FStoreCollection.tables).getDocuments { (querySnapshot, error) in
+            if let e = error{
+                print("Issue retreiving current free tables: \(e)")
+                return
+            }
+            else{
+                if let snapDocs = querySnapshot?.documents{
+                    for doc in snapDocs{
+                        let tableName = doc.data()[Constants.FStoreField.Table.tableNames] as! String
+                        print(tableName)
+                        if tableName == tableN{
+                            tableID = doc.data()[Constants.FStoreField.Table.tableID] as! String
+                            break
+                        }
+                        else{
+                            print("unable to find table")
+                        }
+                    }
+                }
+            }
+        }
+        return tableID
+    }
+    
+    func updateTableAvailability(_ table:String){
+        let tb = db.collection(Constants.FStoreCollection.tables).document(table)
+        tb.getDocument { (document, error) in
+            if let document = document, document.exists {
+                document.setValue(false, forKey: Constants.FStoreField.Table.tableEmpty)
+            } else {
+                print("document for table does not exist")
+            }
+        }
+        
+    }
     
 }
 
@@ -195,31 +264,45 @@ extension BookTableViewController: UIPickerViewDelegate,  UIPickerViewDataSource
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return nums.count
+        switch pickerView.tag{
+        case 1:
+            return freeTables.count
+        case 2:
+            return durations.count
+        default:
+            return 1
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        nums[row]
+        switch pickerView.tag{
+        case 1:
+            return freeTables[row]
+        case 2:
+            return durations[row]
+        default:
+            return "Data Not Found"
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch curId{
         case 1:
-            numOfPeopleTxt.text = nums[row]
+            tableTxt.text = freeTables[row]
         case 4:
-            durationTxt.text = nums[row]
+            durationTxt.text = durations[row]
         default:
-            print("error setting nums")
+            print("Error setting nums")
         }
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         performTransform(false)
         switch textField.tag{
-        case 1: //num of ppl
+        case 1: //table
             hideAllPicker()
-            numPicker.isHidden = false
-            curId = numId
+            tablePicker.isHidden = false
+            curId = tableID
         case 2: //date
             hideAllPicker()
             datePicker.isHidden = false
@@ -228,15 +311,14 @@ extension BookTableViewController: UIPickerViewDelegate,  UIPickerViewDataSource
             hideAllPicker()
             timePicker.isHidden = false
             curId = timeId
-        case 4: // duration
+        case 4: //duration
             hideAllPicker()
-            numPicker.isHidden = false
+            durationPicker.isHidden = false
             curId = durationId
         default:
             print("unknown txt")
         }
     }
-    
     
 }
 
