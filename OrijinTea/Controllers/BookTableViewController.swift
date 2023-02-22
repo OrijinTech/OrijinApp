@@ -15,7 +15,7 @@ class BookTableViewController: UIViewController{
     
     // Database Reference
     let db = Firestore.firestore()
-
+    
     
     // Constraints Outlets
     @IBOutlet weak var stackDist: NSLayoutConstraint!
@@ -37,7 +37,7 @@ class BookTableViewController: UIViewController{
     // View Outlets
     @IBOutlet weak var pickView: UIView!
     @IBOutlet weak var pickViewHeight: NSLayoutConstraint!
-
+    
     
     var freeTables = [String]()
     let durations = ["1", "2", "3", "4", "5"]
@@ -47,12 +47,14 @@ class BookTableViewController: UIViewController{
     let timeId = 3
     let durationId = 4
     
-    
+    var curTableSelected = ""
+    var desiredTableName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // delegates
+        // load currently free tables
         loadTables()
+        // delegates
         tableTxt.delegate = self
         dateTxt.delegate = self
         timeTxt.delegate = self
@@ -78,8 +80,6 @@ class BookTableViewController: UIViewController{
         // add listeners
         datePicker.addTarget(self, action: #selector(onDateValueChanged(_:)), for: .valueChanged)
         timePicker.addTarget(self, action: #selector(onTimeValueChanged(_:)), for: .valueChanged)
-        // load currently free tables
-        
     }
     
     // hiding the pick view and transforming the book table btn
@@ -125,6 +125,7 @@ class BookTableViewController: UIViewController{
     
     // user pressed the "Book a Table Button"
     @IBAction func bookTableBtn(_ sender: UIButton) {
+        
         if let messageSender = Auth.auth().currentUser?.email{
             if isFilled(){ // if all required fields are filled
                 // Add booking information for the user to Firestore
@@ -132,8 +133,10 @@ class BookTableViewController: UIViewController{
                 do{
                     try db.collection(Constants.FStoreCollection.reservations).document(messageSender).setData(from:reservation)
                     // update the table occupancy
-                    var tbID = getTableID(tableTxt.text!)
-                    updateTableAvailability(tbID)
+                    //desiredTableName = tableTxt.text!
+                    //calcTableID()
+                    //print(curTableSelected)
+                    //updateTableAvailability(curTableSelected)
                     // go to confirmation pg
                     performSegue(withIdentifier: Constants.bookTableToComfirm, sender: self)
                 }
@@ -147,7 +150,7 @@ class BookTableViewController: UIViewController{
             }
         }
     }
-
+    
     @IBAction func cancelPressed(_ sender: UIBarButtonItem) {
         hideAllPicker()
         performTransform(true)
@@ -193,7 +196,7 @@ class BookTableViewController: UIViewController{
         default:
             print("error done")
         }
-
+        
     }
     
     func loadTables(){
@@ -215,43 +218,41 @@ class BookTableViewController: UIViewController{
         }
     }
     
-    func getTableID(_ tableN:String) -> String{
-        var tableID = ""
-        db.collection(Constants.FStoreCollection.tables).getDocuments { (querySnapshot, error) in
-            if let e = error{
-                print("Issue retreiving current free tables: \(e)")
-                return
-            }
-            else{
-                if let snapDocs = querySnapshot?.documents{
-                    for doc in snapDocs{
-                        let tableName = doc.data()[Constants.FStoreField.Table.tableNames] as! String
-                        print(tableName)
-                        if tableName == tableN{
-                            tableID = doc.data()[Constants.FStoreField.Table.tableID] as! String
-                            break
-                        }
-                        else{
-                            print("unable to find table")
-                        }
-                    }
-                }
-            }
-        }
-        return tableID
-    }
-    
-    func updateTableAvailability(_ table:String){
-        let tb = db.collection(Constants.FStoreCollection.tables).document(table)
-        tb.getDocument { (document, error) in
-            if let document = document, document.exists {
-                document.setValue(false, forKey: Constants.FStoreField.Table.tableEmpty)
-            } else {
-                print("document for table does not exist")
-            }
-        }
-        
-    }
+//    func calcTableID(){
+//        db.collection(Constants.FStoreCollection.tables).getDocuments { querySnap, error in
+//            if let e = error{
+//                print("there was an issue retreiving from FIRESTORE \(e)")
+//            }
+//            else{
+//                if let snapDocs = querySnap?.documents{
+//                    for doc in snapDocs{
+//                        print(doc.data())
+//                        let data = doc.data()
+//                        let tableName = data[Constants.FStoreField.Table.tableNames] as! String
+//                        if tableName == self.desiredTableName {
+//                            self.curTableSelected = data[Constants.FStoreField.Table.tableID] as! String
+//                            break
+//                        }
+//                        else{
+//                            print("unable to find table")
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
+//
+//    func updateTableAvailability(_ table:String){
+//        let tb = db.collection(Constants.FStoreCollection.tables).document(table)
+//        tb.getDocument { (document, error) in
+//            if let document = document, document.exists {
+//                document.setValue(false, forKey: Constants.FStoreField.Table.tableEmpty)
+//            } else {
+//                print("document for table does not exist")
+//            }
+//        }
+//
+//    }
     
 }
 
