@@ -22,6 +22,11 @@ class Constants{
     static let bookTableToVisit: String = "bookTableToVisit"
     static let bookTableToComfirm: String = "bookTableToComfirm"
     static let confirmationToMain: String = "confirmationToMain"
+    // Me tab
+    struct Me{
+        static let profileToReservations: String = "profileToReservations"
+    }
+    
 
 // MARK: - View Identifiers
     static let prodTypeCell: String = "prodTypeCell"

@@ -25,7 +25,7 @@
 		549547812993E3EE008E458B /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549547802993E3EE008E458B /* BookingViewController.swift */; };
 		549547832993E4CC008E458B /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549547822993E4CC008E458B /* ShopViewController.swift */; };
 		549547852993E98C008E458B /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549547842993E98C008E458B /* InfoViewController.swift */; };
-		549547872993ED59008E458B /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549547862993ED59008E458B /* OrderViewController.swift */; };
+		549547872993ED59008E458B /* ReservePgViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549547862993ED59008E458B /* ReservePgViewController.swift */; };
 		549547892993F192008E458B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549547882993F192008E458B /* SettingsViewController.swift */; };
 		54AB765329A51CB700287A8D /* ComfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AB765229A51CB700287A8D /* ComfirmViewController.swift */; };
 		54D832F129A4D14700A8A036 /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D832F029A4D14700A8A036 /* Reservation.swift */; };
@@ -55,7 +55,7 @@
 		549547802993E3EE008E458B /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
 		549547822993E4CC008E458B /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		549547842993E98C008E458B /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
-		549547862993ED59008E458B /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		549547862993ED59008E458B /* ReservePgViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservePgViewController.swift; sourceTree = "<group>"; };
 		549547882993F192008E458B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		54AB765229A51CB700287A8D /* ComfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComfirmViewController.swift; sourceTree = "<group>"; };
 		54D832F029A4D14700A8A036 /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 				549547802993E3EE008E458B /* BookingViewController.swift */,
 				549547822993E4CC008E458B /* ShopViewController.swift */,
 				549547842993E98C008E458B /* InfoViewController.swift */,
-				549547862993ED59008E458B /* OrderViewController.swift */,
+				549547862993ED59008E458B /* ReservePgViewController.swift */,
 				549547882993F192008E458B /* SettingsViewController.swift */,
 				5415EA24299A49B700302EC6 /* BookTableViewController.swift */,
 				54AB765229A51CB700287A8D /* ComfirmViewController.swift */,
@@ -279,7 +279,7 @@
 				5415EA25299A49B700302EC6 /* BookTableViewController.swift in Sources */,
 				54D832F129A4D14700A8A036 /* Reservation.swift in Sources */,
 				54289C9B2992ACD400872E9D /* Constants.swift in Sources */,
-				549547872993ED59008E458B /* OrderViewController.swift in Sources */,
+				549547872993ED59008E458B /* ReservePgViewController.swift in Sources */,
 				549547832993E4CC008E458B /* ShopViewController.swift in Sources */,
 				5488E50429916E3600788259 /* LoginViewController.swift in Sources */,
 				5488E4EF2991686100788259 /* AppDelegate.swift in Sources */,

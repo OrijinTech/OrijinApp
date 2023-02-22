@@ -34,13 +34,7 @@ class ComfirmViewController: UIViewController {
         super.viewDidLoad()
         setInformation()
         addressTxt.text = "Charvatova 1988/3"
-        
-//        calcTableID(bookedTable)
-//        print(curTableSelected)
-//
-        
     }
-    
     
     func setInformation(){
         if let messageSender = Auth.auth().currentUser?.email{
@@ -60,8 +54,6 @@ class ComfirmViewController: UIViewController {
             print("inside setInfo")
         }
     }
-
-    
     
     func calcTableID(_ tableN: String){
         db.collection(Constants.FStoreCollection.tables).getDocuments { querySnap, error in
@@ -100,8 +92,6 @@ class ComfirmViewController: UIViewController {
             }
         }
     }
-    
-    
 
     @IBAction func backBtnPressed(_ sender: UIButton) {
         performSegue(withIdentifier: Constants.confirmationToMain, sender: self)

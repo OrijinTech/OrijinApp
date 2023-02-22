@@ -47,9 +47,6 @@ class BookTableViewController: UIViewController{
     let timeId = 3
     let durationId = 4
     
-    var curTableSelected = ""
-    var desiredTableName = ""
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // load currently free tables
@@ -132,12 +129,6 @@ class BookTableViewController: UIViewController{
                 let reservation = Reservation(user: messageSender, date: dateTxt.text!, time: timeTxt.text!, duration: durationTxt.text!, tableNumber: tableTxt.text!)
                 do{
                     try db.collection(Constants.FStoreCollection.reservations).document(messageSender).setData(from:reservation)
-                    // update the table occupancy
-                    //desiredTableName = tableTxt.text!
-                    //calcTableID()
-                    //print(curTableSelected)
-                    //updateTableAvailability(curTableSelected)
-                    // go to confirmation pg
                     performSegue(withIdentifier: Constants.bookTableToComfirm, sender: self)
                 }
                 catch let error{
@@ -218,42 +209,6 @@ class BookTableViewController: UIViewController{
         }
     }
     
-//    func calcTableID(){
-//        db.collection(Constants.FStoreCollection.tables).getDocuments { querySnap, error in
-//            if let e = error{
-//                print("there was an issue retreiving from FIRESTORE \(e)")
-//            }
-//            else{
-//                if let snapDocs = querySnap?.documents{
-//                    for doc in snapDocs{
-//                        print(doc.data())
-//                        let data = doc.data()
-//                        let tableName = data[Constants.FStoreField.Table.tableNames] as! String
-//                        if tableName == self.desiredTableName {
-//                            self.curTableSelected = data[Constants.FStoreField.Table.tableID] as! String
-//                            break
-//                        }
-//                        else{
-//                            print("unable to find table")
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//    }
-//
-//    func updateTableAvailability(_ table:String){
-//        let tb = db.collection(Constants.FStoreCollection.tables).document(table)
-//        tb.getDocument { (document, error) in
-//            if let document = document, document.exists {
-//                document.setValue(false, forKey: Constants.FStoreField.Table.tableEmpty)
-//            } else {
-//                print("document for table does not exist")
-//            }
-//        }
-//
-//    }
-    
 }
 
 
@@ -322,22 +277,5 @@ extension BookTableViewController: UIPickerViewDelegate,  UIPickerViewDataSource
     }
     
 }
-
-
-//// MARK: - Custom Picker Delegate
-//extension BookTableViewController: BookingPickerDelegate{
-//    func didTapDone() {
-//        let row = self.numPicker.selectedRow(inComponent: 0)
-//        self.numPicker.selectRow(row, inComponent: 0, animated: false)
-//        self.numOfPeopleTxt.text = self.numPeople[row]
-//        self.numOfPeopleTxt.resignFirstResponder()
-//    }
-//
-//    func didTapCancel() {
-//        self.numOfPeopleTxt.text = nil
-//        self.numOfPeopleTxt.resignFirstResponder()
-//    }
-//
-//}
 
     
