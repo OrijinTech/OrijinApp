@@ -334,7 +334,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zcD-dQ-FfE">
-                                <rect key="frame" x="0.0" y="216" width="393" height="602"/>
+                                <rect key="frame" x="0.0" y="216" width="393" height="553"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="boF-RB-ZW8">
                                         <rect key="frame" x="8" y="8" width="377" height="1012"/>
@@ -537,17 +537,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="p68-W8-0DE" userLabel="Profile Pic">
-                                <rect key="frame" x="155" y="125.66666666666669" width="82" height="82"/>
+                                <rect key="frame" x="155" y="125.66666666666669" width="82" height="131"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtG-ao-BLo">
-                                <rect key="frame" x="136" y="211" width="121" height="30"/>
+                                <rect key="frame" x="136" y="211" width="121" height="79"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="33K-kV-nEv">
-                                <rect key="frame" x="46" y="261" width="300" height="330"/>
+                                <rect key="frame" x="46" y="261" width="300" height="379"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6VW-8P-2Lr">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="75"/>
@@ -584,7 +584,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dre-pP-KYW">
-                                        <rect key="frame" x="0.0" y="255" width="300" height="75"/>
+                                        <rect key="frame" x="0.0" y="255" width="300" height="124"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="75" id="zNo-vP-pl6"/>
                                         </constraints>
@@ -597,7 +597,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLT-Eh-DIK">
-                                <rect key="frame" x="46" y="671" width="300" height="66"/>
+                                <rect key="frame" x="46" y="671" width="300" height="115"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Log Out"/>
                                 <connections>
@@ -920,6 +920,7 @@ this reservation?</string>
                                     <constraint firstItem="66N-pS-Iqd" firstAttribute="top" secondItem="2eW-Cq-etq" secondAttribute="top" constant="88" id="eox-rq-kTU"/>
                                     <constraint firstItem="0Gb-kk-mey" firstAttribute="top" secondItem="2eW-Cq-etq" secondAttribute="top" constant="664" id="lJw-bh-sE3"/>
                                     <constraint firstItem="66N-pS-Iqd" firstAttribute="leading" secondItem="2eW-Cq-etq" secondAttribute="leading" constant="76" id="noP-Bs-Cd5"/>
+                                    <constraint firstAttribute="trailing" secondItem="0Gb-kk-mey" secondAttribute="trailing" constant="127.33" id="oA3-Xb-G70"/>
                                     <constraint firstItem="Qvq-bB-EGE" firstAttribute="leading" secondItem="2eW-Cq-etq" secondAttribute="leading" constant="58" id="tzR-r0-HIi"/>
                                     <constraint firstItem="Qvq-bB-EGE" firstAttribute="top" secondItem="2eW-Cq-etq" secondAttribute="top" constant="224" id="yaN-a4-xuP"/>
                                     <constraint firstAttribute="bottom" secondItem="Qvq-bB-EGE" secondAttribute="bottom" constant="453" id="yeq-lz-deS"/>
@@ -1748,10 +1749,10 @@ this reservation?</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ngJ-Ji-nea"/>
+        <segue reference="lpo-BE-qJD"/>
         <segue reference="4TM-UG-qtk"/>
-        <segue reference="RGB-ok-aTm"/>
-        <segue reference="UNL-yL-buP"/>
+        <segue reference="aeF-A3-q2X"/>
+        <segue reference="zVZ-ol-uZK"/>
         <segue reference="4fw-6U-pV6"/>
         <segue reference="SPD-0Y-dUO"/>
     </inferredMetricsTieBreakers>

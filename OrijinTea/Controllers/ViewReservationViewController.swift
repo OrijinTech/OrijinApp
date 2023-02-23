@@ -54,18 +54,16 @@ class ViewReservationViewController: UIViewController {
             blurEffectView.effect = blurEffect
             print("reached 1")
         }
-        print("reached 2")
-        
+        self.popupWindow.isHidden = false
+        self.setPopup()
+        self.blurView.addSubview(popupWindow)
     }
     
     
     @IBAction func deletePressed(_ sender: UIButton) {
         deleteBookingBtn.isUserInteractionEnabled = false
         setBlur()
-        print("reached 3")
-        self.popupWindow.isHidden = false
-        self.setPopup()
-        print("reached 4")
+
     }
     
     @IBAction func confirmDelPressed(_ sender: UIButton) {
@@ -73,6 +71,11 @@ class ViewReservationViewController: UIViewController {
     }
     
     @IBAction func cancelPressed(_ sender: UIButton) {
+        for subview in blurView.subviews {
+            if subview is UIVisualEffectView {
+                subview.removeFromSuperview()
+            }
+        }
         popupWindow.isHidden = true
         deleteBookingBtn.isUserInteractionEnabled = true
     }
