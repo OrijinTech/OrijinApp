@@ -33,7 +33,7 @@ class ComfirmViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setInformation()
-        addressTxt.text = "Charvatova 1988/3"
+        addressTxt.text = Constants.TextCont.orijinAddress
     }
     
     func setInformation(){

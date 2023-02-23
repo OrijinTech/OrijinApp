@@ -27,6 +27,7 @@
 		549547852993E98C008E458B /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549547842993E98C008E458B /* InfoViewController.swift */; };
 		549547872993ED59008E458B /* ReservePgViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549547862993ED59008E458B /* ReservePgViewController.swift */; };
 		549547892993F192008E458B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549547882993F192008E458B /* SettingsViewController.swift */; };
+		54A211EF29A68E20001C5E49 /* ViewReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A211EE29A68E20001C5E49 /* ViewReservationViewController.swift */; };
 		54AB765329A51CB700287A8D /* ComfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AB765229A51CB700287A8D /* ComfirmViewController.swift */; };
 		54D832F129A4D14700A8A036 /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D832F029A4D14700A8A036 /* Reservation.swift */; };
 		54EC945C2992A688003C744A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54EC945B2992A688003C744A /* GoogleService-Info.plist */; };
@@ -57,6 +58,7 @@
 		549547842993E98C008E458B /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		549547862993ED59008E458B /* ReservePgViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservePgViewController.swift; sourceTree = "<group>"; };
 		549547882993F192008E458B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		54A211EE29A68E20001C5E49 /* ViewReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewReservationViewController.swift; sourceTree = "<group>"; };
 		54AB765229A51CB700287A8D /* ComfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComfirmViewController.swift; sourceTree = "<group>"; };
 		54D832F029A4D14700A8A036 /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
 		54EC945B2992A688003C744A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				549547882993F192008E458B /* SettingsViewController.swift */,
 				5415EA24299A49B700302EC6 /* BookTableViewController.swift */,
 				54AB765229A51CB700287A8D /* ComfirmViewController.swift */,
+				54A211EE29A68E20001C5E49 /* ViewReservationViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				54289C9F2993CF2700872E9D /* Users.swift in Sources */,
 				5495477D2993E0A0008E458B /* ProfileViewController.swift in Sources */,
 				549547892993F192008E458B /* SettingsViewController.swift in Sources */,
+				54A211EF29A68E20001C5E49 /* ViewReservationViewController.swift in Sources */,
 				5495477F2993E0FA008E458B /* CartViewController.swift in Sources */,
 				5461F2F52997BAC600B66B2E /* ProductTypeViewCell.swift in Sources */,
 				549547812993E3EE008E458B /* BookingViewController.swift in Sources */,

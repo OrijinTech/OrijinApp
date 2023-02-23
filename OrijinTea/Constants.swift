@@ -25,6 +25,9 @@ class Constants{
     // Me tab
     struct Me{
         static let profileToReservations: String = "profileToReservations"
+        static let reservationsToProfile: String = "reservationsToProfile"
+        static let reservationPopup: String = "reservationPopup"
+        static let hideResPopup: String = "hideResPopup"
     }
     
 
@@ -56,7 +59,9 @@ class Constants{
 
     }
 
-    
+    struct TextCont{
+        static let orijinAddress: String = "Charvatova 1988/3"
+    }
     
     
 }
