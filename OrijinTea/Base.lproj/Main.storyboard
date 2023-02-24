@@ -334,7 +334,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zcD-dQ-FfE">
-                                <rect key="frame" x="0.0" y="216" width="393" height="553"/>
+                                <rect key="frame" x="0.0" y="216" width="393" height="602"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="boF-RB-ZW8">
                                         <rect key="frame" x="8" y="8" width="377" height="1012"/>
@@ -537,17 +537,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="p68-W8-0DE" userLabel="Profile Pic">
-                                <rect key="frame" x="155" y="125.66666666666669" width="82" height="131"/>
+                                <rect key="frame" x="155" y="125.66666666666669" width="82" height="82"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtG-ao-BLo">
-                                <rect key="frame" x="136" y="211" width="121" height="79"/>
+                                <rect key="frame" x="136" y="211" width="121" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="33K-kV-nEv">
-                                <rect key="frame" x="46" y="261" width="300" height="379"/>
+                                <rect key="frame" x="46" y="261" width="300" height="330"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6VW-8P-2Lr">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="75"/>
@@ -584,7 +584,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dre-pP-KYW">
-                                        <rect key="frame" x="0.0" y="255" width="300" height="124"/>
+                                        <rect key="frame" x="0.0" y="255" width="300" height="75"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="75" id="zNo-vP-pl6"/>
                                         </constraints>
@@ -597,7 +597,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLT-Eh-DIK">
-                                <rect key="frame" x="46" y="671" width="300" height="115"/>
+                                <rect key="frame" x="46" y="671" width="300" height="66"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Log Out"/>
                                 <connections>
@@ -712,10 +712,10 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="A7V-UH-Uta"/>
                     <connections>
-                        <segue destination="pLn-nJ-SSm" kind="presentation" identifier="reservationsToProfile" animates="NO" modalPresentationStyle="fullScreen" id="I4A-oQ-ViE"/>
                         <segue destination="KNR-Dk-0v2" kind="popoverPresentation" identifier="reservationPopup" popoverAnchorView="UZi-xo-LRs" id="jKd-Mr-WeJ">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
+                        <segue destination="pbB-nc-kna" kind="presentation" identifier="reservationsToProfile" animates="NO" modalPresentationStyle="fullScreen" id="02e-8h-Les"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d2o-7a-pun" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1327,10 +1327,6 @@ this reservation?</string>
                                             </navigationItem>
                                         </items>
                                     </navigationBar>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="iPU-hw-DgJ">
-                                        <rect key="frame" x="0.0" y="44" width="393" height="216"/>
-                                        <color key="backgroundColor" red="0.58431375029999999" green="0.56862747670000002" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </datePicker>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="cho-mG-LEB" userLabel="Time Picker">
                                         <rect key="frame" x="0.0" y="44" width="393" height="216"/>
                                         <color key="backgroundColor" red="0.58431375029999999" green="0.56862747670000002" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1347,24 +1343,28 @@ this reservation?</string>
                                             <constraint firstAttribute="width" constant="393" id="VGX-V5-RRu"/>
                                         </constraints>
                                     </pickerView>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="iPU-hw-DgJ">
+                                        <rect key="frame" x="0.0" y="44" width="393" height="216"/>
+                                        <color key="backgroundColor" red="0.58431375029999999" green="0.56862747670000002" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </datePicker>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="cho-mG-LEB" firstAttribute="top" secondItem="IP9-mS-nX7" secondAttribute="bottom" id="07g-Le-Ws5"/>
-                                    <constraint firstItem="iPU-hw-DgJ" firstAttribute="top" secondItem="IP9-mS-nX7" secondAttribute="bottom" id="6hO-pe-kb3"/>
                                     <constraint firstItem="iPU-hw-DgJ" firstAttribute="leading" secondItem="NoF-Ba-izQ" secondAttribute="leading" id="7SQ-Fc-TAf"/>
+                                    <constraint firstItem="iPU-hw-DgJ" firstAttribute="top" secondItem="NoF-Ba-izQ" secondAttribute="top" constant="44" id="8IX-tw-gXO"/>
                                     <constraint firstAttribute="trailing" secondItem="Mwx-Wa-INv" secondAttribute="trailing" id="9M7-9s-CQm"/>
-                                    <constraint firstItem="VAW-9I-mcG" firstAttribute="top" secondItem="IP9-mS-nX7" secondAttribute="bottom" id="9Me-gC-16Q"/>
                                     <constraint firstItem="VAW-9I-mcG" firstAttribute="leading" secondItem="NoF-Ba-izQ" secondAttribute="leading" id="AQz-Om-G1c"/>
-                                    <constraint firstItem="Mwx-Wa-INv" firstAttribute="top" secondItem="IP9-mS-nX7" secondAttribute="bottom" id="ArX-We-Fxa"/>
+                                    <constraint firstItem="cho-mG-LEB" firstAttribute="top" secondItem="NoF-Ba-izQ" secondAttribute="top" constant="44" id="CqM-L3-tYg"/>
                                     <constraint firstItem="IP9-mS-nX7" firstAttribute="top" secondItem="NoF-Ba-izQ" secondAttribute="top" id="GrV-s8-PUS"/>
                                     <constraint firstAttribute="trailing" secondItem="cho-mG-LEB" secondAttribute="trailing" id="HGM-5f-fhm"/>
                                     <constraint firstAttribute="bottom" secondItem="cho-mG-LEB" secondAttribute="bottom" id="Owj-AZ-3QV"/>
                                     <constraint firstItem="cho-mG-LEB" firstAttribute="leading" secondItem="NoF-Ba-izQ" secondAttribute="leading" id="Pm5-F7-fa7"/>
                                     <constraint firstAttribute="trailing" secondItem="VAW-9I-mcG" secondAttribute="trailing" id="RZ8-UR-8Ph"/>
                                     <constraint firstAttribute="trailing" secondItem="iPU-hw-DgJ" secondAttribute="trailing" id="TVK-ej-BXV"/>
+                                    <constraint firstItem="VAW-9I-mcG" firstAttribute="top" secondItem="NoF-Ba-izQ" secondAttribute="top" constant="44" id="UcF-aK-Nn3"/>
                                     <constraint firstAttribute="height" constant="260" id="Uy5-rI-kVw"/>
                                     <constraint firstItem="IP9-mS-nX7" firstAttribute="leading" secondItem="NoF-Ba-izQ" secondAttribute="leading" id="VWT-QH-29P"/>
+                                    <constraint firstItem="Mwx-Wa-INv" firstAttribute="top" secondItem="NoF-Ba-izQ" secondAttribute="top" constant="44" id="Xtx-VI-qly"/>
                                     <constraint firstItem="Mwx-Wa-INv" firstAttribute="leading" secondItem="NoF-Ba-izQ" secondAttribute="leading" id="cYY-xz-1xt"/>
                                     <constraint firstAttribute="bottom" secondItem="VAW-9I-mcG" secondAttribute="bottom" id="hqC-nE-FWF"/>
                                     <constraint firstAttribute="bottom" secondItem="iPU-hw-DgJ" secondAttribute="bottom" id="iA5-t4-szK"/>
@@ -1403,6 +1403,7 @@ this reservation?</string>
                         <viewLayoutGuide key="safeArea" id="IhV-tR-b1h"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="NoF-Ba-izQ" firstAttribute="top" secondItem="eGW-Rp-va9" secondAttribute="bottom" constant="8" id="17T-aA-eil"/>
                             <constraint firstItem="dF9-l7-Zub" firstAttribute="leading" secondItem="IhV-tR-b1h" secondAttribute="leading" constant="20" id="6mg-4F-cwx"/>
                             <constraint firstAttribute="bottom" secondItem="NoF-Ba-izQ" secondAttribute="bottom" id="8IJ-hn-bmk"/>
                             <constraint firstItem="llY-xU-nK3" firstAttribute="trailing" secondItem="IhV-tR-b1h" secondAttribute="trailing" id="D31-1B-F5r"/>
@@ -1410,7 +1411,6 @@ this reservation?</string>
                             <constraint firstItem="eGW-Rp-va9" firstAttribute="leading" secondItem="IhV-tR-b1h" secondAttribute="leading" constant="20" id="KLS-Tx-8B1"/>
                             <constraint firstItem="llY-xU-nK3" firstAttribute="leading" secondItem="IhV-tR-b1h" secondAttribute="leading" id="cFc-bZ-ily"/>
                             <constraint firstItem="NoF-Ba-izQ" firstAttribute="leading" secondItem="IhV-tR-b1h" secondAttribute="leading" id="eyg-B9-dj0"/>
-                            <constraint firstItem="IhV-tR-b1h" firstAttribute="bottom" secondItem="eGW-Rp-va9" secondAttribute="bottom" constant="234" id="gle-9f-mWH"/>
                             <constraint firstItem="IhV-tR-b1h" firstAttribute="bottom" secondItem="llY-xU-nK3" secondAttribute="bottom" constant="610" id="jQW-Zm-Zea"/>
                             <constraint firstItem="dF9-l7-Zub" firstAttribute="top" secondItem="llY-xU-nK3" secondAttribute="bottom" constant="30" id="lg0-t9-14C"/>
                             <constraint firstItem="IhV-tR-b1h" firstAttribute="trailing" secondItem="dF9-l7-Zub" secondAttribute="trailing" constant="20" id="n3H-Dc-eQL"/>
@@ -1419,14 +1419,15 @@ this reservation?</string>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="bookTableDist" destination="gle-9f-mWH" id="g4W-sa-q8q"/>
+                        <outlet property="bookBtnOutlet" destination="eGW-Rp-va9" id="I61-oK-dsA"/>
+                        <outlet property="bookTableDist" destination="17T-aA-eil" id="eYe-z6-JCp"/>
                         <outlet property="datePicker" destination="iPU-hw-DgJ" id="lkf-yz-FI4"/>
                         <outlet property="dateTxt" destination="70f-eI-kQn" id="WrE-B6-T5D"/>
                         <outlet property="durationPicker" destination="Mwx-Wa-INv" id="9JS-qB-5dx"/>
                         <outlet property="durationTxt" destination="pAV-Ad-J4N" id="PcY-0q-ywc"/>
                         <outlet property="errorTxt" destination="ThD-A3-v75" id="H5g-HG-DZ2"/>
                         <outlet property="pickView" destination="NoF-Ba-izQ" id="fSk-Xt-pwg"/>
-                        <outlet property="pickViewHeight" destination="Uy5-rI-kVw" id="arS-JT-FZS"/>
+                        <outlet property="pickViewHeight" destination="Uy5-rI-kVw" id="6An-zD-eUt"/>
                         <outlet property="stackDist" destination="lg0-t9-14C" id="oOX-Qp-ZwP"/>
                         <outlet property="tablePicker" destination="VAW-9I-mcG" id="5k1-IX-ggx"/>
                         <outlet property="tableTxt" destination="Bpz-7G-4Zh" id="hMp-QV-5wZ"/>
@@ -1438,7 +1439,7 @@ this reservation?</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v5k-Nt-fOg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="717" y="2377"/>
+            <point key="canvasLocation" x="716.79389312977094" y="2376.7605633802818"/>
         </scene>
         <!--Comfirmation Page-->
         <scene sceneID="ohx-Eo-32P">
@@ -1749,12 +1750,12 @@ this reservation?</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lpo-BE-qJD"/>
-        <segue reference="4TM-UG-qtk"/>
-        <segue reference="aeF-A3-q2X"/>
-        <segue reference="zVZ-ol-uZK"/>
-        <segue reference="4fw-6U-pV6"/>
-        <segue reference="SPD-0Y-dUO"/>
+        <segue reference="hbK-Mo-Cr0"/>
+        <segue reference="hRU-Co-kmm"/>
+        <segue reference="RGB-ok-aTm"/>
+        <segue reference="UNL-yL-buP"/>
+        <segue reference="h8H-C5-WCh"/>
+        <segue reference="02e-8h-Les"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Tea Icon" width="252" height="214"/>
