@@ -157,10 +157,26 @@ class BookTableViewController: UIViewController{
         performTransform(true)
     }
     
+    
+    
     @objc private func onDateValueChanged(_ datePicker: UIDatePicker) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        dateTxt.text = dateFormatter.string(from: datePicker.date)
+        let dateComp = datePicker.date
+        checkDay(for: dateComp)
+    }
+    
+    func checkDay(for date: Date){
+        let calendar = Calendar.current
+        let weekday = calendar.component(.weekday, from: date)
+        if weekday == 1 {
+            // Sunday is disabled, do nothing or show an error message
+            dateTxt.text = ""
+            print("The selected day is a Sunday")
+        } else {
+            // Selected date is valid, do something with it
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            dateTxt.text = dateFormatter.string(from: date)
+        }
     }
     
     
@@ -180,8 +196,6 @@ class BookTableViewController: UIViewController{
         var bookingID = 0
         getBookingID { bookingNum in
             bookingID = bookingNum!
-            print("THE BOOKING NUMBER TO USE IS: " + String(bookingID))
-            
             if let messageSender = Auth.auth().currentUser?.email{
                 if self.isFilled(){ // if all required fields are filled
                     // Update Segue Transform Info
@@ -617,3 +631,4 @@ extension Formatter {
         return formatter
     }()
 }
+
