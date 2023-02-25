@@ -41,6 +41,7 @@ class BookTableViewController: UIViewController{
     // Button outlets
     @IBOutlet weak var bookBtnOutlet: UIButton!
     
+    // Global Variables and Constants
     var freeTables = [String](repeating: "", count: 5)
     var reservations = [Reservation]()
     let durations = ["1", "2", "3", "4", "5"]
@@ -49,6 +50,14 @@ class BookTableViewController: UIViewController{
     let dateId = 2
     let timeId = 3
     let durationId = 4
+    
+    // Segue Prep Variables
+    var bookingNum = 0
+    var date = ""
+    var time = ""
+    var duration = ""
+    var table = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -168,24 +177,36 @@ class BookTableViewController: UIViewController{
     
     // user pressed the "Book a Table Button"
     @IBAction func bookTableBtn(_ sender: UIButton) {
-        
-        if let messageSender = Auth.auth().currentUser?.email{
-            if isFilled(){ // if all required fields are filled
-                // Add booking information for the user to Firestore
-                let reservation = Reservation(user: messageSender, date: dateTxt.text!, time: timeTxt.text!, duration: durationTxt.text!, tableNumber: tableTxt.text!)
-                do{
-                    try db.collection(Constants.FStoreCollection.reservations).document(messageSender).setData(from:reservation)
-                    performSegue(withIdentifier: Constants.bookTableToComfirm, sender: self)
+        var bookingID = 0
+        getBookingID { bookingNum in
+            bookingID = bookingNum!
+            print("THE BOOKING NUMBER TO USE IS: " + String(bookingID))
+            
+            if let messageSender = Auth.auth().currentUser?.email{
+                if self.isFilled(){ // if all required fields are filled
+                    // Update Segue Transform Info
+                    self.date = self.dateTxt.text!
+                    self.time = self.timeTxt.text!
+                    self.duration = self.durationTxt.text!
+                    self.table = self.tableTxt.text!
+                    self.bookingNum = bookingID
+                    // Add booking information for the user to Firestore
+                    let reservation = Reservation(user: messageSender, date: self.dateTxt.text!, time: self.timeTxt.text!, duration: self.durationTxt.text!, tableNumber: self.tableTxt.text!)
+                    do{
+                        try self.db.collection(Constants.FStoreCollection.reservations).document(String(bookingID)).setData(from:reservation)
+                        self.performSegue(withIdentifier: Constants.bookTableToComfirm, sender: self)
+                    }
+                    catch let error{
+                        print("Error writing city to Firestore: \(error)")
+                    }
                 }
-                catch let error{
-                    print("Error writing city to Firestore: \(error)")
+                else{
+                    self.errorTxt.textColor = UIColor.red
+                    self.errorTxt.text = "Please fill in all fields!"
                 }
-            }
-            else{
-                errorTxt.textColor = UIColor.red
-                errorTxt.text = "Please fill in all fields!"
             }
         }
+        updateBookingID()
     }
     
     @IBAction func cancelPressed(_ sender: UIBarButtonItem) {
@@ -226,6 +247,20 @@ class BookTableViewController: UIViewController{
         }
         
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.bookTableToComfirm{
+            let destinationVC = segue.destination as? ComfirmViewController
+            destinationVC?.date = self.date
+            destinationVC?.time = self.time
+            destinationVC?.duration = self.duration
+            destinationVC?.bookingNum = self.bookingNum
+            destinationVC?.table = self.table
+            
+        }
+    }
+    
     
     // MARK: - Data Retreival
     
@@ -317,6 +352,47 @@ class BookTableViewController: UIViewController{
                             self.loadTables(forTime: inpDate)
                         }
                     }
+                }
+            }
+        }
+    }
+    
+    
+    // Retreive current booking ID for use
+    func getBookingID(completion: @escaping (Int?) -> Void){
+        var docuID = 0
+        let collectionRef = db.collection(Constants.FStoreCollection.adminStats)
+        let docRef = collectionRef.document(Constants.FStoreDocument.tableBooking)
+        
+        docRef.getDocument { qsnap, error in
+            if let e = error{
+                print("Error: Retreiving booking ID: \(e)")
+            }
+            else{
+                if let doc = qsnap, doc.exists{
+                    docuID = (doc.data()?[Constants.FStoreField.AdminFields.tableBookingId] as? Int)!
+                    completion(docuID)
+                }
+                else{
+                    completion(nil)
+                    print("doc does not exist while getBookingID")
+                }
+            }
+        }
+//        print("The ID is: " + String(docuID))
+//        return docuID + 1
+    }
+    
+    // Update booking ID (after user books a table, this is a global value shared among users)
+    func updateBookingID(){
+        getBookingID { int in
+            let finalID = int! + 1
+            let docRef = self.db.collection(Constants.FStoreCollection.adminStats).document(Constants.FStoreDocument.tableBooking)
+            docRef.updateData([Constants.FStoreField.AdminFields.tableBookingId : finalID]){ error in
+                if let error = error {
+                    print("Error updating document: \(error.localizedDescription)")
+                } else {
+                    print("Document updated successfully")
                 }
             }
         }

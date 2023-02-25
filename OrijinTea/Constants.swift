@@ -35,11 +35,21 @@ class Constants{
     static let prodTypeCell: String = "prodTypeCell"
     
 // MARK: - FireStore constants
+    
+    // Collection
     struct FStoreCollection{
         static let reservations: String = "reservations"
         static let tables: String = "tables"
+        static let adminStats: String = "teashopAdminStats"
     }
     
+    // Document
+    struct FStoreDocument{
+        static let tableBooking = "tableBooking"
+    }
+    
+    
+    // Fields
     struct FStoreField{
         // tables
         struct Table{
@@ -56,6 +66,11 @@ class Constants{
             static let time: String = "time"
             static let user: String = "user"
         }
+        
+        struct AdminFields{
+            static let tableBookingId = "id"
+        }
+        
 
     }
 

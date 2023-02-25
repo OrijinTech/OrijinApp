@@ -1499,13 +1499,22 @@ this reservation?</string>
                                 <rect key="frame" x="76" y="165" width="240" height="128"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qoO-J9-ftJ">
-                                <rect key="frame" x="71" y="444" width="250" height="210"/>
+                                <rect key="frame" x="71" y="438" width="250" height="255"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="5UH-st-Byp" userLabel="Label">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="210"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="255"/>
                                         <subviews>
-                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Date:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gSO-KG-iVJ" userLabel="Date">
+                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Booking ID:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kwi-SF-937" userLabel="bookingID">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="JjL-af-Cdu"/>
+                                                    <constraint firstAttribute="height" constant="30" id="ZM5-DY-H0X"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Date:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gSO-KG-iVJ" userLabel="Date">
+                                                <rect key="frame" x="0.0" y="45" width="100" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="8do-tK-Ak4"/>
                                                     <constraint firstAttribute="width" constant="100" id="fh4-BZ-Qjn"/>
@@ -1514,7 +1523,7 @@ this reservation?</string>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Time:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FPt-3M-0em" userLabel="Time">
-                                                <rect key="frame" x="0.0" y="45" width="100" height="30"/>
+                                                <rect key="frame" x="0.0" y="90" width="100" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="EXl-Jc-2ne"/>
                                                     <constraint firstAttribute="width" constant="100" id="oRU-Ve-HtV"/>
@@ -1523,7 +1532,7 @@ this reservation?</string>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Duration:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fJX-tS-DJ1" userLabel="Duration">
-                                                <rect key="frame" x="0.0" y="90" width="100" height="30"/>
+                                                <rect key="frame" x="0.0" y="135" width="100" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="9wQ-WV-cpp"/>
                                                     <constraint firstAttribute="height" constant="30" id="ZAk-5C-Bu6"/>
@@ -1532,7 +1541,7 @@ this reservation?</string>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Table:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Lq-lt-caD" userLabel="Table">
-                                                <rect key="frame" x="0.0" y="135" width="100" height="30"/>
+                                                <rect key="frame" x="0.0" y="180" width="100" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="M7E-rx-WQl"/>
                                                     <constraint firstAttribute="width" constant="100" id="V4h-oz-Khq"/>
@@ -1541,7 +1550,7 @@ this reservation?</string>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Address:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T2O-8p-ZgF" userLabel="Address">
-                                                <rect key="frame" x="0.0" y="180" width="100" height="30"/>
+                                                <rect key="frame" x="0.0" y="225" width="100" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="T1H-AU-KYD"/>
                                                     <constraint firstAttribute="height" constant="30" id="aZy-Mj-Ybg"/>
@@ -1552,10 +1561,19 @@ this reservation?</string>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="B4I-Xu-emS">
-                                        <rect key="frame" x="100" y="0.0" width="150" height="210"/>
+                                        <rect key="frame" x="100" y="0.0" width="150" height="255"/>
                                         <subviews>
-                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wQ0-A4-AQ9" userLabel="Date">
+                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5V7-NN-Z1b" userLabel="bookingID">
                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="150" id="UaV-1L-uyY"/>
+                                                    <constraint firstAttribute="height" constant="30" id="V0j-FV-8ua"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wQ0-A4-AQ9" userLabel="Date">
+                                                <rect key="frame" x="0.0" y="45" width="150" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="wCg-E3-ehf"/>
                                                     <constraint firstAttribute="height" constant="30" id="xFE-5l-ScI"/>
@@ -1564,7 +1582,7 @@ this reservation?</string>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RET-Yz-TPH" userLabel="Time">
-                                                <rect key="frame" x="0.0" y="45" width="150" height="30"/>
+                                                <rect key="frame" x="0.0" y="90" width="150" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="4vK-HK-aOo"/>
                                                     <constraint firstAttribute="height" constant="30" id="NKh-yO-0mX"/>
@@ -1573,7 +1591,7 @@ this reservation?</string>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0ty-cK-FEq" userLabel="Duration">
-                                                <rect key="frame" x="0.0" y="90" width="150" height="30"/>
+                                                <rect key="frame" x="0.0" y="135" width="150" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="KAr-le-ESf"/>
                                                     <constraint firstAttribute="height" constant="30" id="VL3-Dq-gbR"/>
@@ -1582,7 +1600,7 @@ this reservation?</string>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="msX-yG-Lmm" userLabel="Date">
-                                                <rect key="frame" x="0.0" y="135" width="150" height="30"/>
+                                                <rect key="frame" x="0.0" y="180" width="150" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="20y-Kd-N4n"/>
                                                     <constraint firstAttribute="width" constant="150" id="JFo-lg-wnY"/>
@@ -1591,7 +1609,7 @@ this reservation?</string>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IWI-eZ-1uj" userLabel="Date">
-                                                <rect key="frame" x="0.0" y="180" width="150" height="30"/>
+                                                <rect key="frame" x="0.0" y="225" width="150" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="Usw-Uv-au9"/>
                                                     <constraint firstAttribute="width" constant="150" id="pcO-73-rXS"/>
@@ -1610,7 +1628,6 @@ this reservation?</string>
                         <constraints>
                             <constraint firstItem="2gP-xj-agt" firstAttribute="bottom" secondItem="6Lw-6w-h35" secondAttribute="bottom" constant="525" id="1yS-Ol-p2W"/>
                             <constraint firstItem="qoO-J9-ftJ" firstAttribute="leading" secondItem="2gP-xj-agt" secondAttribute="leading" constant="71" id="4xw-mW-fJ4"/>
-                            <constraint firstItem="2gP-xj-agt" firstAttribute="bottom" secondItem="qoO-J9-ftJ" secondAttribute="bottom" constant="164" id="9Rv-RM-wY6"/>
                             <constraint firstItem="fTb-2r-Iul" firstAttribute="top" secondItem="6Lw-6w-h35" secondAttribute="bottom" constant="8" id="A3m-lW-u4b"/>
                             <constraint firstItem="6Lw-6w-h35" firstAttribute="top" secondItem="2gP-xj-agt" secondAttribute="top" constant="106" id="D1Y-NP-F8A"/>
                             <constraint firstItem="2gP-xj-agt" firstAttribute="trailing" secondItem="fTb-2r-Iul" secondAttribute="trailing" constant="58" id="JOX-lX-uIH"/>
@@ -1622,15 +1639,17 @@ this reservation?</string>
                             <constraint firstItem="D5S-Ng-z2H" firstAttribute="leading" secondItem="2gP-xj-agt" secondAttribute="leading" constant="58" id="bWS-vy-KjL"/>
                             <constraint firstItem="D5S-Ng-z2H" firstAttribute="top" secondItem="fTb-2r-Iul" secondAttribute="bottom" constant="8" symbolic="YES" id="hWn-cR-LDE"/>
                             <constraint firstItem="2gP-xj-agt" firstAttribute="bottom" secondItem="D5S-Ng-z2H" secondAttribute="bottom" constant="398" id="ina-tr-JbP"/>
+                            <constraint firstItem="qoO-J9-ftJ" firstAttribute="top" secondItem="Zpb-Mv-t4I" secondAttribute="topMargin" constant="379" id="jf7-4r-c0s"/>
                             <constraint firstItem="2gP-xj-agt" firstAttribute="trailing" secondItem="UgC-2Y-c5X" secondAttribute="trailing" constant="68" id="juT-rv-T04"/>
                             <constraint firstItem="2gP-xj-agt" firstAttribute="trailing" secondItem="D5S-Ng-z2H" secondAttribute="trailing" constant="58" id="mNe-zO-UwR"/>
-                            <constraint firstItem="qoO-J9-ftJ" firstAttribute="top" secondItem="D5S-Ng-z2H" secondAttribute="bottom" constant="24" id="pnl-kD-xe6"/>
+                            <constraint firstItem="2gP-xj-agt" firstAttribute="bottom" secondItem="qoO-J9-ftJ" secondAttribute="bottom" constant="125" id="qpg-lP-YYO"/>
                             <constraint firstItem="2gP-xj-agt" firstAttribute="bottom" secondItem="UgC-2Y-c5X" secondAttribute="bottom" constant="54" id="szk-gn-mom"/>
                             <constraint firstItem="UgC-2Y-c5X" firstAttribute="leading" secondItem="2gP-xj-agt" secondAttribute="leading" constant="68" id="ujU-0Y-Hqr"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addressTxt" destination="IWI-eZ-1uj" id="1Og-Xa-rSC"/>
+                        <outlet property="bookingIdTxt" destination="5V7-NN-Z1b" id="6aa-a6-eb0"/>
                         <outlet property="dateTxt" destination="wQ0-A4-AQ9" id="VsP-nP-o32"/>
                         <outlet property="durationTxt" destination="0ty-cK-FEq" id="Ja1-DP-eVe"/>
                         <outlet property="tableTxt" destination="msX-yG-Lmm" id="smQ-0Y-2i6"/>
@@ -1764,7 +1783,7 @@ this reservation?</string>
         <segue reference="RGB-ok-aTm"/>
         <segue reference="UNL-yL-buP"/>
         <segue reference="h8H-C5-WCh"/>
-        <segue reference="02e-8h-Les"/>
+        <segue reference="Lmw-U4-PIn"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Tea Icon" width="252" height="214"/>
