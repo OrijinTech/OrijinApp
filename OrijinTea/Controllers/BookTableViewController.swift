@@ -16,7 +16,6 @@ class BookTableViewController: UIViewController{
     // Database Reference
     let db = Firestore.firestore()
     
-    
     // Constraints Outlets
     @IBOutlet weak var stackDist: NSLayoutConstraint!
     @IBOutlet weak var bookTableDist: NSLayoutConstraint!
@@ -37,11 +36,12 @@ class BookTableViewController: UIViewController{
     
     // View Outlets
     @IBOutlet weak var pickView: UIView!
+    @IBOutlet weak var clickView: UIView!
     
     // Button outlets
     @IBOutlet weak var bookBtnOutlet: UIButton!
     
-    var freeTables = [String]()
+    var freeTables = [String](repeating: "", count: 5)
     var reservations = [Reservation]()
     let durations = ["1", "2", "3", "4", "5"]
     var curId = 0
@@ -52,6 +52,8 @@ class BookTableViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // create tap gesture
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(mainViewTapped))
         // delegates
         tableTxt.delegate = self
         dateTxt.delegate = self
@@ -78,8 +80,12 @@ class BookTableViewController: UIViewController{
         // add listeners
         datePicker.addTarget(self, action: #selector(onDateValueChanged(_:)), for: .valueChanged)
         timePicker.addTarget(self, action: #selector(onTimeValueChanged(_:)), for: .valueChanged)
+        clickView.addGestureRecognizer(tapGesture)
         //disable textfields to avoid errors
         enableAllTextFields(false)
+        // set textfield input view
+        tableTxt.inputView = tablePicker
+        durationTxt.inputView = durationPicker
     }
     
     
@@ -113,6 +119,34 @@ class BookTableViewController: UIViewController{
         durationPicker.isHidden = true
     }
     
+    
+    // MARK: - RESPONSE FUNCTIONS FOR LISTENERS
+    
+    // When the user taps the surroundings
+    @objc func mainViewTapped(){
+        switch curId{
+        case 1:
+            tableTxt.resignFirstResponder()
+            tableTxt.text = ""
+            updateAllowedTextFields(current: tableTxt)
+        case 2:
+            dateTxt.resignFirstResponder()
+            dateTxt.text = ""
+            updateAllowedTextFields(current: dateTxt)
+        case 3:
+            timeTxt.resignFirstResponder()
+            timeTxt.text = ""
+            updateAllowedTextFields(current: timeTxt)
+        case 4:
+            durationTxt.resignFirstResponder()
+            durationTxt.text = ""
+            updateAllowedTextFields(current: durationTxt)
+        default:
+            print("error in mainViewTapped")
+        }
+        // dismiss textfield selections
+        performTransform(true)
+    }
     
     @objc private func onDateValueChanged(_ datePicker: UIDatePicker) {
         let dateFormatter = DateFormatter()
@@ -173,10 +207,12 @@ class BookTableViewController: UIViewController{
             updateAllowedTextFields(current: dateTxt)
             dateTxt.resignFirstResponder()
             performTransform(true)
+            getAvailableTables()
         case 3: // picked time
             updateAllowedTextFields(current: timeTxt)
             timeTxt.resignFirstResponder()
             performTransform(true)
+            getAvailableTables()
         case 4: // picked duration
             updateAllowedTextFields(current: durationTxt)
             let row = durationPicker.selectedRow(inComponent: 0)
@@ -184,6 +220,7 @@ class BookTableViewController: UIViewController{
             durationTxt.text = durations[row]
             durationTxt.resignFirstResponder()
             performTransform(true)
+            getAvailableTables()
         default:
             print("error done")
         }
@@ -192,10 +229,25 @@ class BookTableViewController: UIViewController{
     
     // MARK: - Data Retreival
     
+    // Reloads the available tables
+    func getAvailableTables(){
+        reservations.removeAll()
+        freeTables.removeAll()
+        if reloadReservations(){
+            print(dateTxt.text!)
+            loadReservations(forFormattedDate: dateTxt.text!)
+        }
+        if reloadTables() {
+            let inpDate = timeStringtoTime(timeTxt.text!)
+            loadTables(forTime: inpDate)
+        }
+    }
+
+    
     // Get all free tables
     func loadTables(forTime time: Date){
         print("start laoding tables")
-        freeTables = []
+        freeTables.removeAll()
         db.collection(Constants.FStoreCollection.tables).getDocuments { querySnapshot, error in
             if let e = error{
                 print("Issue retreiving current free tables: \(e)")
@@ -206,7 +258,6 @@ class BookTableViewController: UIViewController{
                         let tableNameSelected = doc.data()[Constants.FStoreField.Table.tableNames] as! String
                         var addToList = true // flag for adding tables
                         if self.reservations.count >= 1{
-                            print("have reservation")
                             for reservation in self.reservations { // for each reservation, check for time conflicts
                                 // calculating the time bounds
                                 let startTime = self.timeStringtoTime(reservation.time)
@@ -226,16 +277,19 @@ class BookTableViewController: UIViewController{
                 }
             }
             // Reload the table picker with available tables
+            print(self.freeTables)
             DispatchQueue.main.async {
                 self.tablePicker.reloadAllComponents()
             }
         }
+        tableTxt.text = ""
     }
     
     
     func loadReservations(forFormattedDate date: String){
         print("Start loading reservations")
-        reservations = []
+        print(dateTxt.text!)
+        reservations.removeAll()
         let collectionRef = db.collection(Constants.FStoreCollection.reservations)
         if let curUser = Auth.auth().currentUser?.email{
             collectionRef.getDocuments { querySnapshot, error in
@@ -254,6 +308,13 @@ class BookTableViewController: UIViewController{
                                 let createRes = Reservation(user: curUser, date: date, time: time, duration: duration, tableNumber: tableNum)
                                 self.reservations.append(createRes)
                             }
+                        }
+                        // RELOAD TABELS HERE @!!!
+                        if self.timeTxt.text != ""{
+                            print("Time done inputting.")
+                            self.freeTables.removeAll()
+                            let inpDate = self.timeStringtoTime(self.timeTxt.text!)
+                            self.loadTables(forTime: inpDate)
                         }
                     }
                 }
@@ -320,6 +381,26 @@ class BookTableViewController: UIViewController{
         }
     }
     
+    
+    func reloadTables() -> Bool{
+        if(dateTxt.text != "" && timeTxt.text != "" && durationTxt.text != ""){
+            return true
+        }
+        else{
+            return false
+        }
+    }
+    
+    func reloadReservations() -> Bool{
+        if(dateTxt.text != ""){
+            return true
+        }
+        else{
+            return false
+        }
+    }
+    
+    
     func enableAllTextFields(_ trigger: Bool){
         timeTxt.isUserInteractionEnabled = trigger
         durationTxt.isUserInteractionEnabled = trigger
@@ -336,9 +417,17 @@ class BookTableViewController: UIViewController{
             if(dateTxt.text != ""){
                 timeTxt.isUserInteractionEnabled = true
             }
+            if reloadTables(){
+                tableTxt.isUserInteractionEnabled = true
+                durationTxt.isUserInteractionEnabled = true
+            }
         case 3: // user is selecting time
             timeTxt.isUserInteractionEnabled = true
             if(timeTxt.text != ""){
+                durationTxt.isUserInteractionEnabled = true
+            }
+            if reloadTables(){
+                tableTxt.isUserInteractionEnabled = true
                 durationTxt.isUserInteractionEnabled = true
             }
         case 4: // user is selecting duration
@@ -396,19 +485,18 @@ extension BookTableViewController: UIPickerViewDelegate,  UIPickerViewDataSource
         }
     }
     
+    // HERE IS AN ISSUE: NOW USER MUST PRESS DONE SO TABLE RELOADS
     func textFieldDidEndEditing(_ textField: UITextField) {
         updateAllowedTextFields(current: textField)
         switch textField.tag{
         case 2: // after user inputs the date textfield
             // get all reservation based on the date inputed by the user
-            loadReservations(forFormattedDate: dateTxt.text!)
+            updateAllowedTextFields(current: textField)
         case 3: // after user inputs the time textfield
             // convert input date into the Date object
-            if timeTxt.text != ""{
-                let inpDate = timeStringtoTime(timeTxt.text!)
-                // load the tables based on the time
-                loadTables(forTime: inpDate)
-            }
+            updateAllowedTextFields(current: textField)
+        case 4:
+            updateAllowedTextFields(current: textField)
         default:
             print("error after editing text field")
         }
@@ -416,7 +504,6 @@ extension BookTableViewController: UIPickerViewDelegate,  UIPickerViewDataSource
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         performTransform(false)
-        updateAllowedTextFields(current: textField)
         switch textField.tag{
         case 1: // user is selecting table
             hideAllPicker()
@@ -439,6 +526,7 @@ extension BookTableViewController: UIPickerViewDelegate,  UIPickerViewDataSource
         default:
             print("unknown txt")
         }
+        updateAllowedTextFields(current: textField)
     }
     
 }

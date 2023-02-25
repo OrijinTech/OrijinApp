@@ -1215,6 +1215,10 @@ this reservation?</string>
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nNN-oZ-bxu">
+                                <rect key="frame" x="0.0" y="216" width="393" height="368"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="llY-xU-nK3" userLabel="Collapsible View">
                                 <rect key="frame" x="0.0" y="59" width="393" height="149"/>
                                 <subviews>
@@ -1409,11 +1413,15 @@ this reservation?</string>
                             <constraint firstItem="llY-xU-nK3" firstAttribute="trailing" secondItem="IhV-tR-b1h" secondAttribute="trailing" id="D31-1B-F5r"/>
                             <constraint firstItem="IhV-tR-b1h" firstAttribute="trailing" secondItem="eGW-Rp-va9" secondAttribute="trailing" constant="20" id="FZR-06-Jko"/>
                             <constraint firstItem="eGW-Rp-va9" firstAttribute="leading" secondItem="IhV-tR-b1h" secondAttribute="leading" constant="20" id="KLS-Tx-8B1"/>
+                            <constraint firstItem="nNN-oZ-bxu" firstAttribute="leading" secondItem="IhV-tR-b1h" secondAttribute="leading" id="M14-ms-yfU"/>
                             <constraint firstItem="llY-xU-nK3" firstAttribute="leading" secondItem="IhV-tR-b1h" secondAttribute="leading" id="cFc-bZ-ily"/>
                             <constraint firstItem="NoF-Ba-izQ" firstAttribute="leading" secondItem="IhV-tR-b1h" secondAttribute="leading" id="eyg-B9-dj0"/>
                             <constraint firstItem="IhV-tR-b1h" firstAttribute="bottom" secondItem="llY-xU-nK3" secondAttribute="bottom" constant="610" id="jQW-Zm-Zea"/>
                             <constraint firstItem="dF9-l7-Zub" firstAttribute="top" secondItem="llY-xU-nK3" secondAttribute="bottom" constant="30" id="lg0-t9-14C"/>
                             <constraint firstItem="IhV-tR-b1h" firstAttribute="trailing" secondItem="dF9-l7-Zub" secondAttribute="trailing" constant="20" id="n3H-Dc-eQL"/>
+                            <constraint firstItem="nNN-oZ-bxu" firstAttribute="trailing" secondItem="IhV-tR-b1h" secondAttribute="trailing" id="nPi-FD-5LK"/>
+                            <constraint firstItem="nNN-oZ-bxu" firstAttribute="top" secondItem="IhV-tR-b1h" secondAttribute="top" constant="157" id="pQs-qM-Of9"/>
+                            <constraint firstItem="IhV-tR-b1h" firstAttribute="bottom" secondItem="nNN-oZ-bxu" secondAttribute="bottom" constant="234" id="qsp-7M-YDy"/>
                             <constraint firstItem="llY-xU-nK3" firstAttribute="top" secondItem="IhV-tR-b1h" secondAttribute="top" id="ser-Pm-937"/>
                             <constraint firstItem="NoF-Ba-izQ" firstAttribute="trailing" secondItem="IhV-tR-b1h" secondAttribute="trailing" id="wvK-P1-nFv"/>
                         </constraints>
@@ -1421,6 +1429,7 @@ this reservation?</string>
                     <connections>
                         <outlet property="bookBtnOutlet" destination="eGW-Rp-va9" id="I61-oK-dsA"/>
                         <outlet property="bookTableDist" destination="17T-aA-eil" id="eYe-z6-JCp"/>
+                        <outlet property="clickView" destination="nNN-oZ-bxu" id="4JM-7g-sIy"/>
                         <outlet property="datePicker" destination="iPU-hw-DgJ" id="lkf-yz-FI4"/>
                         <outlet property="dateTxt" destination="70f-eI-kQn" id="WrE-B6-T5D"/>
                         <outlet property="durationPicker" destination="Mwx-Wa-INv" id="9JS-qB-5dx"/>
@@ -1750,7 +1759,7 @@ this reservation?</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hbK-Mo-Cr0"/>
+        <segue reference="ngJ-Ji-nea"/>
         <segue reference="hRU-Co-kmm"/>
         <segue reference="RGB-ok-aTm"/>
         <segue reference="UNL-yL-buP"/>

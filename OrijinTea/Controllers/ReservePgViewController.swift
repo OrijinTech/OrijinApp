@@ -60,27 +60,26 @@ class ReservePgViewController: UITableViewController{
     func getReservations(){
         reservations = []
         if let curUser = Auth.auth().currentUser?.email{
-            db.collection(Constants.FStoreCollection.reservations).getDocuments { querySnapshot, error in
+            let docID = curUser
+            db.collection(Constants.FStoreCollection.reservations).document(docID).getDocument { querySnapshot, error in
                 if let e = error{
                     print("Issue retreiving current free tables: \(e)")
                 }
                 else{
-                    if let snapDocs = querySnapshot?.documents{
-                        for doc in snapDocs{
-                            let date = doc.data()[Constants.FStoreField.Reservation.date] as! String
-                            let time = doc.data()[Constants.FStoreField.Reservation.time] as! String
-                            let duration = doc.data()[Constants.FStoreField.Reservation.duration] as! String
-                            let tableNum = doc.data()[Constants.FStoreField.Reservation.tableNumber] as! String
-                            let createRes = Reservation(user: curUser, date: date, time: time, duration: duration, tableNumber: tableNum)
-                            self.reservations.append(createRes)
-                            DispatchQueue.main.async {
-                                self.tableView.reloadData()
-                            }
+                    if let doc = querySnapshot, doc.exists{
+                        let date = doc.data()?[Constants.FStoreField.Reservation.date] as? String
+                        let time = doc.data()?[Constants.FStoreField.Reservation.time] as? String
+                        let duration = doc.data()?[Constants.FStoreField.Reservation.duration] as? String
+                        let tableNum = doc.data()?[Constants.FStoreField.Reservation.tableNumber] as? String
+                        // create reservation
+                        let createRes = Reservation(user: curUser, date: date!, time: time!, duration: duration!, tableNumber: tableNum!)
+                        self.reservations.append(createRes)
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
                         }
                     }
                 }
             }
-            
         }
     }
     
