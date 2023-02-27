@@ -35,10 +35,10 @@ class RegisterViewController: UIViewController {
                     // Save the user profile to firestore
                     if let curUser = Auth.auth().currentUser?.email{
                         let curUserId = Auth.auth().currentUser?.uid
-                        let saveUser = Users(id: curUserId!, firstName: self.firstNameField.text!, lastName: self.lastNameField.text!, email: curUser)
+                        let saveUser = Users(id: curUserId!, firstName: self.firstNameField.text!, lastName: self.lastNameField.text!, email: curUser, userName: curUser)
                         do{
                             try self.db.collection(Constants.FStoreCollection.users).document(curUser).setData(from:saveUser)
-                            self.performSegue(withIdentifier: Constants.signToMain, sender: self)
+                            self.prepareUser()
                         }
                         catch let error{
                             print("Error writing user to Firestore: \(error)")
@@ -51,6 +51,39 @@ class RegisterViewController: UIViewController {
             
         }
         
+    }
+    
+    
+    func prepareUser(){
+        if let curUser = Auth.auth().currentUser?.email{
+            let col = db.collection(Constants.FStoreCollection.users)
+            let docRef = col.document(curUser)
+            docRef.getDocument { docSnap, error in
+                if let e = error{
+                    print("Error: Getting the user name. \(e)")
+                }
+                else{
+                    if let userN = docSnap?.data()![Constants.FStoreField.Users.userName] as? String{
+                        let uid = docSnap?.data()![Constants.FStoreField.Users.id] as! String
+                        let firstN = docSnap?.data()![Constants.FStoreField.Users.firstName] as! String
+                        let lastN = docSnap?.data()![Constants.FStoreField.Users.lastName] as! String
+                        let email = docSnap?.data()![Constants.FStoreField.Users.email] as! String
+                        let teaPts = docSnap?.data()![Constants.FStoreField.Users.teaPoints] as! Int
+                        Global.User.userName = userN
+                        Global.User.firstName = firstN
+                        Global.User.lastName = lastN
+                        Global.User.email = email
+                        Global.User.id = uid
+                        Global.User.teaPoints = teaPts
+                        print("success pulling the user")
+                        self.performSegue(withIdentifier: Constants.signToMain, sender: self)
+                    }
+                    else{
+                        print("Error loading user")
+                    }
+                }
+            }
+        }
     }
     
     

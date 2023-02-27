@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5402692829ACEA37006D4E05 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5402692729ACEA37006D4E05 /* Global.swift */; };
 		5415EA25299A49B700302EC6 /* BookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5415EA24299A49B700302EC6 /* BookTableViewController.swift */; };
 		54289C9B2992ACD400872E9D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54289C9A2992ACD400872E9D /* Constants.swift */; };
 		54289C9F2993CF2700872E9D /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54289C9E2993CF2700872E9D /* Users.swift */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		4998D1C712EE03762E8750B9 /* Pods-OrijinTea.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrijinTea.release.xcconfig"; path = "Target Support Files/Pods-OrijinTea/Pods-OrijinTea.release.xcconfig"; sourceTree = "<group>"; };
+		5402692729ACEA37006D4E05 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		5415EA24299A49B700302EC6 /* BookTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewController.swift; sourceTree = "<group>"; };
 		54289C9A2992ACD400872E9D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		54289C9E2993CF2700872E9D /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				5488E4EE2991686100788259 /* AppDelegate.swift */,
 				5488E4F02991686100788259 /* SceneDelegate.swift */,
 				54289C9A2992ACD400872E9D /* Constants.swift */,
+				5402692729ACEA37006D4E05 /* Global.swift */,
 				54289C9D2993CF0800872E9D /* Model */,
 				5488E50229916E0900788259 /* Controllers */,
 				5488E4F42991686100788259 /* Main.storyboard */,
@@ -297,6 +300,7 @@
 				549547812993E3EE008E458B /* BookingViewController.swift in Sources */,
 				549547852993E98C008E458B /* InfoViewController.swift in Sources */,
 				5488E50629916E4C00788259 /* RegisterViewController.swift in Sources */,
+				5402692829ACEA37006D4E05 /* Global.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

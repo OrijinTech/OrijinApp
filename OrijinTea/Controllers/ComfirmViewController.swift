@@ -100,7 +100,7 @@ class ComfirmViewController: UIViewController {
         tb.getDocument { (document, error) in
             if let document = document, document.exists {
                 tb.updateData([Constants.FStoreField.Table.tableEmpty : false])
-                //document.setValue(false, forKey: Constants.FStoreField.Table.tableEmpty)
+                //document.sewtValue(false, forKey: Constants.FStoreField.Table.tableEmpty)
             } else {
                 print("document for table does not exist")
             }

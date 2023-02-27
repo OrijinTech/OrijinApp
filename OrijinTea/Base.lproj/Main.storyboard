@@ -33,7 +33,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ecX-bu-Ala" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="717" y="-42"/>
+            <point key="canvasLocation" x="717" y="27"/>
         </scene>
         <!--LoginViewController-->
         <scene sceneID="tne-QT-ifu">
@@ -49,7 +49,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="m82-S8-NXd">
                                 <rect key="frame" x="30" y="457" width="333" height="311"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1@2.com" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ywL-U4-dVR">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="a@b.com" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ywL-U4-dVR">
                                         <rect key="frame" x="0.0" y="0.0" width="333" height="50"/>
                                         <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
@@ -502,6 +502,7 @@
                         <outlet property="visitOrijinBtn" destination="THq-5c-8B5" id="voM-fu-iXc"/>
                         <outlet property="visitOrijinImg" destination="yMA-TX-9rM" id="bmC-ul-p3n"/>
                         <outlet property="visitOrijinView" destination="f8l-Pp-EM2" id="zuS-gV-MCr"/>
+                        <outlet property="welcomeTxt" destination="sjA-r5-EvS" id="b5a-ea-K6r"/>
                         <segue destination="pLn-nJ-SSm" kind="presentation" identifier="mainToMe" animates="NO" modalPresentationStyle="fullScreen" id="aeF-A3-q2X"/>
                         <segue destination="gtn-1n-nCq" kind="presentation" identifier="mainToCommunity" animates="NO" modalPresentationStyle="fullScreen" id="4fw-6U-pV6"/>
                         <segue destination="a8I-lK-scy" kind="presentation" identifier="mainToCart" animates="NO" modalPresentationStyle="fullScreen" id="UKu-xd-fqn"/>
@@ -540,7 +541,7 @@
                                 <rect key="frame" x="155" y="125.66666666666669" width="82" height="82"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtG-ao-BLo">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtG-ao-BLo">
                                 <rect key="frame" x="136" y="211" width="121" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
@@ -628,6 +629,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Me" image="person" catalog="system" id="coF-yf-Fhf"/>
                     <connections>
+                        <outlet property="masterView" destination="acB-zH-L4A" id="fXy-fB-VAR"/>
                         <outlet property="profileImg" destination="p68-W8-0DE" id="hAv-zG-2iI"/>
                         <outlet property="userNameTxt" destination="qtG-ao-BLo" id="JaP-A2-651"/>
                         <segue destination="VDk-LN-cea" kind="presentation" identifier="meToMain" animates="NO" modalPresentationStyle="fullScreen" id="UNL-yL-buP"/>
@@ -1799,13 +1801,13 @@ this reservation?</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ngJ-Ji-nea"/>
+        <segue reference="lpo-BE-qJD"/>
         <segue reference="hRU-Co-kmm"/>
         <segue reference="RGB-ok-aTm"/>
         <segue reference="UNL-yL-buP"/>
         <segue reference="h8H-C5-WCh"/>
         <segue reference="VKI-K2-vpu"/>
-        <segue reference="h5e-xt-cSS"/>
+        <segue reference="9uv-2X-in3"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Tea Icon" width="252" height="214"/>

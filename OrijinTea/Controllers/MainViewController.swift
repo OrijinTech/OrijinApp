@@ -8,9 +8,15 @@
 
 
 import UIKit
+import FirebaseCore
+import FirebaseFirestore
+import FirebaseAuth
+import FirebaseFirestoreSwift
+
 
 class MainViewController: UIViewController, UIScrollViewDelegate{
 
+    let db = Firestore.firestore()
     
     // UIView Outlet
     @IBOutlet weak var collapsibleView: UIView!
@@ -33,6 +39,9 @@ class MainViewController: UIViewController, UIScrollViewDelegate{
     @IBOutlet weak var otherServicesBtn: UIButton!
     @IBOutlet weak var visitOrijinBtn: UIButton!
     
+    // Text Outlet
+    @IBOutlet weak var welcomeTxt: UITextView!
+    
     // Value Variables
     var lastContentOffset: CGFloat = 0
     let maxHeaderHeight: CGFloat = 149
@@ -41,8 +50,8 @@ class MainViewController: UIViewController, UIScrollViewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //prepareUser() // ENTRY POINT OF THE USER'S APP, PREPARE USER DATA
         self.scrollView.delegate = self
-        
         // View/Graphic Settings
         onlineShoppingView.layer.cornerRadius = 12
         onlineShoppingView.layer.borderWidth = 1
@@ -59,8 +68,9 @@ class MainViewController: UIViewController, UIScrollViewDelegate{
         collapsibleView.layer.shadowOpacity = 0.8
         collapsibleView.layer.shadowRadius = 6
         collapsibleView.clipsToBounds = true
+        // Set Welcome Text
+        self.welcomeTxt.text = "Welcome Back, \n" + Global.User.userName
 
-        
     }
     
 
@@ -108,6 +118,6 @@ class MainViewController: UIViewController, UIScrollViewDelegate{
         
     }
 
-
+    
 }
 

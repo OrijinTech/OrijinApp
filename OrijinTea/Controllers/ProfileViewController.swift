@@ -19,11 +19,15 @@ class ProfileViewController: UIViewController {
     // Label outlet
     @IBOutlet weak var userNameTxt: UILabel!
     
+    @IBOutlet var masterView: UIView!
+    
+    
+    let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        userNameTxt.text = Global.User.userName
     }
-    
     
     
     @IBAction func profileInfoPressed(_ sender: UIButton) {

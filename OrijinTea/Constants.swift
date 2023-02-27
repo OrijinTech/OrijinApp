@@ -75,7 +75,7 @@ class Constants{
         }
         
         struct Users{
-            static let id: String = "uid"
+            static let id: String = "id"
             static let firstName: String = "firstName"
             static let lastName: String = "lastName"
             static let email: String = "email"
