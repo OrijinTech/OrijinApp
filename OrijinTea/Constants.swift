@@ -29,6 +29,9 @@ class Constants{
         static let reservationPopup: String = "reservationPopup"
         static let hideResPopup: String = "hideResPopup"
         static let meToLogin: String = "meToLogin"
+        static let profileToInfo: String = "profileToInfo"
+        static let profileInfoToMe: String = "profileInfoToMe"
+        
     }
     
 

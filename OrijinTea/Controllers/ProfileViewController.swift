@@ -31,7 +31,7 @@ class ProfileViewController: UIViewController {
     
     
     @IBAction func profileInfoPressed(_ sender: UIButton) {
-        
+        performSegue(withIdentifier: Constants.Me.profileToInfo, sender: self)
     }
     
     @IBAction func reservationsPressed(_ sender: UIButton) {
