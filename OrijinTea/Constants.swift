@@ -28,6 +28,7 @@ class Constants{
         static let reservationsToProfile: String = "reservationsToProfile"
         static let reservationPopup: String = "reservationPopup"
         static let hideResPopup: String = "hideResPopup"
+        static let meToLogin: String = "meToLogin"
     }
     
 
@@ -41,6 +42,7 @@ class Constants{
         static let reservations: String = "reservations"
         static let tables: String = "tables"
         static let adminStats: String = "teashopAdminStats"
+        static let users: String = "users"
     }
     
     // Document
@@ -65,10 +67,20 @@ class Constants{
             static let tableNumber: String = "tableNumber"
             static let time: String = "time"
             static let user: String = "user"
+            static let reservationID: String = "reservationID"
         }
         
         struct AdminFields{
             static let tableBookingId = "id"
+        }
+        
+        struct Users{
+            static let id: String = "uid"
+            static let firstName: String = "firstName"
+            static let lastName: String = "lastName"
+            static let email: String = "email"
+            static let teaPoints: String = "teaPoints"
+            static let userName: String = "userName"
         }
         
 

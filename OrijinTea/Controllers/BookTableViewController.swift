@@ -205,7 +205,7 @@ class BookTableViewController: UIViewController{
                     self.table = self.tableTxt.text!
                     self.bookingNum = bookingID
                     // Add booking information for the user to Firestore
-                    let reservation = Reservation(user: messageSender, date: self.dateTxt.text!, time: self.timeTxt.text!, duration: self.durationTxt.text!, tableNumber: self.tableTxt.text!)
+                    let reservation = Reservation(user: messageSender, date: self.dateTxt.text!, time: self.timeTxt.text!, duration: self.durationTxt.text!, tableNumber: self.tableTxt.text!, reservationID: bookingID)
                     do{
                         try self.db.collection(Constants.FStoreCollection.reservations).document(String(bookingID)).setData(from:reservation)
                         self.performSegue(withIdentifier: Constants.bookTableToComfirm, sender: self)
@@ -221,6 +221,7 @@ class BookTableViewController: UIViewController{
             }
         }
         updateBookingID()
+        print("UPDATING BOOKING ID")
     }
     
     @IBAction func cancelPressed(_ sender: UIBarButtonItem) {
@@ -309,11 +310,12 @@ class BookTableViewController: UIViewController{
                         if self.reservations.count >= 1{
                             for reservation in self.reservations { // for each reservation, check for time conflicts
                                 // calculating the time bounds
-                                let startTime = self.timeStringtoTime(reservation.time)
+                                let startTime = self.timeStringtoTime(reservation.time) // start time for the currently selected reservation
                                 let startMin = self.timeToMinutes(fullDate: startTime)
                                 let endMin = startMin + Int(reservation.duration)! * 60
                                 let inpTimeMin = self.timeToMinutes(fullDate: time)
-                                if (inpTimeMin > startMin && inpTimeMin < endMin) && (tableNameSelected == reservation.tableNumber){ // table already booked
+                                let inpEndTime = inpTimeMin + Int(self.durationTxt.text!)! * 60 // calculate the end time for currently input time
+                                if ((inpTimeMin > startMin && inpTimeMin < endMin) || (inpEndTime > startMin && inpEndTime < endMin)) && (tableNameSelected == reservation.tableNumber){ // table already booked
                                     addToList = false
                                     break
                                 }
@@ -354,12 +356,13 @@ class BookTableViewController: UIViewController{
                                 let time = doc.data()[Constants.FStoreField.Reservation.time] as! String
                                 let duration = doc.data()[Constants.FStoreField.Reservation.duration] as! String
                                 let tableNum = doc.data()[Constants.FStoreField.Reservation.tableNumber] as! String
-                                let createRes = Reservation(user: curUser, date: date, time: time, duration: duration, tableNumber: tableNum)
+                                let reservationID = doc.data()[Constants.FStoreField.Reservation.reservationID] as! Int
+                                let createRes = Reservation(user: curUser, date: date, time: time, duration: duration, tableNumber: tableNum, reservationID: reservationID)
                                 self.reservations.append(createRes)
                             }
                         }
                         // RELOAD TABELS HERE @!!!
-                        if self.timeTxt.text != ""{
+                        if self.timeTxt.text != "" && self.durationTxt.text != ""{
                             print("Time done inputting.")
                             self.freeTables.removeAll()
                             let inpDate = self.timeStringtoTime(self.timeTxt.text!)
@@ -419,7 +422,7 @@ class BookTableViewController: UIViewController{
     func setDateAndTimeChoices(){
         Formatter.time.defaultDate = Calendar.current.startOfDay(for: Date())
         let minimumDate = Formatter.time.date(from: "10:00")!
-        let maximumDate = Formatter.time.date(from: "20:00")!
+        let maximumDate = Formatter.time.date(from: "19:00")!
         timePicker.date = minimumDate
         timePicker.datePickerMode = .time
         timePicker.minuteInterval = 30
@@ -547,7 +550,34 @@ extension BookTableViewController: UIPickerViewDelegate,  UIPickerViewDataSource
         case 1:
             return freeTables.count
         case 2:
-            return durations.count
+            var minus = 0
+            if timeTxt.text != ""{
+                print("TEXT: " + timeTxt.text!)
+                let startIndex = timeTxt.text!.startIndex // index of the first character
+                let endIndex = timeTxt.text!.index(startIndex, offsetBy: 1) // index of the character at position 5
+                let minIndex = timeTxt.text!.index(endIndex, offsetBy:2)
+                let minIdxMax = timeTxt.text!.index(minIndex, offsetBy:1)
+                let thresholdL = Int(timeTxt.text![startIndex...endIndex])!
+                let thresholdR = Int(timeTxt.text![minIndex...minIdxMax])!
+                let threshold = thresholdL*60 + thresholdR
+                print()
+                if threshold > 15*60 && threshold <= 16*60{
+                    minus = 1
+                }
+                else if threshold > 16*60 && threshold <= 17*60{
+                    minus = 2
+                }
+                else if threshold > 17*60 && threshold <= 18*60{
+                    minus = 3
+                }
+                else if threshold > 18*60 && threshold <= 19*60{
+                    minus = 4
+                }
+                else if threshold > 19*60{
+                    minus = durations.count
+                }
+            }
+            return durations.count - minus
         default:
             return 1
         }

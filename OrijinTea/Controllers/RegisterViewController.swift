@@ -9,6 +9,7 @@ import UIKit
 import FirebaseCore
 import FirebaseAuth
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class RegisterViewController: UIViewController {
 
@@ -18,6 +19,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var confirmField: UITextField!
+    
+    let db = Firestore.firestore()
     
     
     @IBAction func signUpPressed(_ sender: UIButton) {
@@ -29,9 +32,23 @@ class RegisterViewController: UIViewController {
                     print(e.localizedDescription)
                 }
                 else {
-                    self.performSegue(withIdentifier: Constants.signToMain, sender: self)
+                    // Save the user profile to firestore
+                    if let curUser = Auth.auth().currentUser?.email{
+                        let curUserId = Auth.auth().currentUser?.uid
+                        let saveUser = Users(id: curUserId!, firstName: self.firstNameField.text!, lastName: self.lastNameField.text!, email: curUser)
+                        do{
+                            try self.db.collection(Constants.FStoreCollection.users).document(curUser).setData(from:saveUser)
+                            self.performSegue(withIdentifier: Constants.signToMain, sender: self)
+                        }
+                        catch let error{
+                            print("Error writing user to Firestore: \(error)")
+                        }
+                    }
+                    
                 }
             }
+
+            
         }
         
     }

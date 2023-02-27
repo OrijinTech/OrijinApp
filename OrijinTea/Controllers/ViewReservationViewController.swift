@@ -6,8 +6,14 @@
 //
 
 import UIKit
+import FirebaseCore
+import FirebaseFirestore
+import FirebaseAuth
+import FirebaseFirestoreSwift
 
 class ViewReservationViewController: UIViewController {
+    
+    let db = Firestore.firestore()
     
     // outlets
     @IBOutlet weak var dateTxt: UITextField!
@@ -18,12 +24,14 @@ class ViewReservationViewController: UIViewController {
     @IBOutlet weak var popupWindow: UIView!
     @IBOutlet weak var deleteBookingBtn: UIButton!
     @IBOutlet weak var blurView: UIView!
+    @IBOutlet weak var reservationID: UITextField!
     
     // accepting data from previous segue
     var date = ""
     var time = ""
     var duration = ""
     var table = ""
+    var bookingId = ""
     
     
     
@@ -34,6 +42,7 @@ class ViewReservationViewController: UIViewController {
         timeTxt.text = time
         durationTxt.text = duration
         tableTxt.text = table
+        reservationID.text = bookingId
         addressTxt.text = Constants.TextCont.orijinAddress
     }
     
@@ -52,7 +61,6 @@ class ViewReservationViewController: UIViewController {
         self.blurView.addSubview(blurEffectView)
         UIView.animate(withDuration: 0.2, delay: 0) {
             blurEffectView.effect = blurEffect
-            print("reached 1")
         }
         self.popupWindow.isHidden = false
         self.setPopup()
@@ -63,11 +71,12 @@ class ViewReservationViewController: UIViewController {
     @IBAction func deletePressed(_ sender: UIButton) {
         deleteBookingBtn.isUserInteractionEnabled = false
         setBlur()
-
     }
     
+    // This is where you actually delete the reservation.
     @IBAction func confirmDelPressed(_ sender: UIButton) {
-        self.dismiss(animated: true)
+        deleteReservation()
+        performSegue(withIdentifier: Constants.Me.hideResPopup, sender: self)
     }
     
     @IBAction func cancelPressed(_ sender: UIButton) {
@@ -78,6 +87,18 @@ class ViewReservationViewController: UIViewController {
         }
         popupWindow.isHidden = true
         deleteBookingBtn.isUserInteractionEnabled = true
+    }
+    
+    func deleteReservation(){
+        let docRef = db.collection(Constants.FStoreCollection.reservations).document(String(bookingId))
+        docRef.delete(){ err in
+            if let e = err{
+                print("ERROR: Deleting an reservation: \(e)")
+            }
+            else{
+                print("Successfully deleted a reservation!")
+            }
+        }
     }
     
 

@@ -6,6 +6,10 @@
 //
 
 import UIKit
+import FirebaseCore
+import FirebaseFirestore
+import FirebaseAuth
+import FirebaseFirestoreSwift
 
 
 class ProfileViewController: UIViewController {
@@ -37,6 +41,13 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func logOutPressed(_ sender: UIButton) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            performSegue(withIdentifier: Constants.Me.meToLogin, sender: self)
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
     }
     
     
