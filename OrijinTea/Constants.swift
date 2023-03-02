@@ -34,9 +34,21 @@ class Constants{
         
     }
     
+    struct Shop{
+        static let toProducts: String = "toProducts"
+        static let toProductOverview: String = "toProductOverview"
+        static let generalTypeToTypeProducts: String = "generalTypeToTypeProducts"
+        static let typeProductsToGeneralType: String = "typeProductsToGeneralType"
+    }
+    
 
 // MARK: - View Identifiers
     static let prodTypeCell: String = "prodTypeCell"
+    
+    
+    
+    
+    
     
 // MARK: - FireStore constants
     
@@ -46,6 +58,7 @@ class Constants{
         static let tables: String = "tables"
         static let adminStats: String = "teashopAdminStats"
         static let users: String = "users"
+        static let product: String = "product"
     }
     
     // Document
@@ -85,6 +98,8 @@ class Constants{
             static let teaPoints: String = "teaPoints"
             static let userName: String = "userName"
         }
+
+        
         
 
     }

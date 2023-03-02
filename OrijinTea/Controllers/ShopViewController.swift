@@ -7,14 +7,21 @@
 
 
 import UIKit
+import FirebaseCore
+import FirebaseFirestore
+import FirebaseAuth
+import FirebaseFirestoreSwift
 
 
 class ShopViewController: UIViewController{
+    
+    let db = Firestore.firestore()
     
     @IBOutlet weak var shopCatCollectionView: UICollectionView!
     @IBOutlet var shopView: UIView!
     
     var catList = [ProductData]()
+    var clickedChoice = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +32,19 @@ class ShopViewController: UIViewController{
     
     
     private func fillData(){
-        let teaCat = ProductData(categoryPic: "Tea Icon", categoryName: "Tea")
-        catList.append(teaCat)
-        
-        let ceramicCat = ProductData(categoryPic: "Ceramics Icon", categoryName: "Ceramics")
-        catList.append(ceramicCat)
-        
+        let collectionRef = db.collection(Constants.FStoreCollection.product)
+        collectionRef.getDocuments { productTypes, error in
+            if let e = error{
+                print("Error retreiving product types! \(e)")
+            }
+            else{
+                for prodType in productTypes!.documents{
+                    let productTp = ProductData(categoryPic: "Tea Icon", categoryName: prodType.documentID)
+                    self.catList.append(productTp)
+                }
+            }
+            self.shopCatCollectionView.reloadData()
+        }
     }
     
     
@@ -40,6 +54,13 @@ class ShopViewController: UIViewController{
         
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.Shop.toProducts{
+            let destinationVC = segue.destination as? ProductsViewController
+            destinationVC?.titleTxt = clickedChoice
+        }
+    }
     
 }
 
@@ -63,7 +84,6 @@ extension ShopViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.layer.shadowOpacity = 0.5
         cell.layer.masksToBounds = false
         return cell
-        
     }
     
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -72,7 +92,9 @@ extension ShopViewController: UICollectionViewDelegate, UICollectionViewDataSour
 //    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        clickedChoice = catList[indexPath.row].categoryName
         print("You have clicked on \(catList[indexPath.row].categoryName)")
+        performSegue(withIdentifier: Constants.Shop.toProducts, sender: self)
     }
     
 }

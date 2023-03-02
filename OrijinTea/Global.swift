@@ -20,6 +20,9 @@ struct Global {
         static var userName: String = ""
     }
     
+    static var products: [String] = []
+    
+    
 }
 
 

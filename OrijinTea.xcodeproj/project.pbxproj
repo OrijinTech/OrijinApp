@@ -8,13 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		5402692829ACEA37006D4E05 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5402692729ACEA37006D4E05 /* Global.swift */; };
-		5402692A29AE669B006D4E05 /* Tea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5402692929AE669B006D4E05 /* Tea.swift */; };
-		5402692C29AE66A7006D4E05 /* Ceramics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5402692B29AE66A7006D4E05 /* Ceramics.swift */; };
-		5402692E29AE66AD006D4E05 /* Coffee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5402692D29AE66AD006D4E05 /* Coffee.swift */; };
 		5402693029AE6852006D4E05 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5402692F29AE6852006D4E05 /* Product.swift */; };
+		5402693229AF6C9A006D4E05 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5402693129AF6C9A006D4E05 /* ProductsViewController.swift */; };
 		5415EA25299A49B700302EC6 /* BookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5415EA24299A49B700302EC6 /* BookTableViewController.swift */; };
 		54289C9B2992ACD400872E9D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54289C9A2992ACD400872E9D /* Constants.swift */; };
 		54289C9F2993CF2700872E9D /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54289C9E2993CF2700872E9D /* Users.swift */; };
+		5449ED8629B10B1E00F9198F /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5449ED8529B10B1E00F9198F /* ProductListViewController.swift */; };
 		5461F2F52997BAC600B66B2E /* ProductTypeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5461F2F42997BAC600B66B2E /* ProductTypeViewCell.swift */; };
 		5461F2F72997C60C00B66B2E /* ProductData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5461F2F62997C60C00B66B2E /* ProductData.swift */; };
 		5488E4EF2991686100788259 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5488E4EE2991686100788259 /* AppDelegate.swift */; };
@@ -42,13 +41,12 @@
 /* Begin PBXFileReference section */
 		4998D1C712EE03762E8750B9 /* Pods-OrijinTea.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrijinTea.release.xcconfig"; path = "Target Support Files/Pods-OrijinTea/Pods-OrijinTea.release.xcconfig"; sourceTree = "<group>"; };
 		5402692729ACEA37006D4E05 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
-		5402692929AE669B006D4E05 /* Tea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tea.swift; sourceTree = "<group>"; };
-		5402692B29AE66A7006D4E05 /* Ceramics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ceramics.swift; sourceTree = "<group>"; };
-		5402692D29AE66AD006D4E05 /* Coffee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coffee.swift; sourceTree = "<group>"; };
 		5402692F29AE6852006D4E05 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		5402693129AF6C9A006D4E05 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		5415EA24299A49B700302EC6 /* BookTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewController.swift; sourceTree = "<group>"; };
 		54289C9A2992ACD400872E9D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		54289C9E2993CF2700872E9D /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		5449ED8529B10B1E00F9198F /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 		5461F2F42997BAC600B66B2E /* ProductTypeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTypeViewCell.swift; sourceTree = "<group>"; };
 		5461F2F62997C60C00B66B2E /* ProductData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductData.swift; sourceTree = "<group>"; };
 		5488E4EB2991686100788259 /* OrijinTea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrijinTea.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,9 +94,6 @@
 				5461F2F62997C60C00B66B2E /* ProductData.swift */,
 				54D832F029A4D14700A8A036 /* Reservation.swift */,
 				5402692F29AE6852006D4E05 /* Product.swift */,
-				5402692929AE669B006D4E05 /* Tea.swift */,
-				5402692B29AE66A7006D4E05 /* Ceramics.swift */,
-				5402692D29AE66AD006D4E05 /* Coffee.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -155,6 +150,8 @@
 				5415EA24299A49B700302EC6 /* BookTableViewController.swift */,
 				54AB765229A51CB700287A8D /* ComfirmViewController.swift */,
 				54A211EE29A68E20001C5E49 /* ViewReservationViewController.swift */,
+				5402693129AF6C9A006D4E05 /* ProductsViewController.swift */,
+				5449ED8529B10B1E00F9198F /* ProductListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -292,7 +289,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5402692C29AE66A7006D4E05 /* Ceramics.swift in Sources */,
 				5495477B2993E016008E458B /* MainViewController.swift in Sources */,
 				54AB765329A51CB700287A8D /* ComfirmViewController.swift in Sources */,
 				5415EA25299A49B700302EC6 /* BookTableViewController.swift in Sources */,
@@ -302,21 +298,21 @@
 				5402693029AE6852006D4E05 /* Product.swift in Sources */,
 				549547832993E4CC008E458B /* ShopViewController.swift in Sources */,
 				5488E50429916E3600788259 /* LoginViewController.swift in Sources */,
-				5402692A29AE669B006D4E05 /* Tea.swift in Sources */,
 				5488E4EF2991686100788259 /* AppDelegate.swift in Sources */,
 				5488E4F12991686100788259 /* SceneDelegate.swift in Sources */,
 				5461F2F72997C60C00B66B2E /* ProductData.swift in Sources */,
 				54289C9F2993CF2700872E9D /* Users.swift in Sources */,
 				5495477D2993E0A0008E458B /* ProfileViewController.swift in Sources */,
+				5402693229AF6C9A006D4E05 /* ProductsViewController.swift in Sources */,
 				549547892993F192008E458B /* SettingsViewController.swift in Sources */,
 				54A211EF29A68E20001C5E49 /* ViewReservationViewController.swift in Sources */,
+				5449ED8629B10B1E00F9198F /* ProductListViewController.swift in Sources */,
 				5495477F2993E0FA008E458B /* CartViewController.swift in Sources */,
 				5461F2F52997BAC600B66B2E /* ProductTypeViewCell.swift in Sources */,
 				549547812993E3EE008E458B /* BookingViewController.swift in Sources */,
 				549547852993E98C008E458B /* InfoViewController.swift in Sources */,
 				5488E50629916E4C00788259 /* RegisterViewController.swift in Sources */,
 				5402692829ACEA37006D4E05 /* Global.swift in Sources */,
-				5402692E29AE66AD006D4E05 /* Coffee.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

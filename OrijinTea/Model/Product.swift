@@ -7,19 +7,22 @@
 
 import Foundation
 
-class Product{
-    var productName: String
-    var categoryPic: String // picture
-    var categoryName: String // product category
+class Product: Codable{
+    @objc var productName: String?
+    @objc var categoryPic: String?
+    @objc var categoryName: String? //茶类
+    @objc var productionPlace: String?
+    @objc var productionYear: String?
+    @objc var description: String?
     
-    
-    init(productName: String, categoryPic: String, categoryName: String) {
+    init(productName: String? = nil, categoryPic: String? = "Tea Icon", categoryName: String? = nil, productionPlace: String? = nil, productionYear: String? = nil, description: String? = nil) {
         self.productName = productName
         self.categoryPic = categoryPic
         self.categoryName = categoryName
+        self.productionPlace = productionPlace
+        self.productionYear = productionYear
+        self.description = description
     }
-    
-    
     
     
 }
