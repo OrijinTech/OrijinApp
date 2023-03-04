@@ -6,7 +6,8 @@
 //
 
 import Foundation
-
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 
 struct Global {
@@ -18,10 +19,13 @@ struct Global {
         static var email: String = ""
         static var teaPoints: Int = 0
         static var userName: String = ""
+        static var favoriteProducs: [DocumentReference] = []
     }
     
     static var products: [String] = []
     
+    static var favorites: [Product] = [] // This is for user's unique list of favorite productss
+    static var favoritesTags: [String] = [] // This is the user's unique list of favorite produts' tag
     
 }
 

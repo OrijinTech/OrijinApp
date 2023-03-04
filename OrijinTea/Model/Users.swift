@@ -6,22 +6,27 @@
 //
 
 import Foundation
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
-struct Users: Identifiable, Encodable{
+
+struct Users: Identifiable, Codable{
     var id: String
     var firstName: String
     var lastName: String
     var email: String
     var teaPoints: Int
     var userName: String
+    var favoriteProducts: [DocumentReference]?
     
-    init(id: String, firstName: String, lastName: String, email: String, teaPoints: Int = 0, userName: String = "") {
+    init(id: String, firstName: String, lastName: String, email: String, teaPoints: Int = 0, userName: String = "", favoriteProducts: [DocumentReference] = []) {
         self.id = id
         self.firstName = firstName
         self.lastName = lastName
         self.email = email
         self.teaPoints = teaPoints
         self.userName = userName
+        self.favoriteProducts = favoriteProducts
     }
     
     

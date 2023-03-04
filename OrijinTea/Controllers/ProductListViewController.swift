@@ -22,6 +22,9 @@ class ProductListViewController: UIViewController {
     var productType = ""
     var subCollectionName = ""
     
+    // Variables for outgoing segue
+    var productObj: Product = Product()
+    
     
     // Outlets
     @IBOutlet weak var titleTxt: UILabel!
@@ -76,6 +79,14 @@ class ProductListViewController: UIViewController {
             let destinationVC = segue.destination as? ProductsViewController
             destinationVC?.titleTxt = self.productType
         }
+        else if segue.identifier == Constants.Shop.toSpecificProduct{
+            let destinationVC = segue.destination as? SpecificProductViewController
+            destinationVC?.chosenProduct = productObj
+            destinationVC?.titleText = titleText
+            destinationVC?.productType = productType
+            destinationVC?.subCollectionName = subCollectionName
+        }
+        
     }
     
 }
@@ -101,6 +112,11 @@ extension ProductListViewController: UICollectionViewDelegate, UICollectionViewD
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        productObj = filteredProdList[indexPath.row]
+        performSegue(withIdentifier: Constants.Shop.toSpecificProduct, sender: self)
+    }
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.count == 0{
             filteredProdList = prodList
@@ -112,33 +128,4 @@ extension ProductListViewController: UICollectionViewDelegate, UICollectionViewD
     }
     
 }
-
-
-
-
-//    func loadProducts(_ productType: String){
-//        let collRef = db.collection(Constants.FStoreCollection.product).document(productType).collection(String(subCollectionName.lowercased()))
-//        collRef.getDocuments { tea, error in
-//            if let e = error{
-//                print("Error retreiving specific list of tea. \(e)")
-//            }
-//            else{
-//                if let teaProducts = tea?.documents{
-//                    for teaProduct in teaProducts{
-//                        let teaData = teaProduct.data()
-//                        do {
-//                            let dat = try JSONSerialization.data(withJSONObject: teaData)
-//                            let prodObj = try JSONDecoder().decode(Product.self, from: dat)
-//                            self.prodList.append(prodObj)
-//                            // print("Object created: \(prodObj.productName ?? "Default")")
-//                        } catch let error {
-//                            print("Error decoding object: \(error.localizedDescription)")
-//                        }
-//                    }
-//                    self.filteredProdList = self.prodList
-//                }
-//            }
-//            self.productCollectionView.reloadData()
-//        }
-//    }
 

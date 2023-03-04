@@ -39,6 +39,8 @@ class Constants{
         static let toProductOverview: String = "toProductOverview"
         static let generalTypeToTypeProducts: String = "generalTypeToTypeProducts"
         static let typeProductsToGeneralType: String = "typeProductsToGeneralType"
+        static let toSpecificProduct: String = "toSpecificProduct"
+        static let specificToProductList: String = "specificToProductList"
     }
     
 
@@ -97,6 +99,7 @@ class Constants{
             static let email: String = "email"
             static let teaPoints: String = "teaPoints"
             static let userName: String = "userName"
+            static let favoriteProducts: String = "favoriteProducts"
         }
 
         

@@ -69,6 +69,9 @@ extension ProductsViewController: UITableViewDelegate, UITableViewDataSource, UI
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "productType", for: indexPath)
         cell.textLabel?.text = filteredData[indexPath.row]
+        let imageBackground = CustomBackgroundView()
+        imageBackground.setImg("Default Cell Img")
+        cell.backgroundView = imageBackground
         return cell
     }
     
