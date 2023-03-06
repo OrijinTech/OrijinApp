@@ -2775,7 +2775,7 @@ this reservation?</string>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="productType" rowHeight="100" id="1iB-J0-x6k" customClass="ProductCell" customModule="OrijinTea" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="productType" rowHeight="100" id="1iB-J0-x6k">
                                         <rect key="frame" x="0.0" y="50" width="394" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1iB-J0-x6k" id="1t7-up-b0q">
@@ -2808,8 +2808,8 @@ this reservation?</string>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="OeB-q9-DXH"/>
-        <segue reference="gTs-Ms-bhZ"/>
-        <segue reference="VE2-lg-UK7"/>
+        <segue reference="x7A-cV-mN1"/>
+        <segue reference="8bt-8N-bs4"/>
         <segue reference="lpo-BE-qJD"/>
         <segue reference="4TM-UG-qtk"/>
         <segue reference="aeF-A3-q2X"/>

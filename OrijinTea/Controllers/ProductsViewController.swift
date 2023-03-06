@@ -68,7 +68,15 @@ extension ProductsViewController: UITableViewDelegate, UITableViewDataSource, UI
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "productType", for: indexPath)
-        cell.textLabel?.text = filteredData[indexPath.row]
+        if #available(iOS 15.0, *) {
+            var config = cell.defaultContentConfiguration()
+            config.text = Global.textLimiter(filteredData[indexPath.row], 6)
+            config.textProperties.numberOfLines = 0
+            cell.contentConfiguration = config
+        } else {
+            cell.textLabel?.text = Global.textLimiter(filteredData[indexPath.row], 6)
+            cell.textLabel?.numberOfLines = 0
+        }
         let imageBackground = CustomBackgroundView()
         imageBackground.setImg("Default Cell Img")
         cell.backgroundView = imageBackground

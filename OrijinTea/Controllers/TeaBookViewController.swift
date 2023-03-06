@@ -22,6 +22,7 @@ class TeaBookViewController: UIViewController {
         super.viewDidLoad()
         teaBookTableView.delegate = self
         teaBookTableView.dataSource = self
+        teaBookTableView.rowHeight = 100
         prepareProducts()
     }
     
@@ -49,7 +50,16 @@ extension TeaBookViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "teaBookCell", for: indexPath)
-        cell.textLabel?.text = favProducts[indexPath.row].productName
+        if #available(iOS 15.0, *) {
+            var config = cell.defaultContentConfiguration()
+            config.text = Global.textLimiter(favProducts[indexPath.row].productName!, 6)
+            config.textProperties.numberOfLines = 0
+            cell.contentConfiguration = config
+        } else {
+            cell.textLabel?.text = Global.textLimiter(favProducts[indexPath.row].productName!, 6)
+            cell.textLabel?.numberOfLines = 0
+        }
+        
         let imageBackground = CustomBackgroundView()
         imageBackground.setImg("Default Cell Img")
         cell.backgroundView = imageBackground
