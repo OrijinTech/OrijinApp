@@ -128,6 +128,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate{
     
     func getFavoriteProducts(_ completion: @escaping () -> Void){
         let userRef = db.collection(Constants.FStoreCollection.users).document(Global.User.email)
+        print(userRef.path)
         userRef.getDocument { snapshot, error in
             if let error = error {
                 print("Error retrieving user document: \(error)")
@@ -141,8 +142,10 @@ class MainViewController: UIViewController, UIScrollViewDelegate{
     }
     
     func convertFavProdctToObj(){
+        Global.favorites.removeAll()
         for docRef in Global.User.favoriteProducs{
-            docRef.getDocument { (document, error) in
+            docRef.getDocument() { (document, error) in
+                print(docRef.path)
                 if let document = document, document.exists {
                     let docData = document.data()
                     do {

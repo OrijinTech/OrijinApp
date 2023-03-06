@@ -39,6 +39,7 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func teaBookPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: Constants.Me.toTeaBook, sender: self)
     }
     
     @IBAction func settingsPressed(_ sender: UIButton) {

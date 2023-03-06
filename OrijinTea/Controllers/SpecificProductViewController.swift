@@ -35,7 +35,7 @@ class SpecificProductViewController: UIViewController {
     // Variables for outgoing segue
     var titleText = ""
     var productType = ""
-    var subCollectionName = ""
+    var subCollectionName = "" // This is right now in uppercase first letter, if you want to use this to retreive database data, then check for correct casing
     
     // Variable from incomming segue
     var chosenProduct: Product = Product()
@@ -62,13 +62,15 @@ class SpecificProductViewController: UIViewController {
         prodTagLabel.text = product.productTag
     }
     
+    
+    // Later if we want directly go from this page to MY TEA BOOK, then we need to also update Global.favorites[Product] here.
     func updateUserLikeList(){
         if currentLiked && !containsLikedProduct(){ // button is liked, but list does not contain this product
             Global.favorites.append(chosenProduct)
             Global.favoritesTags.append(chosenProduct.productTag!)
             // update database
             let userDocRef = db.collection(Constants.FStoreCollection.users).document(Global.User.email)
-            let productDocRef = db.collection(Constants.FStoreCollection.product).document(productType).collection(subCollectionName).document(chosenProduct.productTag!)
+            let productDocRef = db.collection(Constants.FStoreCollection.product).document(productType).collection(subCollectionName.lowercased()).document(chosenProduct.productTag!)
             Global.User.favoriteProducs.append(productDocRef)
             userDocRef.updateData([Constants.FStoreField.Users.favoriteProducts: Global.User.favoriteProducs]) { err in
                 if let err = err {
@@ -90,6 +92,7 @@ class SpecificProductViewController: UIViewController {
         }
     }
     
+
     
     func setLikeButtonStatus(_ liked: Bool){
         if liked{

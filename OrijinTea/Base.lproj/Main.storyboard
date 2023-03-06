@@ -148,7 +148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pby-PF-686" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1839" y="-1688"/>
+            <point key="canvasLocation" x="1839" y="-2514"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="f2Z-kX-lLc">
@@ -164,7 +164,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zwY-8x-YE1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1839" y="-2507"/>
+            <point key="canvasLocation" x="1839" y="-3333"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Lgf-YX-tzU">
@@ -182,7 +182,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="an1-kB-hVv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="717" y="-1795"/>
+            <point key="canvasLocation" x="717" y="-2621"/>
         </scene>
         <!--RegisterViewController-->
         <scene sceneID="Sl6-bD-EIh">
@@ -328,7 +328,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZXd-mN-fFE">
-                                <rect key="frame" x="-23" y="59" width="397" height="44"/>
+                                <rect key="frame" x="-25" y="59" width="397" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Community" id="bbs-fl-kYJ"/>
@@ -345,7 +345,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hQk-vT-SaM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1781" y="764"/>
+            <point key="canvasLocation" x="-4497" y="787"/>
         </scene>
         <!--MainViewController-->
         <scene sceneID="Csg-GD-Jtw">
@@ -687,11 +687,12 @@
                         <segue destination="kzH-eS-741" kind="presentation" identifier="SettingsViewController" animates="NO" modalPresentationStyle="fullScreen" id="bcA-tK-plE"/>
                         <segue destination="Oln-ZQ-gnJ" kind="presentation" identifier="profileToReservations" modalPresentationStyle="fullScreen" id="hRU-Co-kmm"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="meToLogin" modalPresentationStyle="fullScreen" id="VKI-K2-vpu"/>
+                        <segue destination="1Ll-3l-hjg" kind="presentation" identifier="toTeaBook" modalPresentationStyle="fullScreen" id="hsD-AN-HfA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pog-bB-083" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3948.8549618320608" y="774.64788732394368"/>
+            <point key="canvasLocation" x="6224" y="787"/>
         </scene>
         <!--Reserve Pg View Controller-->
         <scene sceneID="BWE-87-b60">
@@ -773,7 +774,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d2o-7a-pun" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4960" y="1307"/>
+            <point key="canvasLocation" x="7233" y="1318"/>
         </scene>
         <!--View Reservation View Controller-->
         <scene sceneID="khy-LP-c9w">
@@ -1028,7 +1029,7 @@ this reservation?</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FcW-XP-Twi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5759.5419847328239" y="1304.9295774647887"/>
+            <point key="canvasLocation" x="8033" y="1318"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="da8-wE-lgm">
@@ -1043,22 +1044,102 @@ this reservation?</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6I9-uD-0Ry" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3949" y="1561"/>
+            <point key="canvasLocation" x="6224" y="1574"/>
         </scene>
-        <!--View Controller-->
+        <!--Tea Book View Controller-->
         <scene sceneID="7FL-ds-Kdd">
             <objects>
-                <viewController id="1Ll-3l-hjg" sceneMemberID="viewController">
+                <viewController id="1Ll-3l-hjg" customClass="TeaBookViewController" customModule="OrijinTea" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AjE-qv-DKO">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ilX-J7-qv7" userLabel="Collapsible View">
+                                <rect key="frame" x="0.0" y="59" width="393" height="150"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Tea Book" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEB-Zd-Qdn">
+                                        <rect key="frame" x="109.99999999999999" y="8" width="164.66666666666663" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7D-lT-mMF">
+                                        <rect key="frame" x="7.9999999999999964" y="8" width="61.666666666666657" height="35"/>
+                                        <color key="tintColor" red="0.55942234850000006" green="0.52984675569999995" blue="0.17300596930000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Back" cornerStyle="capsule">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" red="0.23552735280000001" green="0.22307547080000001" blue="0.072838773930000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </backgroundConfiguration>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="backBtnPresed:" destination="1Ll-3l-hjg" eventType="touchUpInside" id="mh9-Db-U7F"/>
+                                        </connections>
+                                    </button>
+                                    <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="lpA-IL-yYi">
+                                        <rect key="frame" x="0.0" y="106" width="393" height="44"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                </subviews>
+                                <color key="backgroundColor" red="0.58431375029999999" green="0.56862747670000002" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="wEB-Zd-Qdn" firstAttribute="leading" secondItem="ilX-J7-qv7" secondAttribute="trailing" constant="-283" id="3cM-d2-JnW"/>
+                                    <constraint firstItem="lpA-IL-yYi" firstAttribute="leading" secondItem="ilX-J7-qv7" secondAttribute="leading" id="6AH-MV-llV"/>
+                                    <constraint firstAttribute="bottom" secondItem="c7D-lT-mMF" secondAttribute="bottom" constant="107" id="Pv6-Sf-Azr"/>
+                                    <constraint firstAttribute="trailing" secondItem="c7D-lT-mMF" secondAttribute="trailing" constant="323.32999999999998" id="SIF-ta-alD"/>
+                                    <constraint firstItem="c7D-lT-mMF" firstAttribute="leading" secondItem="ilX-J7-qv7" secondAttribute="leading" constant="8" id="U2J-Vf-1Ry"/>
+                                    <constraint firstItem="wEB-Zd-Qdn" firstAttribute="leading" secondItem="ilX-J7-qv7" secondAttribute="leading" constant="110" id="WSq-Kk-XKX"/>
+                                    <constraint firstAttribute="bottom" secondItem="lpA-IL-yYi" secondAttribute="bottom" id="bRT-Ct-C1U"/>
+                                    <constraint firstAttribute="height" constant="150" id="iZL-5H-Gbh"/>
+                                    <constraint firstItem="lpA-IL-yYi" firstAttribute="top" secondItem="ilX-J7-qv7" secondAttribute="top" constant="106" id="jHV-A0-SRU"/>
+                                    <constraint firstItem="c7D-lT-mMF" firstAttribute="top" secondItem="ilX-J7-qv7" secondAttribute="top" constant="8" id="rAW-wv-chO"/>
+                                    <constraint firstAttribute="bottom" secondItem="wEB-Zd-Qdn" secondAttribute="bottom" constant="106" id="upH-ww-vsG"/>
+                                    <constraint firstAttribute="trailing" secondItem="lpA-IL-yYi" secondAttribute="trailing" id="uuZ-QW-wUc"/>
+                                    <constraint firstItem="wEB-Zd-Qdn" firstAttribute="top" secondItem="ilX-J7-qv7" secondAttribute="top" constant="8" id="yQH-3K-YOy"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6ca-oz-Dcg">
+                                <rect key="frame" x="0.0" y="209" width="393" height="643"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="teaBookCell" rowHeight="100" id="NUv-rO-uAJ">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NUv-rO-uAJ" id="Pzp-fJ-gVf">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="k04-V5-bKb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6ca-oz-Dcg" firstAttribute="trailing" secondItem="k04-V5-bKb" secondAttribute="trailing" id="3d7-oq-7fO"/>
+                            <constraint firstItem="ilX-J7-qv7" firstAttribute="trailing" secondItem="k04-V5-bKb" secondAttribute="trailing" id="5fJ-cs-CYd"/>
+                            <constraint firstItem="ilX-J7-qv7" firstAttribute="top" secondItem="k04-V5-bKb" secondAttribute="top" id="JCb-bm-Yfm"/>
+                            <constraint firstItem="6ca-oz-Dcg" firstAttribute="top" secondItem="ilX-J7-qv7" secondAttribute="bottom" id="U1k-rO-cc4"/>
+                            <constraint firstItem="6ca-oz-Dcg" firstAttribute="leading" secondItem="k04-V5-bKb" secondAttribute="leading" id="Xjr-HJ-pi4"/>
+                            <constraint firstItem="ilX-J7-qv7" firstAttribute="leading" secondItem="k04-V5-bKb" secondAttribute="leading" id="aGl-KD-817"/>
+                            <constraint firstItem="ilX-J7-qv7" firstAttribute="leading" secondItem="k04-V5-bKb" secondAttribute="leading" id="eFp-hc-9Tw"/>
+                            <constraint firstAttribute="bottom" secondItem="6ca-oz-Dcg" secondAttribute="bottom" id="hiW-EI-gUR"/>
+                            <constraint firstItem="ilX-J7-qv7" firstAttribute="top" secondItem="k04-V5-bKb" secondAttribute="top" id="ntr-43-6Dg"/>
+                            <constraint firstItem="k04-V5-bKb" firstAttribute="bottom" secondItem="ilX-J7-qv7" secondAttribute="bottom" constant="609" id="rag-Lp-jUd"/>
+                            <constraint firstItem="ilX-J7-qv7" firstAttribute="trailing" secondItem="k04-V5-bKb" secondAttribute="trailing" id="zlV-b7-khW"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backBtn" destination="c7D-lT-mMF" id="hsr-fe-FLm"/>
+                        <outlet property="searchBar" destination="lpA-IL-yYi" id="JJc-4P-92g"/>
+                        <outlet property="teaBookTableView" destination="6ca-oz-Dcg" id="hwF-MO-Apc"/>
+                        <outlet property="titleLabel" destination="wEB-Zd-Qdn" id="NEd-08-fed"/>
+                        <segue destination="pbB-nc-kna" kind="presentation" identifier="teaBookToMe" animates="NO" modalPresentationStyle="fullScreen" id="NX3-TY-l1B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9S8-h7-hPf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3949" y="5"/>
+            <point key="canvasLocation" x="6223.6641221374048" y="-25.35211267605634"/>
         </scene>
         <!--PersonalInfoViewController-->
         <scene sceneID="aGZ-VU-WjI">
@@ -1447,7 +1528,7 @@ this reservation?</string>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="4959.5419847328239" y="485.91549295774649"/>
+            <point key="canvasLocation" x="7233" y="499"/>
         </scene>
         <!--BookingViewController-->
         <scene sceneID="h8S-eO-Gxe">
@@ -2690,15 +2771,15 @@ this reservation?</string>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Tqq-dv-nnZ">
-                                <rect key="frame" x="-1" y="216" width="395" height="635"/>
+                                <rect key="frame" x="-3" y="214" width="394" height="635"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="productType" rowHeight="100" id="1iB-J0-x6k" customClass="ProductCell" customModule="OrijinTea" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="395" height="100"/>
+                                        <rect key="frame" x="0.0" y="50" width="394" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1iB-J0-x6k" id="1t7-up-b0q">
-                                            <rect key="frame" x="0.0" y="0.0" width="364.66666666666669" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="363.66666666666669" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -2729,13 +2810,13 @@ this reservation?</string>
         <segue reference="OeB-q9-DXH"/>
         <segue reference="gTs-Ms-bhZ"/>
         <segue reference="VE2-lg-UK7"/>
-        <segue reference="ngJ-Ji-nea"/>
+        <segue reference="lpo-BE-qJD"/>
         <segue reference="4TM-UG-qtk"/>
         <segue reference="aeF-A3-q2X"/>
         <segue reference="zVZ-ol-uZK"/>
         <segue reference="4fw-6U-pV6"/>
-        <segue reference="ciV-Hq-yIb"/>
-        <segue reference="SPD-0Y-dUO"/>
+        <segue reference="VKI-K2-vpu"/>
+        <segue reference="NX3-TY-l1B"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Tea Icon" width="252" height="214"/>

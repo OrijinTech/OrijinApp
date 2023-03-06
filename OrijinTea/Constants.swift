@@ -31,7 +31,8 @@ class Constants{
         static let meToLogin: String = "meToLogin"
         static let profileToInfo: String = "profileToInfo"
         static let profileInfoToMe: String = "profileInfoToMe"
-        
+        static let toTeaBook: String = "toTeaBook"
+        static let teaBookToMe: String = "teaBookToMe"
     }
     
     struct Shop{

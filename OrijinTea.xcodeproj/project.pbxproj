@@ -16,6 +16,7 @@
 		54289C9B2992ACD400872E9D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54289C9A2992ACD400872E9D /* Constants.swift */; };
 		54289C9F2993CF2700872E9D /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54289C9E2993CF2700872E9D /* Users.swift */; };
 		5449ED8629B10B1E00F9198F /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5449ED8529B10B1E00F9198F /* ProductListViewController.swift */; };
+		5452A61929B4A2CC00B7BD2C /* TeaBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5452A61829B4A2CC00B7BD2C /* TeaBookViewController.swift */; };
 		5461F2F52997BAC600B66B2E /* ProductTypeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5461F2F42997BAC600B66B2E /* ProductTypeViewCell.swift */; };
 		5461F2F72997C60C00B66B2E /* ProductData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5461F2F62997C60C00B66B2E /* ProductData.swift */; };
 		5488E4EF2991686100788259 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5488E4EE2991686100788259 /* AppDelegate.swift */; };
@@ -51,6 +52,7 @@
 		54289C9A2992ACD400872E9D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		54289C9E2993CF2700872E9D /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		5449ED8529B10B1E00F9198F /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
+		5452A61829B4A2CC00B7BD2C /* TeaBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaBookViewController.swift; sourceTree = "<group>"; };
 		5461F2F42997BAC600B66B2E /* ProductTypeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTypeViewCell.swift; sourceTree = "<group>"; };
 		5461F2F62997C60C00B66B2E /* ProductData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductData.swift; sourceTree = "<group>"; };
 		5488E4EB2991686100788259 /* OrijinTea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrijinTea.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +160,7 @@
 				5402693129AF6C9A006D4E05 /* ProductsViewController.swift */,
 				5449ED8529B10B1E00F9198F /* ProductListViewController.swift */,
 				540C881829B22EF600B8D6C2 /* SpecificProductViewController.swift */,
+				5452A61829B4A2CC00B7BD2C /* TeaBookViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				54289C9B2992ACD400872E9D /* Constants.swift in Sources */,
 				549547872993ED59008E458B /* ReservePgViewController.swift in Sources */,
 				5402693029AE6852006D4E05 /* Product.swift in Sources */,
+				5452A61929B4A2CC00B7BD2C /* TeaBookViewController.swift in Sources */,
 				549547832993E4CC008E458B /* ShopViewController.swift in Sources */,
 				5488E50429916E3600788259 /* LoginViewController.swift in Sources */,
 				5488E4EF2991686100788259 /* AppDelegate.swift in Sources */,
