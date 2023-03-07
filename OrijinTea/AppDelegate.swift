@@ -3,7 +3,7 @@
 //  OrijinTea
 //
 //  Created by Yongxiang Jin on 2/6/23.
-//
+//  ORIJIN TEA APPLICATION
 
 import UIKit
 import FirebaseAuth
