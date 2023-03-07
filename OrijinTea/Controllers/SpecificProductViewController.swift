@@ -23,6 +23,9 @@ class SpecificProductViewController: UIViewController {
     @IBOutlet weak var prodPlaceLabel: UITextField!
     @IBOutlet weak var prodTagLabel: UITextField!
     @IBOutlet weak var likeBtn: UIButton!
+    @IBOutlet weak var personalNoteTitle: UILabel!
+    @IBOutlet weak var noteTxtView: UITextView!
+    @IBOutlet weak var personalNotes: UITextView!
     
     
     // database references
@@ -46,6 +49,7 @@ class SpecificProductViewController: UIViewController {
         super.viewDidLoad()
         setUpProductPage(chosenProduct)
         setLikeButtonStatus(containsLikedProduct())
+        productViewMode()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -97,6 +101,16 @@ class SpecificProductViewController: UIViewController {
         }
     }
     
+    func productViewMode(){
+        if incomingSegue == Constants.Shop.toSpecificProduct{
+            personalNoteTitle.isHidden = true
+            noteTxtView.isHidden = true
+        }
+        else if incomingSegue == Constants.Me.toSpecificProductInMe{
+            personalNoteTitle.isHidden = false
+            noteTxtView.isHidden = false
+        }
+    }
 
     
     func setLikeButtonStatus(_ liked: Bool){
