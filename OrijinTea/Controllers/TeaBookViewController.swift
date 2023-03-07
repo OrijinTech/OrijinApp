@@ -17,6 +17,9 @@ class TeaBookViewController: UIViewController {
     
     var favProducts:[Product] = []
     
+    // Prepare for Segue
+    var chosenProduct: Product = Product()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +31,7 @@ class TeaBookViewController: UIViewController {
     
     
     func prepareProducts(){
+        print("LOADING PRODUCTS")
         favProducts = Global.favorites
         DispatchQueue.main.async {
             self.teaBookTableView.reloadData()
@@ -39,12 +43,18 @@ class TeaBookViewController: UIViewController {
         performSegue(withIdentifier: Constants.Me.teaBookToMe, sender: self)
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.Me.toSpecificProductInMe{
+            let destinationVC = segue.destination as? SpecificProductViewController
+            destinationVC?.chosenProduct = chosenProduct
+            destinationVC?.incomingSegue = Constants.Me.toSpecificProductInMe
+        }
+    }
+    
 }
 
 extension TeaBookViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(favProducts.count)
         return favProducts.count
     }
     
@@ -64,6 +74,11 @@ extension TeaBookViewController: UITableViewDelegate, UITableViewDataSource{
         imageBackground.setImg("Default Cell Img")
         cell.backgroundView = imageBackground
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        chosenProduct = favProducts[indexPath.row]
+        performSegue(withIdentifier: Constants.Me.toSpecificProductInMe, sender: self)
     }
     
     

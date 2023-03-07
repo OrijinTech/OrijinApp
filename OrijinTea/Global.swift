@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseCore
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
@@ -57,7 +58,45 @@ struct Global {
         }
         return "Error in TextLimiter"
     }
+
+    // Loading favorite products
+    static func getFavoriteProducts(_ completion: @escaping () -> Void){
+        print("Getting Favorite Products")
+        let userRef = Firestore.firestore().collection(Constants.FStoreCollection.users).document(Global.User.email)
+        userRef.getDocument { snapshot, error in
+            if let error = error {
+                print("Error retrieving user document: \(error)")
+            } else {
+                let data = snapshot?.data()
+                Global.User.favoriteProducs = data?[Constants.FStoreField.Users.favoriteProducts] as? [DocumentReference] ?? []
+                completion()
+                print("User's products: \(Global.User.favoriteProducs)")
+            }
+        }
+    }
     
+    static func convertFavProdctToObj(){
+        Global.favorites.removeAll()
+        for docRef in Global.User.favoriteProducs{
+            docRef.getDocument() { (document, error) in
+                print(docRef.path)
+                if let document = document, document.exists {
+                    let docData = document.data()
+                    do {
+                        let dat = try JSONSerialization.data(withJSONObject: docData!)
+                        let prodObj = try JSONDecoder().decode(Product.self, from: dat)
+                        Global.favorites.append(prodObj)
+                        Global.favoritesTags.append(prodObj.productTag!)
+                        print(Global.favorites)
+                    } catch let error {
+                        print("Error decoding object: \(error.localizedDescription)")
+                    }
+                } else {
+                    print("Document does not exist")
+                }
+            }
+        }
+    }
     
     
 }

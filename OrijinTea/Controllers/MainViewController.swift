@@ -71,8 +71,8 @@ class MainViewController: UIViewController, UIScrollViewDelegate{
         // Set Welcome Text
         self.welcomeTxt.text = "Welcome Back, \n" + Global.User.userName
         // Get User Data
-        getFavoriteProducts {
-            self.convertFavProdctToObj()
+        Global.getFavoriteProducts {
+            Global.convertFavProdctToObj()
         }
 
     }
@@ -123,46 +123,6 @@ class MainViewController: UIViewController, UIScrollViewDelegate{
     }
     
     
-    
-    // MARK: - LOADING USER FAVORITE PRODUCTS
-    
-    func getFavoriteProducts(_ completion: @escaping () -> Void){
-        let userRef = db.collection(Constants.FStoreCollection.users).document(Global.User.email)
-        print(userRef.path)
-        userRef.getDocument { snapshot, error in
-            if let error = error {
-                print("Error retrieving user document: \(error)")
-            } else {
-                let data = snapshot?.data()
-                Global.User.favoriteProducs = data?[Constants.FStoreField.Users.favoriteProducts] as? [DocumentReference] ?? []
-                completion()
-                print("User's posts: \(Global.User.favoriteProducs)")
-            }
-        }
-    }
-    
-    func convertFavProdctToObj(){
-        Global.favorites.removeAll()
-        for docRef in Global.User.favoriteProducs{
-            docRef.getDocument() { (document, error) in
-                print(docRef.path)
-                if let document = document, document.exists {
-                    let docData = document.data()
-                    do {
-                        let dat = try JSONSerialization.data(withJSONObject: docData!)
-                        let prodObj = try JSONDecoder().decode(Product.self, from: dat)
-                        Global.favorites.append(prodObj)
-                        Global.favoritesTags.append(prodObj.productTag!)
-                        print(Global.favorites)
-                    } catch let error {
-                        print("Error decoding object: \(error.localizedDescription)")
-                    }
-                } else {
-                    print("Document does not exist")
-                }
-            }
-        }
-    }
 
     
 }

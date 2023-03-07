@@ -33,6 +33,7 @@ class Constants{
         static let profileInfoToMe: String = "profileInfoToMe"
         static let toTeaBook: String = "toTeaBook"
         static let teaBookToMe: String = "teaBookToMe"
+        static let toSpecificProductInMe: String = "toSpecificProductInMe"
     }
     
     struct Shop{
@@ -42,6 +43,7 @@ class Constants{
         static let typeProductsToGeneralType: String = "typeProductsToGeneralType"
         static let toSpecificProduct: String = "toSpecificProduct"
         static let specificToProductList: String = "specificToProductList"
+        static let toMyTeaBook: String = "toMyTeaBook"
     }
     
 

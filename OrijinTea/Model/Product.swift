@@ -15,14 +15,17 @@ class Product: Codable{
     @objc var productionYear: String?
     @objc var description: String?
     @objc var productTag: String?
+    @objc var productClass: String?
     
-    init(productName: String? = nil, categoryPic: String? = "Tea Icon", categoryName: String? = nil, productionPlace: String? = nil, productionYear: String? = nil, description: String? = nil, productTag: String? = nil) {
+    init(productName: String? = nil, categoryPic: String? = "Tea Icon", categoryName: String? = nil, productionPlace: String? = nil, productionYear: String? = nil, description: String? = nil, productTag: String? = nil, productClass: String? = nil) {
         self.productName = productName
         self.categoryPic = categoryPic
         self.categoryName = categoryName
         self.productionPlace = productionPlace
         self.productionYear = productionYear
         self.description = description
+        self.productTag = productTag
+        self.productClass = productClass
     }
     
     

@@ -39,6 +39,7 @@ class SpecificProductViewController: UIViewController {
     
     // Variable from incomming segue
     var chosenProduct: Product = Product()
+    var incomingSegue: String = ""
     
     
     override func viewDidLoad() {
@@ -48,6 +49,7 @@ class SpecificProductViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        print("updating like list")
         updateUserLikeList()
     }
     
@@ -70,7 +72,7 @@ class SpecificProductViewController: UIViewController {
             Global.favoritesTags.append(chosenProduct.productTag!)
             // update database
             let userDocRef = db.collection(Constants.FStoreCollection.users).document(Global.User.email)
-            let productDocRef = db.collection(Constants.FStoreCollection.product).document(productType).collection(subCollectionName.lowercased()).document(chosenProduct.productTag!)
+            let productDocRef = db.collection(Constants.FStoreCollection.product).document(chosenProduct.productClass!).collection((chosenProduct.categoryName?.lowercased())!).document(chosenProduct.productTag!)
             Global.User.favoriteProducs.append(productDocRef)
             userDocRef.updateData([Constants.FStoreField.Users.favoriteProducts: Global.User.favoriteProducs]) { err in
                 if let err = err {
@@ -86,9 +88,12 @@ class SpecificProductViewController: UIViewController {
             Global.favoritesTags = Global.favoritesTags.filter{$0 != chosenProduct.productTag}
             // Update database
             let userDocRef = db.collection(Constants.FStoreCollection.users).document(Global.User.email)
-            let productDocRef = db.collection(Constants.FStoreCollection.product).document(productType).collection(subCollectionName).document(chosenProduct.productTag!)
+            let productDocRef = db.collection(Constants.FStoreCollection.product).document(chosenProduct.productClass!).collection((chosenProduct.categoryName?.lowercased())!).document(chosenProduct.productTag!)
             Global.User.favoriteProducs.removeAll{$0.documentID == productDocRef.documentID }
             userDocRef.updateData([Constants.FStoreField.Users.favoriteProducts: Global.User.favoriteProducs])
+        }
+        Global.getFavoriteProducts {
+            Global.convertFavProdctToObj()
         }
     }
     
@@ -116,7 +121,13 @@ class SpecificProductViewController: UIViewController {
     
     
     @IBAction func backBtn(_ sender: UIButton) {
-        performSegue(withIdentifier: Constants.Shop.specificToProductList, sender: self)
+        if incomingSegue == Constants.Me.toSpecificProductInMe{
+            performSegue(withIdentifier: Constants.Shop.toMyTeaBook, sender: self)
+        }
+        else if incomingSegue == Constants.Shop.toSpecificProduct{
+            performSegue(withIdentifier: Constants.Shop.specificToProductList, sender: self)
+        }
+        
     }
     
     @IBAction func likeTriggered(_ sender: UIButton) {

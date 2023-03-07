@@ -1135,6 +1135,7 @@ this reservation?</string>
                         <outlet property="teaBookTableView" destination="6ca-oz-Dcg" id="hwF-MO-Apc"/>
                         <outlet property="titleLabel" destination="wEB-Zd-Qdn" id="NEd-08-fed"/>
                         <segue destination="pbB-nc-kna" kind="presentation" identifier="teaBookToMe" animates="NO" modalPresentationStyle="fullScreen" id="NX3-TY-l1B"/>
+                        <segue destination="VRI-Or-IDs" kind="presentation" identifier="toSpecificProductInMe" animates="NO" modalPresentationStyle="fullScreen" id="7GR-mS-im8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9S8-h7-hPf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2580,6 +2581,7 @@ this reservation?</string>
                         <outlet property="screenTitleTxt" destination="Sox-gp-TL8" id="c3F-nH-bpm"/>
                         <outlet property="topImg" destination="X3l-pn-CP8" id="q7g-iI-6hz"/>
                         <segue destination="Ih2-28-W0C" kind="presentation" identifier="specificToProductList" animates="NO" modalPresentationStyle="fullScreen" id="VE2-lg-UK7"/>
+                        <segue destination="1Ll-3l-hjg" kind="presentation" identifier="toMyTeaBook" animates="NO" modalPresentationStyle="fullScreen" id="ZIq-KY-k4c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQe-sS-RgZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2809,8 +2811,10 @@ this reservation?</string>
     <inferredMetricsTieBreakers>
         <segue reference="OeB-q9-DXH"/>
         <segue reference="x7A-cV-mN1"/>
-        <segue reference="8bt-8N-bs4"/>
+        <segue reference="dMQ-Xd-1Bh"/>
+        <segue reference="VE2-lg-UK7"/>
         <segue reference="lpo-BE-qJD"/>
+        <segue reference="ZIq-KY-k4c"/>
         <segue reference="4TM-UG-qtk"/>
         <segue reference="aeF-A3-q2X"/>
         <segue reference="zVZ-ol-uZK"/>
