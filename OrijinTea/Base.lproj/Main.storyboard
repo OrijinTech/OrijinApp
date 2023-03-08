@@ -328,7 +328,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZXd-mN-fFE">
-                                <rect key="frame" x="-25" y="59" width="397" height="44"/>
+                                <rect key="frame" x="-26" y="59" width="397" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Community" id="bbs-fl-kYJ"/>
@@ -2802,7 +2802,7 @@ this reservation?</string>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Tqq-dv-nnZ">
-                                <rect key="frame" x="-3" y="214" width="394" height="635"/>
+                                <rect key="frame" x="-4" y="214" width="394" height="635"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -2839,7 +2839,7 @@ this reservation?</string>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="OeB-q9-DXH"/>
-        <segue reference="x7A-cV-mN1"/>
+        <segue reference="gTs-Ms-bhZ"/>
         <segue reference="7GR-mS-im8"/>
         <segue reference="VE2-lg-UK7"/>
         <segue reference="lpo-BE-qJD"/>
@@ -2849,7 +2849,7 @@ this reservation?</string>
         <segue reference="zVZ-ol-uZK"/>
         <segue reference="4fw-6U-pV6"/>
         <segue reference="VKI-K2-vpu"/>
-        <segue reference="NX3-TY-l1B"/>
+        <segue reference="9uv-2X-in3"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Tea Icon" width="252" height="214"/>
