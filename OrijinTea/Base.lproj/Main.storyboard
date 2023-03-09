@@ -154,22 +154,22 @@
         <!--Manage Teashop-->
         <scene sceneID="f2Z-kX-lLc">
             <objects>
-                <viewController title="Manage Teashop" id="1S9-p0-b7x" sceneMemberID="viewController">
+                <viewController title="Manage Teashop" id="1S9-p0-b7x" customClass="AdmMainViewController" customModule="OrijinTea" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IDq-9B-Rva">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V5b-ax-ROn">
-                                <rect key="frame" x="0.0" y="59" width="393" height="149"/>
+                                <rect key="frame" x="0.0" y="59.000000000000007" width="393" height="84.666666666666686"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Welcome back, Guest User!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RwC-kk-cGw">
-                                        <rect key="frame" x="8" y="8" width="240" height="89"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Welcome back, Admin!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RwC-kk-cGw">
+                                        <rect key="frame" x="8" y="8.0000000000000018" width="240" height="24.666666666666671"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="eYM-tt-pK1" userLabel="Profile Pic">
-                                        <rect key="frame" x="283" y="33.666666666666657" width="82" height="82"/>
+                                        <rect key="frame" x="283" y="33.666666666666671" width="82" height="17.666666666666664"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                 </subviews>
@@ -188,7 +188,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bfX-3i-XRS">
-                                <rect key="frame" x="0.0" y="216" width="393" height="553"/>
+                                <rect key="frame" x="0.0" y="151.66666666666663" width="393" height="553"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="cDb-fG-ZxM">
                                         <rect key="frame" x="8" y="8" width="377" height="706"/>
@@ -217,6 +217,9 @@
                                                             </backgroundConfiguration>
                                                             <color key="baseForegroundColor" red="0.17286952459999999" green="0.16373024250000001" blue="0.053461324419999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="manageResBtn:" destination="1S9-p0-b7x" eventType="touchUpInside" id="vox-Zg-77g"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -259,6 +262,9 @@
                                                             </backgroundConfiguration>
                                                             <color key="baseForegroundColor" red="0.17286952459999999" green="0.16373024250000001" blue="0.053461324419999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="tbManagerBtn:" destination="1S9-p0-b7x" eventType="touchUpInside" id="l2U-pv-goY"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -310,6 +316,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Teashop" image="cup.and.saucer" catalog="system" id="gjJ-AF-XKk"/>
                     <connections>
+                        <outlet property="profileImg" destination="eYM-tt-pK1" id="Q6x-ue-g9l"/>
                         <segue destination="sCO-at-1bE" kind="presentation" identifier="admToAllReservations" animates="NO" modalPresentationStyle="fullScreen" id="X2U-9P-vUP"/>
                     </connections>
                 </viewController>
@@ -320,7 +327,7 @@
         <!--Manage Reservation-->
         <scene sceneID="Cl1-oj-wmn">
             <objects>
-                <viewController title="Manage Reservation" id="sCO-at-1bE" sceneMemberID="viewController">
+                <viewController title="Manage Reservation" id="sCO-at-1bE" customClass="AdmReservationViewController" customModule="OrijinTea" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9GQ-ib-Qs0">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -337,6 +344,9 @@
                                                 <color key="backgroundColor" red="0.23552735280000001" green="0.22307547080000001" blue="0.072838773930000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="backBtn:" destination="sCO-at-1bE" eventType="touchUpInside" id="Emg-oZ-F6a"/>
+                                        </connections>
                                     </button>
                                     <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="wm1-eN-8Be">
                                         <rect key="frame" x="0.0" y="94" width="393" height="56"/>
@@ -357,6 +367,9 @@
                                                 <color key="backgroundColor" red="0.58431375029999999" green="0.56862747670000002" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="pickDateBtn:" destination="sCO-at-1bE" eventType="touchUpInside" id="W3Z-bE-uZX"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Date Selected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2lo-7I-sGx">
                                         <rect key="frame" x="129" y="59" width="134" height="21"/>
@@ -413,12 +426,12 @@
                                             <navigationItem id="Ad8-o1-QIr">
                                                 <barButtonItem key="leftBarButtonItem" title="Cancel" id="BIr-Dk-qgg">
                                                     <connections>
-                                                        <action selector="cancelPressed:" destination="Xpg-Hn-RkW" id="EAb-gf-4xi"/>
+                                                        <action selector="cancelBtn:" destination="sCO-at-1bE" id="Gmq-NZ-GBf"/>
                                                     </connections>
                                                 </barButtonItem>
                                                 <barButtonItem key="rightBarButtonItem" title="Done" id="Az2-e9-eP8">
                                                     <connections>
-                                                        <action selector="donePressed:" destination="Xpg-Hn-RkW" id="Pkh-sh-WyA"/>
+                                                        <action selector="doneBtn:" destination="sCO-at-1bE" id="0B6-Jp-9qz"/>
                                                     </connections>
                                                 </barButtonItem>
                                             </navigationItem>
@@ -438,8 +451,13 @@
                                     <constraint firstItem="lvy-O3-WBe" firstAttribute="top" secondItem="jgm-yo-0nq" secondAttribute="top" constant="52" id="Hlc-UA-3Te"/>
                                     <constraint firstAttribute="bottom" secondItem="y97-YH-Isx" secondAttribute="bottom" constant="334" id="NOq-Sw-BUJ"/>
                                     <constraint firstItem="y97-YH-Isx" firstAttribute="top" secondItem="jgm-yo-0nq" secondAttribute="top" id="bLp-U7-RSX"/>
+                                    <constraint firstAttribute="height" constant="386" id="sX2-HA-H78"/>
                                     <constraint firstItem="lvy-O3-WBe" firstAttribute="leading" secondItem="jgm-yo-0nq" secondAttribute="leading" id="vB4-uJ-PQK"/>
                                 </constraints>
+                            </view>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mN0-rd-xHO" userLabel="Click View">
+                                <rect key="frame" x="0.0" y="59" width="393" height="399"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qcK-oe-tbU"/>
@@ -447,6 +465,9 @@
                         <constraints>
                             <constraint firstItem="jgm-yo-0nq" firstAttribute="leading" secondItem="qcK-oe-tbU" secondAttribute="leading" id="0dN-Eg-IBc"/>
                             <constraint firstItem="7NJ-9f-zsv" firstAttribute="top" secondItem="qcK-oe-tbU" secondAttribute="top" constant="150" id="2dc-Ug-Fe5"/>
+                            <constraint firstItem="mN0-rd-xHO" firstAttribute="top" secondItem="qcK-oe-tbU" secondAttribute="top" id="6fc-5w-H3M"/>
+                            <constraint firstItem="qcK-oe-tbU" firstAttribute="bottom" secondItem="mN0-rd-xHO" secondAttribute="bottom" constant="360" id="8W3-PJ-Wr4"/>
+                            <constraint firstItem="mN0-rd-xHO" firstAttribute="leading" secondItem="qcK-oe-tbU" secondAttribute="leading" id="DMs-Pq-fwI"/>
                             <constraint firstItem="7NJ-9f-zsv" firstAttribute="leading" secondItem="qcK-oe-tbU" secondAttribute="leading" id="FLY-zb-uXk"/>
                             <constraint firstItem="G8Q-7t-XtY" firstAttribute="trailing" secondItem="qcK-oe-tbU" secondAttribute="trailing" id="IzZ-NV-Hce"/>
                             <constraint firstItem="qcK-oe-tbU" firstAttribute="bottom" secondItem="G8Q-7t-XtY" secondAttribute="bottom" constant="609" id="OXV-FY-QXA"/>
@@ -454,12 +475,19 @@
                             <constraint firstAttribute="bottom" secondItem="jgm-yo-0nq" secondAttribute="bottom" id="XNS-jG-0bk"/>
                             <constraint firstItem="G8Q-7t-XtY" firstAttribute="leading" secondItem="qcK-oe-tbU" secondAttribute="leading" id="lcm-Hp-eni"/>
                             <constraint firstItem="G8Q-7t-XtY" firstAttribute="top" secondItem="qcK-oe-tbU" secondAttribute="top" id="nV8-ak-45I"/>
-                            <constraint firstItem="jgm-yo-0nq" firstAttribute="top" secondItem="qcK-oe-tbU" secondAttribute="top" constant="407" id="oX4-5T-VEH"/>
                             <constraint firstItem="jgm-yo-0nq" firstAttribute="trailing" secondItem="qcK-oe-tbU" secondAttribute="trailing" id="ovB-SM-AoH"/>
                             <constraint firstItem="7NJ-9f-zsv" firstAttribute="trailing" secondItem="qcK-oe-tbU" secondAttribute="trailing" id="tQd-xu-dCC"/>
+                            <constraint firstItem="mN0-rd-xHO" firstAttribute="trailing" secondItem="qcK-oe-tbU" secondAttribute="trailing" id="zxp-5y-qHw"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="clickView" destination="mN0-rd-xHO" id="rn6-Qk-Gfx"/>
+                        <outlet property="dateLabel" destination="2lo-7I-sGx" id="5Sv-9h-015"/>
+                        <outlet property="datePickerOutlet" destination="lvy-O3-WBe" id="KYA-lb-cGx"/>
+                        <outlet property="pickDateBtnOutlet" destination="yEt-3Q-CoY" id="O19-OB-hJW"/>
+                        <outlet property="pickerViewHeight" destination="sX2-HA-H78" id="BBc-sc-jNk"/>
+                        <outlet property="reservationTable" destination="7NJ-9f-zsv" id="B9r-7g-LOw"/>
+                        <outlet property="searchBarOutlet" destination="wm1-eN-8Be" id="a5G-aH-iO6"/>
                         <segue destination="1S9-p0-b7x" kind="presentation" identifier="allResToAdmMain" animates="NO" modalPresentationStyle="fullScreen" id="aGy-VQ-FgW"/>
                     </connections>
                 </viewController>
@@ -630,7 +658,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZXd-mN-fFE">
-                                <rect key="frame" x="-25" y="59" width="397" height="44"/>
+                                <rect key="frame" x="-26" y="59" width="397" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Community" id="bbs-fl-kYJ"/>
@@ -3104,7 +3132,7 @@ this reservation?</string>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Tqq-dv-nnZ">
-                                <rect key="frame" x="-5" y="213" width="395" height="634"/>
+                                <rect key="frame" x="-6" y="213" width="395" height="634"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -3150,9 +3178,9 @@ this reservation?</string>
         <segue reference="aeF-A3-q2X"/>
         <segue reference="UNL-yL-buP"/>
         <segue reference="4fw-6U-pV6"/>
-        <segue reference="yeb-5F-5Ei"/>
+        <segue reference="aGy-VQ-FgW"/>
         <segue reference="VKI-K2-vpu"/>
-        <segue reference="9uv-2X-in3"/>
+        <segue reference="02e-8h-Les"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Tea Icon" width="252" height="214"/>
