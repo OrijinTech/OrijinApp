@@ -21,6 +21,7 @@ struct Global {
         static var teaPoints: Int = 0
         static var userName: String = ""
         static var favoriteProducs: [DocumentReference] = []
+        static var userType: String = ""
     }
     
     static var products: [String] = []

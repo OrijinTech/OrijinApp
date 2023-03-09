@@ -18,8 +18,9 @@ struct Users: Identifiable, Codable{
     var teaPoints: Int
     var userName: String
     var favoriteProducts: [DocumentReference]?
+    var userType: String
     
-    init(id: String, firstName: String, lastName: String, email: String, teaPoints: Int = 0, userName: String = "", favoriteProducts: [DocumentReference] = []) {
+    init(id: String, firstName: String, lastName: String, email: String, teaPoints: Int = 0, userName: String = "", favoriteProducts: [DocumentReference] = [], userType: String = "") {
         self.id = id
         self.firstName = firstName
         self.lastName = lastName
@@ -27,6 +28,7 @@ struct Users: Identifiable, Codable{
         self.teaPoints = teaPoints
         self.userName = userName
         self.favoriteProducts = favoriteProducts
+        self.userType = userType
     }
     
     

@@ -46,6 +46,12 @@ class Constants{
         static let toMyTeaBook: String = "toMyTeaBook"
     }
     
+    struct Admin{
+        static let loginToAdmAcc: String = "loginToAdmAcc"
+        static let admToAllReservations: String = "admToAllReservations"
+        static let allResToAdmMain: String = "allResToAdmMain"
+    }
+    
 
 // MARK: - View Identifiers
     static let prodTypeCell: String = "prodTypeCell"
@@ -105,6 +111,7 @@ class Constants{
             static let userName: String = "userName"
             static let favoriteProducts: String = "favoriteProducts"
             static let note: String = "note"
+            static let userType: String = "userType"
         }
 
         

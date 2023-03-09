@@ -49,14 +49,24 @@ class LoginViewController: UIViewController {
                         let lastN = docSnap?.data()![Constants.FStoreField.Users.lastName] as! String
                         let email = docSnap?.data()![Constants.FStoreField.Users.email] as! String
                         let teaPts = docSnap?.data()![Constants.FStoreField.Users.teaPoints] as! Int
+                        let userType = docSnap?.data()![Constants.FStoreField.Users.userType] as! String
                         Global.User.userName = userN
                         Global.User.firstName = firstN
                         Global.User.lastName = lastN
                         Global.User.email = email
                         Global.User.id = uid
                         Global.User.teaPoints = teaPts
+                        Global.User.userType = userType
                         print("success pulling the user")
-                        self.performSegue(withIdentifier: "loginToMain", sender: self)
+                        if userType == "admin"{
+                            self.performSegue(withIdentifier: Constants.Admin.loginToAdmAcc, sender: self)
+                        }
+                        else if userType == "customer"{
+                            self.performSegue(withIdentifier: Constants.loginToMain, sender: self)
+                        }
+                        else{
+                            print("ERROR: Unable to fetch user type.")
+                        }
                     }
                     else{
                         print("Error loading user")

@@ -70,7 +70,7 @@ class SpecificProductViewController: UIViewController {
     }
     
     
-    // Later if we want directly go from this page to MY TEA BOOK, then we need to also update Global.favorites[Product] here.
+    // WARNING: Currently not deleting user notes when the product is not liked.
     func updateUserLikeList(){
         if currentLiked && !containsLikedProduct(){ // button is liked, but list does not contain this product
             Global.favorites.append(chosenProduct)
