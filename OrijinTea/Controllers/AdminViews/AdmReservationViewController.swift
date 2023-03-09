@@ -22,48 +22,38 @@ class AdmReservationViewController: UIViewController {
     @IBOutlet weak var pickerViewHeight: NSLayoutConstraint!
     @IBOutlet weak var reservationTable: UITableView!
     @IBOutlet weak var datePickerOutlet: UIDatePicker!
-    @IBOutlet weak var clickView: UIView!
-    
     
     // Fetched Reservations
     var reservations:[Reservation] = []
     var selectedDate: String = ""
+    var selectedReservation: Reservation?
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(clickViewTapped))
         pickerViewHeight.constant = 0
-        clickView.isHidden = true
         reservationTable.delegate = self
         reservationTable.dataSource = self
         datePickerOutlet.addTarget(self, action: #selector(onDateValueChanged(_:)), for: .valueChanged)
-        reservationTable.addGestureRecognizer(tapGesture)
     }
     
     func hideDatePicker(_ hide: Bool){
         if hide{
             UIView.animate(withDuration: 0.15) {
-                self.clickView.isHidden = true
                 self.pickerViewHeight.constant = 0
                 self.view.layoutIfNeeded()
             }
         }
         else{
             UIView.animate(withDuration: 0.15) {
-                self.clickView.isHidden = false
                 self.pickerViewHeight.constant = 386
                 self.view.layoutIfNeeded()
             }
         }
-       
     }
     
-    @objc func clickViewTapped(){
-        hideDatePicker(true)
-    }
     
-    func getReservations(for date: String){
+    func getReservations(for date: String, loadAll all: Bool){
         print("Start loading reservations")
         reservations.removeAll()
         let collectionRef = db.collection(Constants.FStoreCollection.reservations)
@@ -73,9 +63,8 @@ class AdmReservationViewController: UIViewController {
             }
             else{
                 if let snapDocs = querySnapshot?.documents{
-                    for doc in snapDocs{
-                        let curDate = doc.data()[Constants.FStoreField.Reservation.date] as! String
-                        if date == curDate { //if input date = current selected reservation date
+                    if all{
+                        for doc in snapDocs{
                             let resUser = doc.data()[Constants.FStoreField.Reservation.user] as! String
                             let date = doc.data()[Constants.FStoreField.Reservation.date] as! String
                             let time = doc.data()[Constants.FStoreField.Reservation.time] as! String
@@ -86,6 +75,22 @@ class AdmReservationViewController: UIViewController {
                             self.reservations.append(createRes)
                         }
                     }
+                    else{
+                        for doc in snapDocs{
+                            let curDate = doc.data()[Constants.FStoreField.Reservation.date] as! String
+                            if date == curDate { //if input date = current selected reservation date
+                                let resUser = doc.data()[Constants.FStoreField.Reservation.user] as! String
+                                let date = doc.data()[Constants.FStoreField.Reservation.date] as! String
+                                let time = doc.data()[Constants.FStoreField.Reservation.time] as! String
+                                let duration = doc.data()[Constants.FStoreField.Reservation.duration] as! String
+                                let tableNum = doc.data()[Constants.FStoreField.Reservation.tableNumber] as! String
+                                let reservationID = doc.data()[Constants.FStoreField.Reservation.reservationID] as! Int
+                                let createRes = Reservation(user: resUser, date: date, time: time, duration: duration, tableNumber: tableNum, reservationID: reservationID)
+                                self.reservations.append(createRes)
+                            }
+                        }
+                    }
+
                     DispatchQueue.main.async {
                         self.reservationTable.reloadData()
                         print("RESERVATIONS: \(self.reservations)")
@@ -108,7 +113,7 @@ class AdmReservationViewController: UIViewController {
     }
     
     @IBAction func doneBtn(_ sender: UIBarButtonItem) {
-        getReservations(for: selectedDate)
+        getReservations(for: selectedDate, loadAll: false)
         hideDatePicker(true)
     }
     
@@ -126,6 +131,22 @@ class AdmReservationViewController: UIViewController {
         hideDatePicker(false)
     }
     
+    @IBAction func loadAllBtn(_ sender: UIButton) {
+        getReservations(for: selectedDate, loadAll: true)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.Admin.admResDetail{
+            let destinationVC = segue.destination as? ViewReservationViewController
+            destinationVC?.date = self.selectedReservation!.date
+            destinationVC?.time = self.selectedReservation!.time
+            destinationVC?.duration = self.selectedReservation!.duration
+            destinationVC?.table = self.selectedReservation!.tableNumber
+            destinationVC?.bookingId = String(self.selectedReservation!.reservationID)
+        }
+    }
+    
 }
 
 
@@ -140,5 +161,9 @@ extension AdmReservationViewController: UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedReservation = reservations[indexPath.row]
+        performSegue(withIdentifier: Constants.Admin.admResDetail, sender: self)
+    }
     
 }

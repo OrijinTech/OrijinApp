@@ -50,6 +50,7 @@ class Constants{
         static let loginToAdmAcc: String = "loginToAdmAcc"
         static let admToAllReservations: String = "admToAllReservations"
         static let allResToAdmMain: String = "allResToAdmMain"
+        static let admResDetail: String = "admResDetail"
     }
     
 
