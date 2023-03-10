@@ -51,11 +51,15 @@ class Constants{
         static let admToAllReservations: String = "admToAllReservations"
         static let allResToAdmMain: String = "allResToAdmMain"
         static let admResDetail: String = "admResDetail"
+        static let admMainToTables: String = "admMainToTables"
+        static let admTablesToMain: String = "admTablesToMain"
+        
     }
     
 
 // MARK: - View Identifiers
     static let prodTypeCell: String = "prodTypeCell"
+    static let admTableCell: String = "admTableCell"
     
     
     

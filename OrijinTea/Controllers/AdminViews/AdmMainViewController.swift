@@ -25,6 +25,7 @@ class AdmMainViewController: UIViewController {
     
     
     @IBAction func tbManagerBtn(_ sender: UIButton) {
+        performSegue(withIdentifier: Constants.Admin.admMainToTables, sender: self)
     }
     
     
