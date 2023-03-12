@@ -11,10 +11,25 @@ class AdmMainViewController: UIViewController {
     
     //outlets
     @IBOutlet weak var profileImg: UIImageView!
+    @IBOutlet weak var manageResView: UIView!
+    @IBOutlet weak var resImg: UIImageView!
+    @IBOutlet weak var manageTableView: UIView!
+    @IBOutlet weak var tableImg: UIImageView!
+    
+    
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        manageResView.layer.cornerRadius = 12
+        manageResView.layer.borderWidth = 1
+        manageResView.layer.borderColor = UIColor.lightGray.cgColor
+        resImg.layer.cornerRadius = 12
+        manageTableView.layer.cornerRadius = 12
+        manageTableView.layer.borderWidth = 1
+        manageTableView.layer.borderColor = UIColor.lightGray.cgColor
+        tableImg.layer.cornerRadius = 12
     }
     
     

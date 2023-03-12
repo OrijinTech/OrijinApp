@@ -14,7 +14,12 @@ class AdmTableViewController: UIViewController {
     
     let db = Firestore.firestore()
     var tableList = [Tables]()
+    
+    // outlets
     @IBOutlet weak var tableCollection: UICollectionView!
+    
+    // Outgoing segue var
+    var chosenTable: Tables?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +63,13 @@ class AdmTableViewController: UIViewController {
         performSegue(withIdentifier: Constants.Admin.admTablesToMain, sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.Admin.admToSpecificTable{
+            let destinationVC = segue.destination as? AdmSpecificTableViewController
+            destinationVC?.chosenTable = self.chosenTable
+        }
+    }
+    
 
 }
 
@@ -80,6 +92,11 @@ extension AdmTableViewController: UICollectionViewDelegate, UICollectionViewData
         cell.layer.shadowOpacity = 0.5
         cell.layer.masksToBounds = false
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        chosenTable = tableList[indexPath.row]
+        performSegue(withIdentifier: Constants.Admin.admToSpecificTable, sender: self)
     }
     
     

@@ -53,6 +53,8 @@ class Constants{
         static let admResDetail: String = "admResDetail"
         static let admMainToTables: String = "admMainToTables"
         static let admTablesToMain: String = "admTablesToMain"
+        static let admToSpecificTable: String = "admToSpecificTable"
+        static let admBackToTables: String = "admBackToTables"
         
     }
     
@@ -60,6 +62,8 @@ class Constants{
 // MARK: - View Identifiers
     static let prodTypeCell: String = "prodTypeCell"
     static let admTableCell: String = "admTableCell"
+    static let tableCell: String = "tableCell"
+    static let searchedCell: String = "searchedCell"
     
     
     
@@ -76,6 +80,8 @@ class Constants{
         static let users: String = "users"
         static let product: String = "product"
         static let notes: String = "notes"
+        static let menu: String = "menu"
+        static let curItems: String = "curItems"
     }
     
     // Document
@@ -91,6 +97,7 @@ class Constants{
             static let tableNames: String = "name"
             static let tableEmpty: String = "isEmpty"
             static let tableID: String = "tableID"
+            static let curItems: String = "curItems"
         }
 
         // reservations
@@ -118,8 +125,13 @@ class Constants{
             static let note: String = "note"
             static let userType: String = "userType"
         }
-
         
+        struct Menu{
+            static let name: String = "name"
+            static let price: String = "price"
+            static let amount: String = "amount(g)"
+            static let tag: String = "tag"
+        }
         
 
     }
