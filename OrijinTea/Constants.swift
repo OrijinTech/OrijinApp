@@ -82,11 +82,13 @@ class Constants{
         static let notes: String = "notes"
         static let menu: String = "menu"
         static let curItems: String = "curItems"
+        static let orderHistory: String = "orderHistory"
     }
     
     // Document
     struct FStoreDocument{
         static let tableBooking = "tableBooking"
+        static let statics = "statics"
     }
     
     
@@ -131,6 +133,10 @@ class Constants{
             static let price: String = "price"
             static let amount: String = "amount(g)"
             static let tag: String = "tag"
+        }
+        
+        struct Statics{
+            static let orderID: String = "orderID"
         }
         
 

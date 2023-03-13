@@ -23,6 +23,8 @@ class AdmSpecificTableViewController: UIViewController {
     @IBOutlet weak var searchTableView: UITableView!
     @IBOutlet weak var searchViewHeight: NSLayoutConstraint!
     @IBOutlet weak var searchView: UIView!
+    @IBOutlet weak var popUpView: UIView!
+    
     
     
     // Distance constants
@@ -54,9 +56,11 @@ class AdmSpecificTableViewController: UIViewController {
         searchTableView.dataSource = self
         getAllMenuItems()
         loadTableData()
+        popUpView.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        print("View will dissappear")
         saveTableDataToDB()
     }
     
@@ -176,6 +180,89 @@ class AdmSpecificTableViewController: UIViewController {
     }
     
     
+    func addToPayHistory(){
+        var orderID = 0
+        getOrderID { ordID in
+            orderID = ordID!
+            let order = Order(items: self.chosenProductList, payTime: self.getCurTime(), orderID: orderID)
+            let docRef = self.db.collection(Constants.FStoreCollection.adminStats).document(Constants.FStoreDocument.statics).collection(Constants.FStoreCollection.orderHistory).document(String(order.orderID))
+            do {
+                try docRef.setData(from: order)
+                self.chosenProductList.removeAll()
+                self.selectedProducts.removeAll()
+                DispatchQueue.main.async {
+                    self.tablesTbView.reloadData()
+                }
+            } catch let error {
+                print("Error writing Order to Firestore: \(error)")
+            }
+        }
+        updateOrderID()
+    }
+    
+    
+    func getCurTime() -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        return dateFormatter.string(from: Date())
+    }
+    
+    
+    // Retreive current booking ID for use
+    func getOrderID(completion: @escaping (Int?) -> Void){
+        var docuID = 0
+        let docRef = db.collection(Constants.FStoreCollection.adminStats).document(Constants.FStoreDocument.statics)
+        docRef.getDocument { qsnap, error in
+            if let e = error{
+                print("Error: Retreiving booking ID: \(e)")
+            }
+            else{
+                if let doc = qsnap, doc.exists{
+                    docuID = (doc.data()?[Constants.FStoreField.Statics.orderID] as? Int)!
+                    completion(docuID) // throws the docuID to the completion statements
+                }
+                else{
+                    completion(nil)
+                    print("doc does not exist while getOrderID")
+                }
+            }
+        }
+    }
+    
+    
+    // Update booking ID (after user books a table, this is a global value shared among users)
+    func updateOrderID(){
+        getOrderID { int in
+            let finalID = int! + 1
+            let docRef = self.db.collection(Constants.FStoreCollection.adminStats).document(Constants.FStoreDocument.statics)
+            docRef.updateData([Constants.FStoreField.Statics.orderID : finalID]){ error in
+                if let error = error {
+                    print("Error updating document: \(error.localizedDescription)")
+                } else {
+                    print("Document updated successfully")
+                }
+            }
+        }
+    }
+    
+    
+    func markOccupied(){
+        if (chosenTable!.isEmpty){
+            chosenTable?.isEmpty = false
+            updateTableOccupancy(false)
+            tableStatusTxt.text = "Full"
+        }
+        else{
+            chosenTable?.isEmpty = true
+            updateTableOccupancy(true)
+            tableStatusTxt.text = "Empty"
+        }
+    }
+    
+    
+    
+    
+    // MARK: - Buttons
     @IBAction func backBtn(_ sender: UIButton) {
         performSegue(withIdentifier: Constants.Admin.admBackToTables, sender: self)
     }
@@ -193,6 +280,7 @@ class AdmSpecificTableViewController: UIViewController {
             chosenProductList.removeAll(where: {$0.tag == prod.tag})
         }
         selectedProducts.removeAll()
+        getAllMenuItems()
         DispatchQueue.main.async {
             self.tablesTbView.reloadData()
         }
@@ -203,26 +291,25 @@ class AdmSpecificTableViewController: UIViewController {
     }
     
     @IBAction func paidBtn(_ sender: UIButton) {
+        if !chosenProductList.isEmpty{
+            addToPayHistory()
+            markOccupied()
+            popUpView.isHidden = false
+        }
         
     }
     
     @IBAction func markOccBtn(_ sender: UIButton) {
-        if (chosenTable!.isEmpty){
-            chosenTable?.isEmpty = false
-            updateTableOccupancy(false)
-            tableStatusTxt.text = "Full"
-        }
-        else{
-            chosenTable?.isEmpty = true
-            updateTableOccupancy(true)
-            tableStatusTxt.text = "Empty"
-        }
+        markOccupied()
     }
     
     @IBAction func hideBtn(_ sender: UIButton) {
         hideSearchView(true)
     }
     
+    @IBAction func popupBackBtn(_ sender: UIButton) {
+        popUpView.isHidden = true
+    }
     
 }
 
@@ -276,11 +363,19 @@ extension AdmSpecificTableViewController: UITableViewDelegate, UITableViewDataSo
         case 0: // For currently selected products for customers
             // If item already in selected products list
             if(selectedProducts.contains(where: { $0.tag == chosenProductList[indexPath.row].tag})){
+                let detailLabel = UILabel()
+                detailLabel.text = String(chosenProductList[indexPath.row].itemCount)
+                detailLabel.sizeToFit()
+                cell?.accessoryView = detailLabel
+                cell?.textLabel?.text = chosenProductList[indexPath.row].name
                 cell?.accessoryType = .none
                 selectedProducts.removeAll(where: {$0.tag == chosenProductList[indexPath.row].tag})
             }
             else{ // if item not in the selected product
-                cell?.accessoryType = .checkmark
+                cell?.accessoryView = nil
+                let checkmarkView = UIImageView(image: UIImage(systemName: "checkmark"))
+                cell?.accessoryView = checkmarkView
+                cell?.textLabel?.text = "Price: \(chosenProductList[indexPath.row].price * chosenProductList[indexPath.row].itemCount)   |   Amount(per serving): \(chosenProductList[indexPath.row].amount)g"
                 selectedProducts.append(chosenProductList[indexPath.row])
             }
         case 1: // For Filtered products
