@@ -99,7 +99,7 @@ extension ProductListViewController: UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = productCollectionView.dequeueReusableCell(withReuseIdentifier: Constants.prodTypeCell, for: indexPath) as! ProductTypeViewCell
-        cell.prodImg.image = UIImage(named: prodList[indexPath.row].categoryPic ?? "Tea Icon")
+        cell.prodImg.image = UIImage(named: prodList[indexPath.row].productPic ?? "Tea Icon")
         cell.prodCategory.text = prodList[indexPath.row].productName
         
         // Cell Decoration

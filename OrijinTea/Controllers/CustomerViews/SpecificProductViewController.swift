@@ -60,7 +60,7 @@ class SpecificProductViewController: UIViewController {
     
     func setUpProductPage(_ product: Product){
         screenTitleTxt.text = product.productName
-        topImg.image = UIImage(named: product.categoryPic ?? "Tea Icon")
+        topImg.image = UIImage(named: product.productPic ?? "Tea Icon")
         productTitleTxt.text = product.productName
         aboutTxt.text = product.description
         prodYearLabel.text = product.productionYear

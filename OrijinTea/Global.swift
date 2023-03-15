@@ -24,11 +24,19 @@ struct Global {
         static var userType: String = ""
     }
     
-    static var products: [String] = []
+    // Enum for Admin Product Editing mode
+    enum Mode: String {
+        case edit = "e"
+        case create = "c"
+    }
     
+    // For USERS
+    static var products: [String] = []
     static var favorites: [Product] = [] // This is for user's unique list of favorite productss
     static var favoritesTags: [String] = [] // This is the user's unique list of favorite produts' tag
     
+    // For ADMIN
+    static var allProducts: [Product] = []
     
     
     // MARK: - GLOBAL FUNCTIONS

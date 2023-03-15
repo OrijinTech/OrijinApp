@@ -55,7 +55,10 @@ class Constants{
         static let admTablesToMain: String = "admTablesToMain"
         static let admToSpecificTable: String = "admToSpecificTable"
         static let admBackToTables: String = "admBackToTables"
-        
+        static let admToInventory: String = "admToInventory"
+        static let inventoryToAdmMain: String = "inventoryToAdmMain"
+        static let inventoryToCreatePd: String = "inventoryToCreatePd"
+        static let backToInventory: String = "backToInventory"
     }
     
 
@@ -64,8 +67,8 @@ class Constants{
     static let admTableCell: String = "admTableCell"
     static let tableCell: String = "tableCell"
     static let searchedCell: String = "searchedCell"
-    
-    
+    static let prodSearchCell: String = "prodSearchCell"
+    static let selectionSearchCell: String = "selectionSearchCell"
     
     
     
@@ -89,6 +92,7 @@ class Constants{
     struct FStoreDocument{
         static let tableBooking = "tableBooking"
         static let statics = "statics"
+        static let labels = "labels"
     }
     
     
@@ -139,6 +143,9 @@ class Constants{
             static let orderID: String = "orderID"
         }
         
+        struct Products{
+            static let categories: String = "categories"
+        }
 
     }
 
