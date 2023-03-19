@@ -23,6 +23,8 @@ class InfoViewController: UIViewController{
     @IBOutlet weak var profilePicView: UIView!
     @IBOutlet weak var passwordView: UIView!
     @IBOutlet weak var barcodeView: UIView!
+    @IBOutlet weak var headerView: UIView!
+    
     
     // Textview Outlets
     @IBOutlet weak var profileNameTxt: UITextView!
@@ -54,21 +56,21 @@ class InfoViewController: UIViewController{
     
     // Constraints Outlets
     @IBOutlet weak var usernameHeight: NSLayoutConstraint!
-    @IBOutlet weak var passwordHeight: NSLayoutConstraint!
     @IBOutlet weak var profilePicHeight: NSLayoutConstraint!
+    @IBOutlet weak var passwordHeight: NSLayoutConstraint!
     @IBOutlet weak var barcodeHeight: NSLayoutConstraint!
-    let hideHight = CGFloat(636)
-    let showHeight = CGFloat(8)
+    @IBOutlet weak var collapsViewHeight: NSLayoutConstraint!
     
     
-    
-    
+    var hideHight = CGFloat(0)
+    var showHeight = CGFloat(0)
+    var screenHeight = CGFloat(0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        usernameTxt.text = Global.User.userName
         profileNameTxt.text = Global.User.userName
         btnTagSetup()
+        calcHeight()
         hideAll()
     }
     
@@ -84,13 +86,26 @@ class InfoViewController: UIViewController{
         
     }
     
+    // Calculating how much of the headerview has been covered by the subviews.
+    func calcHeight(){
+        let amountToAdd = 150 - headerView.frame.size.height
+        print(usernameView.frame.size.height)
+        print(amountToAdd)
+        hideHight = usernameView.frame.size.height + amountToAdd
+        print(hideHight)
+    }
+    
     func hideAll(){
+        usernameView.isHidden = true
+        passwordView.isHidden = true
+        profilePicView.isHidden = true
+        barcodeView.isHidden = true
         usernameHeight.constant = hideHight
         passwordHeight.constant = hideHight
         profilePicHeight.constant = hideHight
         barcodeHeight.constant = hideHight
+        collapsViewHeight.constant = 150
     }
-    
     
     func changeScene(for Button: UIButton){
         UIView.animate(withDuration: 0.15) { [self] in
@@ -98,18 +113,22 @@ class InfoViewController: UIViewController{
             case 1:
                 hideAll()
                 headerBack.isHidden = true
+                profilePicView.isHidden = false
                 profilePicHeight.constant = showHeight
             case 2:
                 hideAll()
                 headerBack.isHidden = true
+                usernameView.isHidden = false
                 usernameHeight.constant = showHeight
             case 3:
                 hideAll()
                 headerBack.isHidden = true
+                passwordView.isHidden = false
                 passwordHeight.constant = showHeight
             case 4:
                 hideAll()
                 headerBack.isHidden = true
+                barcodeView.isHidden = false
                 barcodeHeight.constant = showHeight
             case 5, 6, 7, 8: // popup backbuttons
                 hideAll()
@@ -117,6 +136,7 @@ class InfoViewController: UIViewController{
             default:
                 print("ERROR: Showing supviews in profile information.")
             }
+            collapsViewHeight.constant = 150
             self.view.layoutIfNeeded()
         }
     }

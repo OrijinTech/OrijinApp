@@ -100,7 +100,7 @@ class AdmSpecificProductViewController: UIViewController {
     // MARK: - Helper methods
     func setSelectables(){
         prodCategoryTxt.tag = 0
-        unitTxt.tag = 0
+        unitTxt.tag = 1
     }
     
     func setTxtFieldTxt(_ text: String, _ empty: Bool = false){
@@ -231,7 +231,7 @@ extension AdmSpecificProductViewController: UITextFieldDelegate, UITableViewDele
         case 1: // Unit Text
             hideSearchView(false)
             curTextFieldPicked = "unitTxt"
-            getAllLabels("labels")
+            getAllLabels("units")
         default:
             print("unknown txt")
         }

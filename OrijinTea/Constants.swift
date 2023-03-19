@@ -22,6 +22,9 @@ class Constants{
     static let bookTableToVisit: String = "bookTableToVisit"
     static let bookTableToComfirm: String = "bookTableToComfirm"
     static let confirmationToMain: String = "confirmationToMain"
+    static let toTableOccupancy: String = "toTableOccupancy"
+    static let occupancyToBook: String = "occupancyToBook"
+    
     // Me tab
     struct Me{
         static let profileToReservations: String = "profileToReservations"

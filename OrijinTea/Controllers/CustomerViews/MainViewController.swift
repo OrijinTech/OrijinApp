@@ -36,7 +36,6 @@ class MainViewController: UIViewController, UIScrollViewDelegate{
     
     // Button Outlets
     @IBOutlet weak var onlineShoppingBtn: UIButton!
-    @IBOutlet weak var otherServicesBtn: UIButton!
     @IBOutlet weak var visitOrijinBtn: UIButton!
     
     // Text Outlet
@@ -44,7 +43,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate{
     
     // Value Variables
     var lastContentOffset: CGFloat = 0
-    let maxHeaderHeight: CGFloat = 149
+    let maxHeaderHeight: CGFloat = 150
     let minHeaderHeight: CGFloat = 50
     
     
@@ -114,12 +113,6 @@ class MainViewController: UIViewController, UIScrollViewDelegate{
     
     @IBAction func visitOrijin(_ sender: UIButton) {
         performSegue(withIdentifier: Constants.mainToBook, sender: self)
-    }
-    
-    
-    
-    @IBAction func servicesPressed(_ sender: UIButton) {
-        
     }
     
     

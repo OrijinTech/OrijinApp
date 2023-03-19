@@ -19,6 +19,7 @@ class BookingViewController: UIViewController, UIScrollViewDelegate{
     // Constraints Outlet
     @IBOutlet weak var collapsViewHeight: NSLayoutConstraint!
     
+    
     // Scroll View Outlet
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -34,7 +35,7 @@ class BookingViewController: UIViewController, UIScrollViewDelegate{
     
     // Value Variables
     var lastContentOffset: CGFloat = 0
-    let maxHeaderHeight: CGFloat = 149
+    let maxHeaderHeight: CGFloat = 150
     let minHeaderHeight: CGFloat = 50
     
     
@@ -63,33 +64,34 @@ class BookingViewController: UIViewController, UIScrollViewDelegate{
     }
     
 
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        if (scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height)) {
-            //Scrolled to bottom
-            UIView.animate(withDuration: 0.3) {
-                self.collapsViewHeight.constant = self.minHeaderHeight
-                self.view.layoutIfNeeded()
-            }
-             
-        }
-        else if (scrollView.contentOffset.y == 0 && self.collapsViewHeight.constant <= maxHeaderHeight){
-            // scrolled to top --> https://stackoverflow.com/questions/56557078/how-to-implement-a-collapsing-header
-            UIView.animate(withDuration: 0.3) {
-                self.collapsViewHeight.constant = self.maxHeaderHeight
-                self.view.layoutIfNeeded()
-            }
-        }
-
-        else if (scrollView.contentOffset.y > self.lastContentOffset) && self.collapsViewHeight.constant != minHeaderHeight {
-            //Scrolling down
-            UIView.animate(withDuration: 0.3) {
-                self.collapsViewHeight.constant = self.minHeaderHeight
-                self.view.layoutIfNeeded()
-            }
-        }
-        self.lastContentOffset = scrollView.contentOffset.y
-    }
+    // SCROLLING ISSUE !!!
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//
+//        if (scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height)) {
+//            //Scrolled to bottom
+//            UIView.animate(withDuration: 0.3) {
+//                self.collapsViewHeight.constant = self.minHeaderHeight
+//                self.view.layoutIfNeeded()
+//            }
+//
+//        }
+//        else if (scrollView.contentOffset.y == 0 && self.collapsViewHeight.constant <= maxHeaderHeight){
+//            // scrolled to top --> https://stackoverflow.com/questions/56557078/how-to-implement-a-collapsing-header
+//            UIView.animate(withDuration: 0.3) {
+//                self.collapsViewHeight.constant = self.maxHeaderHeight
+//                self.view.layoutIfNeeded()
+//            }
+//        }
+//
+//        else if (scrollView.contentOffset.y > self.lastContentOffset) && self.collapsViewHeight.constant != minHeaderHeight {
+//            //Scrolling down
+//            UIView.animate(withDuration: 0.3) {
+//                self.collapsViewHeight.constant = self.minHeaderHeight
+//                self.view.layoutIfNeeded()
+//            }
+//        }
+//        self.lastContentOffset = scrollView.contentOffset.y
+//    }
 
     
 
