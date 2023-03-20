@@ -479,7 +479,7 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="55"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wK9-Fi-MvO">
-                                        <rect key="frame" x="8" y="10" width="62" height="35"/>
+                                        <rect key="frame" x="7.9999999999999964" y="10" width="61.666666666666657" height="35"/>
                                         <color key="tintColor" red="0.55942234850000006" green="0.52984675569999995" blue="0.17300596930000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Back" cornerStyle="capsule">
@@ -1355,7 +1355,7 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="55"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bwi-vS-WsI">
-                                        <rect key="frame" x="8" y="10" width="62" height="35"/>
+                                        <rect key="frame" x="7.9999999999999964" y="10" width="61.666666666666657" height="35"/>
                                         <color key="tintColor" red="0.55942234850000006" green="0.52984675569999995" blue="0.17300596930000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Back" cornerStyle="capsule">
@@ -1464,7 +1464,7 @@
                                 <rect key="frame" x="0.0" y="762" width="393" height="90"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEh-Ry-EAy">
-                                        <rect key="frame" x="15" y="8" width="198" height="34.333333333333336"/>
+                                        <rect key="frame" x="15" y="8" width="197.33333333333334" height="34.333333333333336"/>
                                         <color key="tintColor" red="0.58431375029999999" green="0.56862747670000002" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="person.2" catalog="system" title="Mark as Occupied" cornerStyle="capsule" titleAlignment="trailing">
@@ -1850,7 +1850,7 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="150"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Welcome back, Guest User!" adjustsFontForContentSizeCategory="YES" id="sjA-r5-EvS">
-                                        <rect key="frame" x="0.0" y="8" width="224" height="134"/>
+                                        <rect key="frame" x="0.0" y="8" width="223" height="134"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
@@ -2357,13 +2357,13 @@ this reservation?</string>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reservation Details" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="3kV-d5-8Od">
-                                        <rect key="frame" x="72.333333333333329" y="211.66666666666666" width="248.33333333333337" height="36"/>
+                                        <rect key="frame" x="72.333333333333329" y="212" width="248.33333333333337" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Kj-5E-L8A">
-                                        <rect key="frame" x="71.666666666666686" y="290.66666666666669" width="250" height="255.00000000000006"/>
+                                        <rect key="frame" x="71.666666666666686" y="291" width="250" height="255"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="xHZ-iK-xhg" userLabel="Label">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="255"/>
@@ -2414,7 +2414,7 @@ this reservation?</string>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Address:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L5P-Ur-oXP" userLabel="Address">
-                                                        <rect key="frame" x="0.0" y="224.99999999999994" width="100" height="30"/>
+                                                        <rect key="frame" x="0.0" y="225" width="100" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="100" id="GE3-Th-eZa"/>
                                                             <constraint firstAttribute="height" constant="30" id="sB0-LG-g7F"/>
@@ -2473,7 +2473,7 @@ this reservation?</string>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FrL-vV-QKu" userLabel="Date">
-                                                        <rect key="frame" x="0.0" y="224.99999999999994" width="150" height="30"/>
+                                                        <rect key="frame" x="0.0" y="225" width="150" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="3Pe-qh-Fgq"/>
                                                             <constraint firstAttribute="width" constant="150" id="h26-yL-J5F"/>
@@ -2869,7 +2869,7 @@ this reservation?</string>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="4ze-a8-LEe">
-                                        <rect key="frame" x="40" y="275" width="313" height="0.0"/>
+                                        <rect key="frame" x="196.66666666666666" y="275" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
@@ -2882,8 +2882,8 @@ this reservation?</string>
                                     <constraint firstItem="4ze-a8-LEe" firstAttribute="centerX" secondItem="MVd-gC-LhG" secondAttribute="centerX" id="526-HA-1y9"/>
                                     <constraint firstItem="LC2-FZ-AzM" firstAttribute="top" secondItem="G5X-ti-ise" secondAttribute="bottom" constant="40" id="8Db-PD-3eB"/>
                                     <constraint firstItem="4ze-a8-LEe" firstAttribute="top" secondItem="LC2-FZ-AzM" secondAttribute="bottom" constant="5" id="AEM-ZE-pdm"/>
-                                    <constraint firstAttribute="trailing" secondItem="4ze-a8-LEe" secondAttribute="trailing" constant="40" id="CPF-ml-sYQ"/>
-                                    <constraint firstItem="4ze-a8-LEe" firstAttribute="leading" secondItem="MVd-gC-LhG" secondAttribute="leading" constant="40" id="EZE-5a-Qs1"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4ze-a8-LEe" secondAttribute="trailing" constant="40" id="CPF-ml-sYQ"/>
+                                    <constraint firstItem="4ze-a8-LEe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MVd-gC-LhG" secondAttribute="leading" constant="40" id="EZE-5a-Qs1"/>
                                     <constraint firstItem="6n2-b6-Ywo" firstAttribute="leading" secondItem="MVd-gC-LhG" secondAttribute="leading" constant="8" id="G60-f0-J3E"/>
                                     <constraint firstItem="Wmh-tL-Ncv" firstAttribute="leading" relation="lessThanOrEqual" secondItem="6z4-Rz-Ul0" secondAttribute="trailing" constant="8" symbolic="YES" id="H0v-ll-v7m"/>
                                     <constraint firstItem="6n2-b6-Ywo" firstAttribute="top" secondItem="MVd-gC-LhG" secondAttribute="top" constant="8" id="QV1-cC-VQ9"/>
@@ -2924,9 +2924,9 @@ this reservation?</string>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="BEJ-rh-3Dm">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BEJ-rh-3Dm">
                                         <rect key="frame" x="115" y="310" width="164" height="171"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal QR Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="gQM-Bi-raL">
                                         <rect key="frame" x="79.000000000000014" y="50" width="235.33333333333337" height="36"/>
@@ -3513,11 +3513,11 @@ this reservation?</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Lw-6w-h35">
-                                <rect key="frame" x="67" y="103" width="234" height="130"/>
+                                <rect key="frame" x="64" y="99" width="234" height="132"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Booking Successful!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" preferredMaxLayoutWidth="270" id="ggp-50-dny">
-                                <rect key="frame" x="67" y="249" width="242" height="54"/>
+                                <rect key="frame" x="64" y="247" width="244" height="53"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <nil key="textColor"/>
@@ -3671,7 +3671,7 @@ this reservation?</string>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Booking Details:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" id="uBy-gb-1SB">
-                                <rect key="frame" x="88" y="332" width="209" height="30"/>
+                                <rect key="frame" x="85" y="327" width="207" height="32"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <nil key="textColor"/>
@@ -3716,7 +3716,7 @@ this reservation?</string>
                                 <rect key="frame" x="0.0" y="59" width="393" height="150"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVI-wp-7lB">
-                                        <rect key="frame" x="8" y="8" width="62" height="35"/>
+                                        <rect key="frame" x="7.9999999999999964" y="8" width="61.666666666666657" height="35"/>
                                         <color key="tintColor" red="0.55942234850000006" green="0.52984675569999995" blue="0.17300596930000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Back" cornerStyle="capsule">
@@ -4158,7 +4158,7 @@ this reservation?</string>
                                 <rect key="frame" x="0.0" y="59" width="393" height="150"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhp-Yo-VJ6">
-                                        <rect key="frame" x="8" y="8" width="62" height="35"/>
+                                        <rect key="frame" x="7.9999999999999964" y="8" width="61.666666666666657" height="35"/>
                                         <color key="tintColor" red="0.58431375029999999" green="0.56862747670000002" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Back" cornerStyle="capsule">
@@ -4373,7 +4373,7 @@ this reservation?</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="OeB-q9-DXH"/>
+        <segue reference="ZBU-lt-br0"/>
         <segue reference="gTs-Ms-bhZ"/>
         <segue reference="dMQ-Xd-1Bh"/>
         <segue reference="VE2-lg-UK7"/>
@@ -4388,7 +4388,7 @@ this reservation?</string>
         <segue reference="djS-QS-1dH"/>
         <segue reference="l1Q-rF-Bnc"/>
         <segue reference="VKI-K2-vpu"/>
-        <segue reference="Lmw-U4-PIn"/>
+        <segue reference="cKr-7W-NJB"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Tea Icon" width="252" height="214"/>

@@ -89,10 +89,7 @@ class InfoViewController: UIViewController{
     // Calculating how much of the headerview has been covered by the subviews.
     func calcHeight(){
         let amountToAdd = 150 - headerView.frame.size.height
-        print(usernameView.frame.size.height)
-        print(amountToAdd)
         hideHight = usernameView.frame.size.height + amountToAdd
-        print(hideHight)
     }
     
     func hideAll(){
@@ -260,18 +257,27 @@ class InfoViewController: UIViewController{
     
     
     // MARK: - Barcode functions
-    func generateBarCode(from user: String) -> UIImage?{
-        let data = user.data(using: String.Encoding.ascii)
-       
-        if let filter = CIFilter(name: "CIQRCodeGenerator") {
-            filter.setValue(data, forKey: "inputMessage")
-            
-            if let output = filter.outputImage {
-                return UIImage(ciImage: output)
-            }
+    func generateBarCode(from user: String) -> UIImage? {
+        guard let data = user.data(using: .ascii, allowLossyConversion: false) else {
+            return nil
         }
-        return nil
+        
+        let qrFilter = CIFilter(name: "CIQRCodeGenerator")
+        qrFilter?.setValue(data, forKey: "inputMessage")
+        qrFilter?.setValue("M", forKey: "inputCorrectionLevel")
+        
+        guard let qrImage = qrFilter?.outputImage else {
+            return nil
+        }
+        
+        let scaleX = barcodeImgView.frame.size.width / qrImage.extent.size.width
+        let scaleY = barcodeImgView.frame.size.height / qrImage.extent.size.height
+        
+        let transformedImage = qrImage.transformed(by: CGAffineTransform(scaleX: scaleX, y: scaleY))
+        
+        return UIImage(ciImage: transformedImage)
     }
+    
     
     func showBarCode(){
         let barcodeImg = generateBarCode(from: Global.User.email)
