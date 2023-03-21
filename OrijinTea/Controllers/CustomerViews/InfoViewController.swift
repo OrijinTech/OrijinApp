@@ -64,7 +64,6 @@ class InfoViewController: UIViewController{
     
     var hideHight = CGFloat(0)
     var showHeight = CGFloat(0)
-    var screenHeight = CGFloat(0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,7 +82,6 @@ class InfoViewController: UIViewController{
         userSave.tag = 6
         passwordBack.tag = 7
         qrcodeBack.tag = 8
-        
     }
     
     // Calculating how much of the headerview has been covered by the subviews.

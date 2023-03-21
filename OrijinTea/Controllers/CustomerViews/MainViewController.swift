@@ -77,33 +77,34 @@ class MainViewController: UIViewController, UIScrollViewDelegate{
     }
     
 
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        // Scrolling events
-        if (scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height)) {
-            //Scrolled to bottom
-            UIView.animate(withDuration: 0.3) {
-                self.viewHeight.constant = self.minHeaderHeight
-                self.view.layoutIfNeeded()
-            }
-             
-        }
-        else if (scrollView.contentOffset.y == 0 && self.viewHeight.constant <= maxHeaderHeight){
-            // scrolled to top --> https://stackoverflow.com/questions/56557078/how-to-implement-a-collapsing-header
-            UIView.animate(withDuration: 0.3) {
-                self.viewHeight.constant = self.maxHeaderHeight
-                self.view.layoutIfNeeded()
-            }
-        }
-
-        else if (scrollView.contentOffset.y > self.lastContentOffset) && self.viewHeight.constant != minHeaderHeight {
-            //Scrolling down
-            UIView.animate(withDuration: 0.3) {
-                self.viewHeight.constant = self.minHeaderHeight
-                self.view.layoutIfNeeded()
-            }
-        }
-        self.lastContentOffset = scrollView.contentOffset.y
-    }
+    // SCROLLING ISSUE!!!
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        // Scrolling events
+//        if (scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height)) {
+//            //Scrolled to bottom
+//            UIView.animate(withDuration: 0.3) {
+//                self.viewHeight.constant = self.minHeaderHeight
+//                self.view.layoutIfNeeded()
+//            }
+//
+//        }
+//        else if (scrollView.contentOffset.y == 0 && self.viewHeight.constant <= maxHeaderHeight){
+//            // scrolled to top --> https://stackoverflow.com/questions/56557078/how-to-implement-a-collapsing-header
+//            UIView.animate(withDuration: 0.3) {
+//                self.viewHeight.constant = self.maxHeaderHeight
+//                self.view.layoutIfNeeded()
+//            }
+//        }
+//
+//        else if (scrollView.contentOffset.y > self.lastContentOffset) && self.viewHeight.constant != minHeaderHeight {
+//            //Scrolling down
+//            UIView.animate(withDuration: 0.3) {
+//                self.viewHeight.constant = self.minHeaderHeight
+//                self.view.layoutIfNeeded()
+//            }
+//        }
+//        self.lastContentOffset = scrollView.contentOffset.y
+//    }
     
     
     @IBAction func onlineShoppingPressed(_ sender: UIButton) {

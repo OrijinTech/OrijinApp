@@ -184,7 +184,7 @@ class AdmSpecificTableViewController: UIViewController {
         var orderID = 0
         getOrderID { ordID in
             orderID = ordID!
-            let order = Order(items: self.chosenProductList, payTime: self.getCurTime(), orderID: orderID)
+            let order = Order(items: self.chosenProductList, payDay: self.getCurDay(), payTime: self.getCurTime(), orderID: orderID)
             let docRef = self.db.collection(Constants.FStoreCollection.adminStats).document(Constants.FStoreDocument.statics).collection(Constants.FStoreCollection.orderHistory).document(String(order.orderID))
             do {
                 try docRef.setData(from: order)
@@ -203,7 +203,13 @@ class AdmSpecificTableViewController: UIViewController {
     
     func getCurTime() -> String{
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.dateFormat = "HH:mm:ss"
+        return dateFormatter.string(from: Date())
+    }
+    
+    func getCurDay() -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         return dateFormatter.string(from: Date())
     }
     

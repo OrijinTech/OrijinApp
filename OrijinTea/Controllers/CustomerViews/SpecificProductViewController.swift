@@ -26,6 +26,9 @@ class SpecificProductViewController: UIViewController {
     @IBOutlet weak var personalNoteTitle: UILabel!
     @IBOutlet weak var noteTxtView: UITextView!
     @IBOutlet weak var personalNotes: UITextView!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var unitLabel: UILabel!
+    
     
     
     // database references
@@ -67,6 +70,8 @@ class SpecificProductViewController: UIViewController {
         prodCategoryLabel.text = product.categoryName
         prodPlaceLabel.text = product.productionPlace
         prodTagLabel.text = product.productTag
+        priceLabel.text = String(product.price!)
+        unitLabel.text = String(product.unit!)
     }
     
     

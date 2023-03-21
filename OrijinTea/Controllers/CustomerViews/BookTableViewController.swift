@@ -214,6 +214,8 @@ class BookTableViewController: UIViewController{
                     catch let error{
                         print("Error writing city to Firestore: \(error)")
                     }
+                    self.updateBookingID()
+                    print("UPDATING BOOKING ID")
                 }
                 else{
                     self.errorTxt.textColor = UIColor.red
@@ -221,8 +223,6 @@ class BookTableViewController: UIViewController{
                 }
             }
         }
-        updateBookingID()
-        print("UPDATING BOOKING ID")
     }
     
     @IBAction func cancelPressed(_ sender: UIBarButtonItem) {

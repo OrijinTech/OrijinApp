@@ -62,6 +62,9 @@ class Constants{
         static let inventoryToAdmMain: String = "inventoryToAdmMain"
         static let inventoryToCreatePd: String = "inventoryToCreatePd"
         static let backToInventory: String = "backToInventory"
+        static let toPayHistory: String = "toPayHistory"
+        static let payHistToMain: String = "payHistToMain"
+        static let viewPayment: String = "viewPayment"
     }
     
 
@@ -72,6 +75,7 @@ class Constants{
     static let searchedCell: String = "searchedCell"
     static let prodSearchCell: String = "prodSearchCell"
     static let selectionSearchCell: String = "selectionSearchCell"
+    static let orderItemCell: String = "orderItemCell"
     
     
     
@@ -148,6 +152,13 @@ class Constants{
         
         struct Products{
             static let categories: String = "categories"
+        }
+        
+        struct Order{
+            static let items: String = "items"
+            static let orderID: String = "orderID"
+            static let payTime: String = "payTime"
+            static let payDay: String = "payDay"
         }
 
     }

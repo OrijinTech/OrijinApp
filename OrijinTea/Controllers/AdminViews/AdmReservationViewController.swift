@@ -16,6 +16,8 @@ class AdmReservationViewController: UIViewController {
     let db = Firestore.firestore()
     
     // outlets
+    
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var pickDateBtnOutlet: UIButton!
     @IBOutlet weak var searchBarOutlet: UISearchBar!
@@ -28,6 +30,14 @@ class AdmReservationViewController: UIViewController {
     var selectedDate: String = ""
     var selectedReservation: Reservation?
     
+    // Fetcehd Payments
+    var payments:[Order] = []
+    var selectedPayment: Order?
+    
+    
+    // Incomming Segue
+    var mode = "unknown"
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +45,16 @@ class AdmReservationViewController: UIViewController {
         reservationTable.delegate = self
         reservationTable.dataSource = self
         datePickerOutlet.addTarget(self, action: #selector(onDateValueChanged(_:)), for: .valueChanged)
+        prepareView(mode)
+    }
+    
+    func prepareView(_ mode: String){
+        if mode == "paymentHistory"{
+            titleLabel.text = "Past Payments"
+        }
+        else{
+            titleLabel.text = "All Reservations"
+        }
     }
     
     func hideDatePicker(_ hide: Bool){
@@ -54,7 +74,6 @@ class AdmReservationViewController: UIViewController {
     
     
     func getReservations(for date: String, loadAll all: Bool){
-        print("Start loading reservations")
         reservations.removeAll()
         let collectionRef = db.collection(Constants.FStoreCollection.reservations)
         collectionRef.getDocuments { querySnapshot, error in
@@ -93,7 +112,66 @@ class AdmReservationViewController: UIViewController {
 
                     DispatchQueue.main.async {
                         self.reservationTable.reloadData()
-                        print("RESERVATIONS: \(self.reservations)")
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    func getPayments(for date: String, loadAll all: Bool){
+        payments.removeAll()
+        let collectionRef = db.collection(Constants.FStoreCollection.adminStats).document(Constants.FStoreDocument.statics).collection(Constants.FStoreCollection.orderHistory)
+        collectionRef.getDocuments { querySnapshot, error in
+            if let e = error{
+                print("Issue retreiving current payments: \(e)")
+            }
+            else{
+                if let snapDocs = querySnapshot?.documents{
+                    for doc in snapDocs{
+                        doc.reference.getDocument { snapDoc, error in
+                            if let e = error{
+                                print("Error loading table data \(e)")
+                            }
+                            else{
+                                if let doc = snapDoc, doc.exists {
+                                    let orderData = doc.data()
+                                    let orderID = orderData![Constants.FStoreField.Order.orderID] as! Int
+                                    let payTime = orderData![Constants.FStoreField.Order.payTime] as! String
+                                    let payDay = orderData![Constants.FStoreField.Order.payDay] as! String
+                                    let dictionary = orderData![Constants.FStoreField.Order.items] as! [[String: Any]]
+                                    var menuItems = [MenuItem]()
+                                    if dictionary.count > 0{
+                                        for items in dictionary{
+                                            let menuItem = MenuItem(amount: items["amount"] as? Int ?? 1,
+                                                                    itemCount: items["itemCount"] as? Int ?? 1,
+                                                                    name: items["name"] as! String,
+                                                                    price: items["price"] as? Int ?? 0,
+                                                                    tag: items["tag"] as! String)
+                                            menuItems.append(menuItem) // append all items to menu list
+                                        }
+                                    }
+                                    // Create the order
+                                    let order = Order(items: menuItems, payDay: payDay, payTime: payTime, orderID: orderID)
+                                    let curDate = payDay // Check for mode
+                                    if all{
+                                        self.payments.append(order)
+                                    }
+                                    else{
+                                        if date == curDate{
+                                            self.payments.append(order)
+                                        }
+                                    }
+                                    
+                                    DispatchQueue.main.async {
+                                        self.reservationTable.reloadData()
+                                    }
+                                }
+                                else {
+                                    print("Document does not exist")
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -113,7 +191,12 @@ class AdmReservationViewController: UIViewController {
     }
     
     @IBAction func doneBtn(_ sender: UIBarButtonItem) {
-        getReservations(for: selectedDate, loadAll: false)
+        if mode == "paymentHistory"{
+            getPayments(for: selectedDate, loadAll: false)
+        }
+        else{
+            getReservations(for: selectedDate, loadAll: false)
+        }
         hideDatePicker(true)
     }
     
@@ -132,7 +215,13 @@ class AdmReservationViewController: UIViewController {
     }
     
     @IBAction func loadAllBtn(_ sender: UIButton) {
-        getReservations(for: selectedDate, loadAll: true)
+        if mode == "paymentHistory"{
+            getPayments(for: selectedDate, loadAll: true)
+        }
+        else{
+            getReservations(for: selectedDate, loadAll: true)
+        }
+        
     }
     
     
@@ -145,6 +234,10 @@ class AdmReservationViewController: UIViewController {
             destinationVC?.table = self.selectedReservation!.tableNumber
             destinationVC?.bookingId = String(self.selectedReservation!.reservationID)
         }
+        else if segue.identifier == Constants.Admin.viewPayment{
+            let destinationVC = segue.destination as? ViewOrderViewController
+            destinationVC?.chosenOrder = selectedPayment
+        }
     }
     
 }
@@ -152,18 +245,42 @@ class AdmReservationViewController: UIViewController {
 
 extension AdmReservationViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return reservations.count
+        if mode == "paymentHistory"{
+            return payments.count
+        }
+        else{
+            return reservations.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "manageResCell", for: indexPath)
-        cell.textLabel?.text = "Booking ID: \(reservations[indexPath.row].reservationID)   |   Time: \(reservations[indexPath.row].time)"
+        let detailLabel = UILabel()
+        var textToCell = ""
+        if mode == "paymentHistory"{
+            detailLabel.text = "Time: \(payments[indexPath.row].payTime)"
+            textToCell = "Order ID: \(payments[indexPath.row].orderID)"
+        }
+        else{
+            detailLabel.text = "Time: \(reservations[indexPath.row].time)"
+            textToCell = "Booking ID: \(reservations[indexPath.row].reservationID)"
+        }
+        detailLabel.sizeToFit()
+        cell.accessoryView = detailLabel
+        cell.textLabel?.text = textToCell
         return cell
     }
     
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedReservation = reservations[indexPath.row]
-        performSegue(withIdentifier: Constants.Admin.admResDetail, sender: self)
+        if mode == "paymentHistory"{
+            selectedPayment = payments[indexPath.row]
+            performSegue(withIdentifier: Constants.Admin.viewPayment, sender: self)
+        }
+        else{
+            selectedReservation = reservations[indexPath.row]
+            performSegue(withIdentifier: Constants.Admin.admResDetail, sender: self)
+        }
     }
     
 }

@@ -107,6 +107,13 @@ struct Global {
         }
     }
     
+    static func calcTotalPrice(for menuList:[MenuItem]) -> Int{
+        var totalPrice = 0
+        for item in menuList{
+            totalPrice = totalPrice + item.price
+        }
+        return totalPrice
+    }
     
     
 }
