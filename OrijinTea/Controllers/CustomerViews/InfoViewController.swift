@@ -62,14 +62,10 @@ class InfoViewController: UIViewController{
     @IBOutlet weak var collapsViewHeight: NSLayoutConstraint!
     
     
-    var hideHight = CGFloat(0)
-    var showHeight = CGFloat(0)
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         profileNameTxt.text = Global.User.userName
         btnTagSetup()
-        calcHeight()
         hideAll()
     }
     
@@ -84,21 +80,12 @@ class InfoViewController: UIViewController{
         qrcodeBack.tag = 8
     }
     
-    // Calculating how much of the headerview has been covered by the subviews.
-    func calcHeight(){
-        let amountToAdd = 150 - headerView.frame.size.height
-        hideHight = usernameView.frame.size.height + amountToAdd
-    }
-    
+
     func hideAll(){
         usernameView.isHidden = true
         passwordView.isHidden = true
         profilePicView.isHidden = true
         barcodeView.isHidden = true
-        usernameHeight.constant = hideHight
-        passwordHeight.constant = hideHight
-        profilePicHeight.constant = hideHight
-        barcodeHeight.constant = hideHight
         collapsViewHeight.constant = 150
     }
     
@@ -109,22 +96,18 @@ class InfoViewController: UIViewController{
                 hideAll()
                 headerBack.isHidden = true
                 profilePicView.isHidden = false
-                profilePicHeight.constant = showHeight
             case 2:
                 hideAll()
                 headerBack.isHidden = true
                 usernameView.isHidden = false
-                usernameHeight.constant = showHeight
             case 3:
                 hideAll()
                 headerBack.isHidden = true
                 passwordView.isHidden = false
-                passwordHeight.constant = showHeight
             case 4:
                 hideAll()
                 headerBack.isHidden = true
                 barcodeView.isHidden = false
-                barcodeHeight.constant = showHeight
             case 5, 6, 7, 8: // popup backbuttons
                 hideAll()
                 headerBack.isHidden = false

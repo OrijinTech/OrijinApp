@@ -227,6 +227,10 @@ class BookTableViewController: UIViewController{
     
     @IBAction func cancelPressed(_ sender: UIBarButtonItem) {
         hideAllPicker()
+        tableTxt.resignFirstResponder()
+        dateTxt.resignFirstResponder()
+        timeTxt.resignFirstResponder()
+        durationTxt.resignFirstResponder()
         performTransform(true)
     }
     
@@ -448,6 +452,12 @@ class BookTableViewController: UIViewController{
         return dFormatter.string(from: date)
     }
     
+    func timeToStr(_ date: Date) -> String{
+        let dFormatter = DateFormatter()
+        dFormatter.dateFormat = "HH:mm"
+        return dFormatter.string(from: date)
+    }
+    
     // Input = String, Output = Date
     func strToDate(_ date: String) -> Date{
         let dFormatter = DateFormatter()
@@ -508,6 +518,7 @@ class BookTableViewController: UIViewController{
         case 1: // user is selecting table
             enableAllTextFields(true)
         case 2: // user is selecting date
+            textField.text = dateToStr(Date())
             if(dateTxt.text != ""){
                 timeTxt.isUserInteractionEnabled = true
             }

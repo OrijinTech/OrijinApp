@@ -65,6 +65,7 @@ class Constants{
         static let toPayHistory: String = "toPayHistory"
         static let payHistToMain: String = "payHistToMain"
         static let viewPayment: String = "viewPayment"
+        static let admLogOut: String = "admLogOut"
     }
     
 
@@ -76,7 +77,7 @@ class Constants{
     static let prodSearchCell: String = "prodSearchCell"
     static let selectionSearchCell: String = "selectionSearchCell"
     static let orderItemCell: String = "orderItemCell"
-    
+    static let occupancyCell: String = "occupancyCell"
     
     
     

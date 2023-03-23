@@ -6,14 +6,12 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class AdmProfileViewController: UIViewController {
     
-    
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +30,17 @@ class AdmProfileViewController: UIViewController {
     
     @IBAction func paymentHist(_ sender: UIButton) {
         performSegue(withIdentifier: Constants.Admin.toPayHistory, sender: self)
+    }
+    
+    
+    @IBAction func logOutBtn(_ sender: UIButton) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            performSegue(withIdentifier: Constants.Admin.admLogOut, sender: self)
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
     }
     
 

@@ -185,6 +185,7 @@ class AdmReservationViewController: UIViewController {
         return dFormatter.string(from: date)
     }
     
+    
     @objc private func onDateValueChanged(_ datePicker: UIDatePicker) {
         selectedDate = dateToStr(datePicker.date)
         dateLabel.text = selectedDate
@@ -203,6 +204,7 @@ class AdmReservationViewController: UIViewController {
     
     @IBAction func cancelBtn(_ sender: UIBarButtonItem) {
         hideDatePicker(true)
+        dateLabel.text = "No Date Selected"
     }
     
     
@@ -212,6 +214,7 @@ class AdmReservationViewController: UIViewController {
     
     @IBAction func pickDateBtn(_ sender: UIButton) {
         hideDatePicker(false)
+        dateLabel.text = dateToStr(Date())
     }
     
     @IBAction func loadAllBtn(_ sender: UIButton) {

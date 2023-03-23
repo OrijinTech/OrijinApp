@@ -48,11 +48,13 @@ class BookingViewController: UIViewController, UIScrollViewDelegate{
         occupancyView.layer.borderWidth = 1
         occupancyView.layer.borderColor = UIColor.lightGray.cgColor
         occupancyView.layer.cornerRadius = 12
-        profileImg.layer.cornerRadius = 40
         bookTableView.layer.cornerRadius = 12
         bookTableView.layer.borderWidth = 1
         bookTableView.layer.borderColor = UIColor.lightGray.cgColor
         bookTableView.layer.cornerRadius = 12
+        occupancyImg.layer.cornerRadius = 12
+        bookTableImg.layer.cornerRadius = 12
+        profileImg.layer.cornerRadius = 40
         // Set up shadows
         collapsibleView.layer.shadowColor = UIColor.black.cgColor
         collapsibleView.layer.shadowOffset = CGSize(width: 3, height: 3)
@@ -101,7 +103,7 @@ class BookingViewController: UIViewController, UIScrollViewDelegate{
     
     
     @IBAction func occupancyPressed(_ sender: UIButton) {
-        print("occ pressed")
+        performSegue(withIdentifier: Constants.toTableOccupancy, sender: self)
     }
     
     

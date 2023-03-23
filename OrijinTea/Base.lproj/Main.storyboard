@@ -183,6 +183,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Log Out"/>
+                                <connections>
+                                    <action selector="logOutBtn:" destination="VuD-2T-L6N" eventType="touchUpInside" id="57g-XK-kkM"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="XwZ-oC-oTY">
                                 <rect key="frame" x="20" y="343" width="390" height="304"/>
@@ -246,6 +249,7 @@
                         <outlet property="profileImg" destination="xcc-eg-guh" id="QB5-jy-ZZ8"/>
                         <outlet property="userNameLabel" destination="TDV-BU-ene" id="XZs-QX-rSq"/>
                         <segue destination="sCO-at-1bE" kind="presentation" identifier="toPayHistory" animates="NO" modalPresentationStyle="fullScreen" id="kj6-8O-om5"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="admLogOut" modalPresentationStyle="fullScreen" id="Y9h-el-hac"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pby-PF-686" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2076,7 +2080,7 @@
                                                             <action selector="visitOrijin:" destination="VDk-LN-cea" eventType="touchUpInside" id="Ow6-o5-Fez"/>
                                                         </connections>
                                                     </button>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Experience the most authentic Chinese style tea art." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v88-5R-O92">
+                                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Experience the most authentic Chinese style tea art." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v88-5R-O92">
                                                         <rect key="frame" x="8" y="254" width="392" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -2171,7 +2175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Fx-VR-3iI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-156" y="1561"/>
+            <point key="canvasLocation" x="-156.27906976744185" y="1560.5150214592277"/>
         </scene>
         <!--Me-->
         <scene sceneID="dRY-Hp-YNV">
@@ -2473,13 +2477,13 @@ this reservation?</string>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reservation Details" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="3kV-d5-8Od">
-                                        <rect key="frame" x="91.000000000000014" y="225" width="248.33333333333337" height="36"/>
+                                        <rect key="frame" x="91.000000000000014" y="224.66666666666666" width="248.33333333333337" height="35.999999999999972"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Kj-5E-L8A">
-                                        <rect key="frame" x="90" y="304" width="250" height="255"/>
+                                        <rect key="frame" x="90" y="303.66666666666669" width="250" height="255.00000000000006"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="xHZ-iK-xhg" userLabel="Label">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="255"/>
@@ -2530,7 +2534,7 @@ this reservation?</string>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Address:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L5P-Ur-oXP" userLabel="Address">
-                                                        <rect key="frame" x="0.0" y="225" width="100" height="30"/>
+                                                        <rect key="frame" x="0.0" y="224.99999999999994" width="100" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="100" id="GE3-Th-eZa"/>
                                                             <constraint firstAttribute="height" constant="30" id="sB0-LG-g7F"/>
@@ -2589,7 +2593,7 @@ this reservation?</string>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FrL-vV-QKu" userLabel="Date">
-                                                        <rect key="frame" x="0.0" y="225" width="150" height="30"/>
+                                                        <rect key="frame" x="0.0" y="224.99999999999994" width="150" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="3Pe-qh-Fgq"/>
                                                             <constraint firstAttribute="width" constant="150" id="h26-yL-J5F"/>
@@ -3161,7 +3165,6 @@ this reservation?</string>
                                             </backgroundConfiguration>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="backPressed:" destination="EY8-Wc-GJR" eventType="touchUpInside" id="ciY-A7-dDn"/>
                                             <action selector="backPressed:" destination="kfN-tV-Qp1" eventType="touchUpInside" id="lW4-rm-rab"/>
                                         </connections>
                                     </button>
@@ -3274,7 +3277,7 @@ this reservation?</string>
                                                             <action selector="visitOrijin:" destination="VDk-LN-cea" eventType="touchUpInside" id="Tl2-nO-caZ"/>
                                                         </connections>
                                                     </button>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Come and sit down at our Tea House" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PfW-gj-yhy">
+                                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Come and sit down at our Tea House" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PfW-gj-yhy">
                                                         <rect key="frame" x="8" y="254" width="401.33333333333331" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -3356,20 +3359,96 @@ this reservation?</string>
         <!--Table Occupancy-->
         <scene sceneID="n7N-0f-J28">
             <objects>
-                <viewController title="Table Occupancy" id="vhH-K1-KGJ" sceneMemberID="viewController">
+                <viewController title="Table Occupancy" id="vhH-K1-KGJ" customClass="OccupancyViewController" customModule="OrijinTea" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G6m-pM-SGn">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i8Q-bS-FG0" userLabel="Collapsible View">
+                                <rect key="frame" x="0.0" y="59" width="430" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xG-f4-4gc">
+                                        <rect key="frame" x="8" y="7.6666666666666714" width="62" height="35"/>
+                                        <color key="tintColor" red="0.55942234850000006" green="0.52984675569999995" blue="0.17300596930000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Back" cornerStyle="capsule">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" red="0.23552735280000001" green="0.22307547080000001" blue="0.072838773930000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </backgroundConfiguration>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="backBtn:" destination="vhH-K1-KGJ" eventType="touchUpInside" id="ZQD-R8-MBf"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Table Occupancy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0a-oT-Mde">
+                                        <rect key="frame" x="122.00000000000001" y="10" width="186.33333333333337" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHo-Ep-DMx">
+                                        <rect key="frame" x="372" y="8" width="50" height="34"/>
+                                        <color key="tintColor" red="0.26922931210000001" green="0.26439181699999997" blue="0.15646969199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="gobackward" catalog="system" title=""/>
+                                        <connections>
+                                            <action selector="reloadBtn:" destination="vhH-K1-KGJ" eventType="touchUpInside" id="vJn-KE-wdX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.43137252329999998" green="0.40784314269999999" blue="0.1294117719" alpha="0.72881312090000006" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="m0a-oT-Mde" firstAttribute="centerX" secondItem="i8Q-bS-FG0" secondAttribute="centerX" id="1LH-in-fVE"/>
+                                    <constraint firstItem="4xG-f4-4gc" firstAttribute="centerY" secondItem="i8Q-bS-FG0" secondAttribute="centerY" id="6oa-ot-Wtv"/>
+                                    <constraint firstItem="4xG-f4-4gc" firstAttribute="leading" secondItem="i8Q-bS-FG0" secondAttribute="leading" constant="8" id="Jeu-jF-93y"/>
+                                    <constraint firstAttribute="trailing" secondItem="dHo-Ep-DMx" secondAttribute="trailing" constant="8" id="OWQ-WT-K1s"/>
+                                    <constraint firstItem="dHo-Ep-DMx" firstAttribute="centerY" secondItem="i8Q-bS-FG0" secondAttribute="centerY" id="b6I-S4-hw9"/>
+                                    <constraint firstItem="dHo-Ep-DMx" firstAttribute="leading" relation="lessThanOrEqual" secondItem="i8Q-bS-FG0" secondAttribute="leading" constant="387" id="l8d-0T-eHZ"/>
+                                    <constraint firstItem="m0a-oT-Mde" firstAttribute="centerY" secondItem="i8Q-bS-FG0" secondAttribute="centerY" id="um0-49-9J3"/>
+                                    <constraint firstAttribute="height" constant="50" id="uwu-Lj-gOu"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="4xG-f4-4gc" secondAttribute="trailing" constant="360" id="yTN-Ox-C40"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="qZt-wE-A7l">
+                                <rect key="frame" x="0.0" y="109" width="430" height="789"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="occupancyCell" rowHeight="100" id="ivY-QG-CWX">
+                                        <rect key="frame" x="0.0" y="50" width="430" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ivY-QG-CWX" id="HOS-wx-ytF">
+                                            <rect key="frame" x="0.0" y="0.0" width="430" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Oln-ZQ-gnJ" id="O3W-EF-Sbt"/>
+                                    <outlet property="delegate" destination="Oln-ZQ-gnJ" id="idk-ua-yFg"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="625-bP-PtK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qZt-wE-A7l" firstAttribute="leading" secondItem="625-bP-PtK" secondAttribute="leading" id="Joh-jA-KVa"/>
+                            <constraint firstItem="i8Q-bS-FG0" firstAttribute="trailing" secondItem="625-bP-PtK" secondAttribute="trailing" id="SUX-QO-mbl"/>
+                            <constraint firstItem="qZt-wE-A7l" firstAttribute="bottom" secondItem="625-bP-PtK" secondAttribute="bottom" id="aDA-fi-rEg"/>
+                            <constraint firstItem="i8Q-bS-FG0" firstAttribute="leading" secondItem="625-bP-PtK" secondAttribute="leading" id="aod-6O-mcd"/>
+                            <constraint firstItem="i8Q-bS-FG0" firstAttribute="top" secondItem="625-bP-PtK" secondAttribute="top" id="jh5-ES-Sbz"/>
+                            <constraint firstItem="qZt-wE-A7l" firstAttribute="trailing" secondItem="625-bP-PtK" secondAttribute="trailing" id="m2q-fa-KFW"/>
+                            <constraint firstItem="qZt-wE-A7l" firstAttribute="top" secondItem="i8Q-bS-FG0" secondAttribute="bottom" id="stg-Ng-uza"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="occupancyTbView" destination="qZt-wE-A7l" id="D1Q-f6-mFS"/>
+                        <outlet property="reloadBtnLayout" destination="dHo-Ep-DMx" id="N56-DV-K3R"/>
                         <segue destination="kfN-tV-Qp1" kind="presentation" identifier="occupancyToBook" animates="NO" modalPresentationStyle="fullScreen" id="hbK-Mo-Cr0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Ny-4s-Ns4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-156" y="2377"/>
+            <point key="canvasLocation" x="-156.27906976744185" y="2376.8240343347643"/>
         </scene>
         <!--Book Table View Controller-->
         <scene sceneID="qPB-Jv-WjR">
@@ -3629,14 +3708,14 @@ this reservation?</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Lw-6w-h35">
-                                <rect key="frame" x="80" y="106" width="271" height="145"/>
+                                <rect key="frame" x="79.666666666666686" y="106" width="271" height="145"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="271" id="H5Q-76-ldH"/>
                                     <constraint firstAttribute="height" constant="145" id="Q0l-fd-twB"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Booking Successful!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" preferredMaxLayoutWidth="270" translatesAutoresizingMaskIntoConstraints="NO" id="ggp-50-dny">
-                                <rect key="frame" x="92" y="259" width="246" height="34"/>
+                                <rect key="frame" x="92.333333333333329" y="259" width="245.66666666666669" height="33.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -3789,7 +3868,7 @@ this reservation?</string>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Booking Details:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="uBy-gb-1SB">
-                                <rect key="frame" x="118" y="323" width="194" height="33"/>
+                                <rect key="frame" x="118.00000000000001" y="322.66666666666669" width="194.33333333333337" height="33.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -3869,8 +3948,8 @@ this reservation?</string>
                                     <constraint firstAttribute="bottom" secondItem="kV5-X7-kfK" secondAttribute="bottom" id="0mR-Qj-M0b"/>
                                     <constraint firstItem="kV5-X7-kfK" firstAttribute="top" secondItem="YVI-wp-7lB" secondAttribute="bottom" constant="51" id="5Vf-Nv-Arg"/>
                                     <constraint firstItem="Ot6-Nz-MXc" firstAttribute="centerX" secondItem="aRg-hW-6Tx" secondAttribute="centerX" id="800-hb-ZIh"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="YVI-wp-7lB" secondAttribute="trailing" constant="360" id="J6G-Cq-cyj"/>
                                     <constraint firstItem="YVI-wp-7lB" firstAttribute="top" secondItem="aRg-hW-6Tx" secondAttribute="top" constant="8" id="Mtg-5q-tgS"/>
-                                    <constraint firstItem="Ot6-Nz-MXc" firstAttribute="leading" relation="lessThanOrEqual" secondItem="YVI-wp-7lB" secondAttribute="trailing" constant="60" id="VML-r1-SoP"/>
                                     <constraint firstItem="Ot6-Nz-MXc" firstAttribute="top" secondItem="aRg-hW-6Tx" secondAttribute="top" constant="8" id="XFz-BA-OLg"/>
                                     <constraint firstItem="YVI-wp-7lB" firstAttribute="leading" secondItem="aRg-hW-6Tx" secondAttribute="leading" constant="8" id="XJS-bC-L5I"/>
                                     <constraint firstAttribute="height" constant="150" id="jqH-b0-ju3"/>
@@ -3992,9 +4071,9 @@ this reservation?</string>
                                 </subviews>
                                 <color key="backgroundColor" red="0.43137252329999998" green="0.40784314269999999" blue="0.1294117719" alpha="0.72881312090000006" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="ZUw-Ns-vfR" secondAttribute="trailing" constant="360.32999999999998" id="9VS-YI-w8N"/>
                                     <constraint firstItem="ZUw-Ns-vfR" firstAttribute="centerY" secondItem="Zel-HQ-ZrG" secondAttribute="centerY" id="J08-Wk-DX7"/>
                                     <constraint firstAttribute="height" constant="55" id="JAi-B5-LoH"/>
-                                    <constraint firstItem="Sox-gp-TL8" firstAttribute="leading" relation="lessThanOrEqual" secondItem="ZUw-Ns-vfR" secondAttribute="trailing" constant="82.329999999999998" id="NfO-Yb-HSw"/>
                                     <constraint firstItem="Sox-gp-TL8" firstAttribute="centerX" secondItem="Zel-HQ-ZrG" secondAttribute="centerX" id="jqE-UJ-gHI"/>
                                     <constraint firstItem="ZUw-Ns-vfR" firstAttribute="leading" secondItem="Zel-HQ-ZrG" secondAttribute="leading" constant="8" id="uI0-0y-HUl"/>
                                     <constraint firstItem="Sox-gp-TL8" firstAttribute="centerY" secondItem="Zel-HQ-ZrG" secondAttribute="centerY" id="vkf-6K-Iwl"/>
@@ -4420,10 +4499,6 @@ this reservation?</string>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="backBtn:" destination="hrx-nM-R3l" eventType="touchUpInside" id="EfN-Nl-G9Y"/>
-                                            <action selector="backBtnPressed:" destination="Oln-ZQ-gnJ" eventType="touchUpInside" id="Fbe-ne-KkA"/>
-                                            <action selector="backBtnPressed:" destination="Xpg-Hn-RkW" eventType="touchUpInside" id="k3t-uT-XMY"/>
-                                            <action selector="backPressed:" destination="EY8-Wc-GJR" eventType="touchUpInside" id="C3j-jQ-dzZ"/>
-                                            <action selector="backPressed:" destination="kfN-tV-Qp1" eventType="touchUpInside" id="dra-bY-v12"/>
                                         </connections>
                                     </button>
                                     <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="MaG-XG-xZB">
@@ -4444,8 +4519,8 @@ this reservation?</string>
                                 <constraints>
                                     <constraint firstItem="MaG-XG-xZB" firstAttribute="top" secondItem="Hs5-pf-Wc7" secondAttribute="bottom" constant="51" id="6Am-uT-hvn"/>
                                     <constraint firstItem="EYK-CN-uBd" firstAttribute="top" secondItem="atd-ys-gGG" secondAttribute="top" constant="8" id="6oV-XJ-LUl"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Hs5-pf-Wc7" secondAttribute="trailing" constant="360" id="7X1-C2-L1Y"/>
                                     <constraint firstAttribute="bottom" secondItem="MaG-XG-xZB" secondAttribute="bottom" id="Kcu-lP-9DN"/>
-                                    <constraint firstItem="EYK-CN-uBd" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Hs5-pf-Wc7" secondAttribute="trailing" constant="60.670000000000002" id="MdB-qz-3EE"/>
                                     <constraint firstItem="MaG-XG-xZB" firstAttribute="leading" secondItem="atd-ys-gGG" secondAttribute="leading" id="OuG-Al-v0f"/>
                                     <constraint firstAttribute="trailing" secondItem="MaG-XG-xZB" secondAttribute="trailing" id="UTw-Mv-Wrr"/>
                                     <constraint firstItem="MaG-XG-xZB" firstAttribute="top" secondItem="EYK-CN-uBd" secondAttribute="bottom" constant="50" id="YrR-FM-0EO"/>
@@ -4500,29 +4575,30 @@ this reservation?</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ZBU-lt-br0"/>
-        <segue reference="gTs-Ms-bhZ"/>
-        <segue reference="7GR-mS-im8"/>
-        <segue reference="VE2-lg-UK7"/>
-        <segue reference="lpo-BE-qJD"/>
+        <segue reference="OeB-q9-DXH"/>
+        <segue reference="x7A-cV-mN1"/>
+        <segue reference="dMQ-Xd-1Bh"/>
+        <segue reference="8bt-8N-bs4"/>
+        <segue reference="hbK-Mo-Cr0"/>
         <segue reference="ZIq-KY-k4c"/>
         <segue reference="KYR-ci-nDL"/>
         <segue reference="hRU-Co-kmm"/>
         <segue reference="aeF-A3-q2X"/>
         <segue reference="UNL-yL-buP"/>
         <segue reference="4fw-6U-pV6"/>
-        <segue reference="d7a-j0-xzY"/>
+        <segue reference="xTl-to-6bm"/>
         <segue reference="djS-QS-1dH"/>
         <segue reference="X2U-9P-vUP"/>
-        <segue reference="Dz6-VG-Y6h"/>
-        <segue reference="VKI-K2-vpu"/>
-        <segue reference="NX3-TY-l1B"/>
+        <segue reference="l1Q-rF-Bnc"/>
+        <segue reference="Y9h-el-hac"/>
+        <segue reference="dxa-FZ-NEv"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Tea Icon" width="252" height="214"/>
         <image name="background" width="1080" height="1920"/>
         <image name="cup.and.saucer" catalog="system" width="128" height="91"/>
         <image name="dollarsign" catalog="system" width="89" height="128"/>
+        <image name="gobackward" catalog="system" width="119" height="128"/>
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="minus" catalog="system" width="128" height="26"/>
         <image name="onlineShopping" width="400" height="225"/>
