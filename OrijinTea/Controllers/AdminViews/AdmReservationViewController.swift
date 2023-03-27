@@ -14,16 +14,18 @@ import FirebaseFirestoreSwift
 class AdmReservationViewController: UIViewController {
     
     let db = Firestore.firestore()
+    var hideFlag = true
     
     // outlets
-    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var pickDateBtnOutlet: UIButton!
-    @IBOutlet weak var searchBarOutlet: UISearchBar!
     @IBOutlet weak var pickerViewHeight: NSLayoutConstraint!
     @IBOutlet weak var reservationTable: UITableView!
     @IBOutlet weak var datePickerOutlet: UIDatePicker!
+    @IBOutlet weak var hideButton: UIButton!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     
     // Fetched Reservations
     var reservations:[Reservation] = []
@@ -44,6 +46,7 @@ class AdmReservationViewController: UIViewController {
         pickerViewHeight.constant = 0
         reservationTable.delegate = self
         reservationTable.dataSource = self
+        searchBar.delegate = self
         datePickerOutlet.addTarget(self, action: #selector(onDateValueChanged(_:)), for: .valueChanged)
         prepareView(mode)
     }
@@ -51,9 +54,13 @@ class AdmReservationViewController: UIViewController {
     func prepareView(_ mode: String){
         if mode == "paymentHistory"{
             titleLabel.text = "Past Payments"
+            searchBar.isHidden = false
+            hideButton.isHidden = true
         }
         else{
             titleLabel.text = "All Reservations"
+            searchBar.isHidden = true
+            hideButton.isHidden = false
         }
     }
     
@@ -83,19 +90,18 @@ class AdmReservationViewController: UIViewController {
             else{
                 if let snapDocs = querySnapshot?.documents{
                     for doc in snapDocs{
-                        let curDate = doc.data()[Constants.FStoreField.Reservation.date] as! String
                         let resUser = doc.data()[Constants.FStoreField.Reservation.user] as! String
-                        let date = doc.data()[Constants.FStoreField.Reservation.date] as! String
+                        let resDate = doc.data()[Constants.FStoreField.Reservation.date] as! String
                         let time = doc.data()[Constants.FStoreField.Reservation.time] as! String
                         let duration = doc.data()[Constants.FStoreField.Reservation.duration] as! String
                         let tableNum = doc.data()[Constants.FStoreField.Reservation.tableNumber] as! String
                         let reservationID = doc.data()[Constants.FStoreField.Reservation.reservationID] as! Int
                         let completed = doc.data()[Constants.FStoreField.Reservation.completed] as! Bool
-                        let createRes = Reservation(user: resUser, date: date, time: time, duration: duration, tableNumber: tableNum, reservationID: reservationID, completed: completed)
+                        let createRes = Reservation(user: resUser, date: resDate, time: time, duration: duration, tableNumber: tableNum, reservationID: reservationID, completed: completed)
                         if all{
                             self.reservations.append(createRes)
                         }
-                        else if date == curDate{
+                        else if date == resDate{
                             self.reservations.append(createRes)
                         }
                     }
@@ -216,6 +222,29 @@ class AdmReservationViewController: UIViewController {
         
     }
     
+    @IBAction func hideCompletedBtn(_ sender: UIButton) {
+        var tempList = [Reservation]()
+        if hideFlag{
+            for reservation in reservations {
+                if !reservation.completed{
+                    tempList.append(reservation)
+                }
+            }
+            hideButton.setTitle("Show Completed", for: .normal)
+            hideFlag = false
+        }
+        else{
+            getReservations(for: selectedDate, loadAll: true)
+            hideButton.setTitle("Hide Completed", for: .normal)
+            hideFlag = true
+        }
+        reservations = tempList
+        DispatchQueue.main.async {
+            self.reservationTable.reloadData()
+        }
+    }
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.Admin.admResDetail{
@@ -235,7 +264,7 @@ class AdmReservationViewController: UIViewController {
 }
 
 
-extension AdmReservationViewController: UITableViewDelegate, UITableViewDataSource{
+extension AdmReservationViewController: UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if mode == "paymentHistory"{
             return payments.count
@@ -254,7 +283,12 @@ extension AdmReservationViewController: UITableViewDelegate, UITableViewDataSour
             textToCell = "Order ID: \(payments[indexPath.row].orderID)"
         }
         else{
-            detailLabel.text = "Time: \(reservations[indexPath.row].time)"
+            if reservations[indexPath.row].completed{
+                detailLabel.text = "Completed"
+            }
+            else{
+                detailLabel.text = "Time: \(reservations[indexPath.row].time)"
+            }
             textToCell = "Booking ID: \(reservations[indexPath.row].reservationID)"
         }
         detailLabel.sizeToFit()
@@ -274,5 +308,7 @@ extension AdmReservationViewController: UITableViewDelegate, UITableViewDataSour
             performSegue(withIdentifier: Constants.Admin.admResDetail, sender: self)
         }
     }
+    
+    
     
 }

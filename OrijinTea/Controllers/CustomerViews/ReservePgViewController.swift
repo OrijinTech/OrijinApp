@@ -42,6 +42,17 @@ class ReservePgViewController: UITableViewController{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReservationCell", for: indexPath)
+        let detailLabel = UILabel()
+        var completeness = ""
+        if reservations[indexPath.row].completed{
+            completeness = "Completed"
+        }
+        else{
+            completeness = ""
+        }
+        detailLabel.text = completeness
+        detailLabel.sizeToFit()
+        cell.accessoryView = detailLabel
         cell.textLabel?.text = reservations[indexPath.row].tableNumber
         return cell
     }
@@ -53,9 +64,6 @@ class ReservePgViewController: UITableViewController{
         duration = reservations[indexPath.row].duration
         tableNumber = reservations[indexPath.row].tableNumber
         reservationID = reservations[indexPath.row].reservationID
-//        DispatchQueue.main.async {
-//            self.tableView.reloadData()
-//        }
         performSegue(withIdentifier: Constants.Me.reservationPopup, sender: self)
     }
     
@@ -77,7 +85,8 @@ class ReservePgViewController: UITableViewController{
                                 let duration = reservation.data()[Constants.FStoreField.Reservation.duration] as! String
                                 let tableNum = reservation.data()[Constants.FStoreField.Reservation.tableNumber] as! String
                                 let reservationID = reservation.data()[Constants.FStoreField.Reservation.reservationID] as! Int
-                                let createRes = Reservation(user: curUser, date: date, time: time, duration: duration, tableNumber: tableNum, reservationID: reservationID)
+                                let completed = reservation.data()[Constants.FStoreField.Reservation.completed] as! Bool
+                                let createRes = Reservation(user: curUser, date: date, time: time, duration: duration, tableNumber: tableNum, reservationID: reservationID, completed: completed)
                                 self.reservations.append(createRes)
                             }
                         }

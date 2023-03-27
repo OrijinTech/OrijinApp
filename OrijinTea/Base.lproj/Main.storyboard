@@ -1179,10 +1179,6 @@
                                             <action selector="backBtn:" destination="sCO-at-1bE" eventType="touchUpInside" id="Emg-oZ-F6a"/>
                                         </connections>
                                     </button>
-                                    <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="wm1-eN-8Be">
-                                        <rect key="frame" x="0.0" y="94" width="430" height="56"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </searchBar>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Reservations" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nmW-XR-SVa">
                                         <rect key="frame" x="111.66666666666669" y="8" width="207" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -1217,32 +1213,44 @@
                                             <action selector="loadAllBtn:" destination="sCO-at-1bE" eventType="touchUpInside" id="dLz-Hx-rWE"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWI-2f-xem">
+                                        <rect key="frame" x="274" y="107" width="148" height="35"/>
+                                        <color key="tintColor" red="0.17720305850000001" green="0.17895754420000001" blue="0.17895754420000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Hide Completed"/>
+                                        <connections>
+                                            <action selector="hideCompletedBtn:" destination="sCO-at-1bE" eventType="touchUpInside" id="XAO-zi-xVv"/>
+                                        </connections>
+                                    </button>
+                                    <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="5ai-8a-sJe">
+                                        <rect key="frame" x="0.0" y="94" width="430" height="56"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
                                 </subviews>
                                 <color key="backgroundColor" red="0.58431375029999999" green="0.56862747670000002" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="nmW-XR-SVa" firstAttribute="top" secondItem="G8Q-7t-XtY" secondAttribute="top" constant="8" id="0CE-Qm-TIY"/>
+                                    <constraint firstItem="cWI-2f-xem" firstAttribute="leading" relation="lessThanOrEqual" secondItem="G8Q-7t-XtY" secondAttribute="leading" constant="274" id="3se-EU-Frf"/>
                                     <constraint firstItem="yEt-3Q-CoY" firstAttribute="leading" relation="lessThanOrEqual" secondItem="2lo-7I-sGx" secondAttribute="trailing" constant="24.329999999999998" id="CDd-Lw-kDc"/>
                                     <constraint firstAttribute="bottom" secondItem="vy7-dc-saH" secondAttribute="bottom" constant="107" id="CRk-lC-xJG"/>
                                     <constraint firstItem="vy7-dc-saH" firstAttribute="leading" secondItem="G8Q-7t-XtY" secondAttribute="leading" constant="8" id="DDk-4a-ivs"/>
-                                    <constraint firstItem="wm1-eN-8Be" firstAttribute="top" secondItem="G8Q-7t-XtY" secondAttribute="top" constant="94" id="EO3-pp-C8M"/>
+                                    <constraint firstAttribute="trailing" secondItem="5ai-8a-sJe" secondAttribute="trailing" id="ETZ-6n-EVB"/>
                                     <constraint firstItem="nmW-XR-SVa" firstAttribute="centerX" secondItem="G8Q-7t-XtY" secondAttribute="centerX" id="FVn-0b-9rV"/>
-                                    <constraint firstItem="wm1-eN-8Be" firstAttribute="leading" secondItem="G8Q-7t-XtY" secondAttribute="leading" id="Hwo-N5-w52"/>
                                     <constraint firstItem="gYv-6m-Wa2" firstAttribute="leading" secondItem="G8Q-7t-XtY" secondAttribute="leading" constant="7" id="I2K-iT-UDK"/>
                                     <constraint firstAttribute="bottom" secondItem="nmW-XR-SVa" secondAttribute="bottom" constant="106" id="L4d-QE-O0k"/>
-                                    <constraint firstAttribute="bottom" secondItem="wm1-eN-8Be" secondAttribute="bottom" id="NH3-pH-kRQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="5ai-8a-sJe" secondAttribute="bottom" id="LwK-6g-G78"/>
                                     <constraint firstItem="2lo-7I-sGx" firstAttribute="top" secondItem="G8Q-7t-XtY" secondAttribute="top" constant="59" id="Nwt-Kt-eqD"/>
                                     <constraint firstItem="yEt-3Q-CoY" firstAttribute="top" secondItem="G8Q-7t-XtY" secondAttribute="top" constant="52" id="Op1-tT-TjB"/>
                                     <constraint firstItem="2lo-7I-sGx" firstAttribute="centerX" secondItem="G8Q-7t-XtY" secondAttribute="centerX" id="TcV-SU-BPW"/>
                                     <constraint firstItem="2lo-7I-sGx" firstAttribute="leading" relation="lessThanOrEqual" secondItem="gYv-6m-Wa2" secondAttribute="trailing" constant="37.670000000000002" id="Td1-3f-Hzg"/>
-                                    <constraint firstItem="wm1-eN-8Be" firstAttribute="top" secondItem="gYv-6m-Wa2" secondAttribute="bottom" constant="8" id="Xah-uH-tsI"/>
                                     <constraint firstItem="gYv-6m-Wa2" firstAttribute="top" secondItem="G8Q-7t-XtY" secondAttribute="top" constant="51" id="avA-P8-Gwb"/>
+                                    <constraint firstAttribute="bottom" secondItem="cWI-2f-xem" secondAttribute="bottom" constant="8" id="d6x-mk-uhS"/>
                                     <constraint firstAttribute="trailing" secondItem="yEt-3Q-CoY" secondAttribute="trailing" constant="8" id="fF2-YU-vfB"/>
                                     <constraint firstItem="vy7-dc-saH" firstAttribute="top" secondItem="G8Q-7t-XtY" secondAttribute="top" constant="8" id="hV0-xm-OUT"/>
-                                    <constraint firstItem="wm1-eN-8Be" firstAttribute="top" secondItem="2lo-7I-sGx" secondAttribute="bottom" constant="14" id="jOf-1R-bDS"/>
                                     <constraint firstItem="nmW-XR-SVa" firstAttribute="leading" relation="lessThanOrEqual" secondItem="vy7-dc-saH" secondAttribute="trailing" constant="42" id="k2o-uE-OjX"/>
-                                    <constraint firstItem="wm1-eN-8Be" firstAttribute="top" secondItem="yEt-3Q-CoY" secondAttribute="bottom" constant="7" id="kor-Be-2lN"/>
                                     <constraint firstAttribute="height" constant="150" id="mVj-eE-NUK"/>
-                                    <constraint firstAttribute="trailing" secondItem="wm1-eN-8Be" secondAttribute="trailing" id="qjZ-hD-pZ7"/>
+                                    <constraint firstAttribute="trailing" secondItem="cWI-2f-xem" secondAttribute="trailing" constant="8" id="o7e-79-99M"/>
+                                    <constraint firstItem="5ai-8a-sJe" firstAttribute="leading" secondItem="G8Q-7t-XtY" secondAttribute="leading" id="wE6-Oh-3cE"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7NJ-9f-zsv">
@@ -1319,10 +1327,11 @@
                     <connections>
                         <outlet property="dateLabel" destination="2lo-7I-sGx" id="5Sv-9h-015"/>
                         <outlet property="datePickerOutlet" destination="lvy-O3-WBe" id="KYA-lb-cGx"/>
+                        <outlet property="hideButton" destination="cWI-2f-xem" id="MlG-nd-SM1"/>
                         <outlet property="pickDateBtnOutlet" destination="yEt-3Q-CoY" id="O19-OB-hJW"/>
                         <outlet property="pickerViewHeight" destination="HJm-IJ-S7R" id="u3S-AH-2v1"/>
                         <outlet property="reservationTable" destination="7NJ-9f-zsv" id="B9r-7g-LOw"/>
-                        <outlet property="searchBarOutlet" destination="wm1-eN-8Be" id="a5G-aH-iO6"/>
+                        <outlet property="searchBar" destination="5ai-8a-sJe" id="ovH-I8-krJ"/>
                         <outlet property="titleLabel" destination="nmW-XR-SVa" id="Sqv-eN-uIc"/>
                         <segue destination="KNR-Dk-0v2" kind="popoverPresentation" identifier="admResDetail" popoverAnchorView="7NJ-9f-zsv" id="KYR-ci-nDL">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
@@ -2674,7 +2683,7 @@ this reservation?</string>
                                 <rect key="frame" x="0.0" y="59" width="430" height="150"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7D-lT-mMF">
-                                        <rect key="frame" x="7.9999999999999964" y="9.6666666666666714" width="61.666666666666657" height="34.333333333333343"/>
+                                        <rect key="frame" x="7.9999999999999964" y="9.6666666666666714" width="61.666666666666657" height="34.333333333333336"/>
                                         <color key="tintColor" red="0.55942234850000006" green="0.52984675569999995" blue="0.17300596930000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Back" cornerStyle="capsule">
@@ -4586,12 +4595,12 @@ this reservation?</string>
         <segue reference="aeF-A3-q2X"/>
         <segue reference="UNL-yL-buP"/>
         <segue reference="4fw-6U-pV6"/>
-        <segue reference="S4s-EG-PEl"/>
+        <segue reference="xTl-to-6bm"/>
         <segue reference="djS-QS-1dH"/>
         <segue reference="X2U-9P-vUP"/>
         <segue reference="l1Q-rF-Bnc"/>
         <segue reference="Y9h-el-hac"/>
-        <segue reference="9uv-2X-in3"/>
+        <segue reference="02e-8h-Les"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Tea Icon" width="252" height="214"/>

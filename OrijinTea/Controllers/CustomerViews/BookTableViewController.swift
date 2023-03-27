@@ -344,7 +344,6 @@ class BookTableViewController: UIViewController{
     
     func loadReservations(forFormattedDate date: String){
         print("Start loading reservations")
-        print(dateTxt.text!)
         reservations.removeAll()
         let collectionRef = db.collection(Constants.FStoreCollection.reservations)
         if let curUser = Auth.auth().currentUser?.email{
@@ -356,7 +355,8 @@ class BookTableViewController: UIViewController{
                     if let snapDocs = querySnapshot?.documents{
                         for doc in snapDocs{
                             let curDate = doc.data()[Constants.FStoreField.Reservation.date] as! String
-                            if date == curDate { //if input date = current selected reservation date
+                            let complete = doc.data()[Constants.FStoreField.Reservation.completed] as! Bool
+                            if date == curDate && !complete { //if input date = current selected reservation date
                                 let date = doc.data()[Constants.FStoreField.Reservation.date] as! String
                                 let time = doc.data()[Constants.FStoreField.Reservation.time] as! String
                                 let duration = doc.data()[Constants.FStoreField.Reservation.duration] as! String
