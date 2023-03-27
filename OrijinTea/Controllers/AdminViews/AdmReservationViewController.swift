@@ -82,34 +82,23 @@ class AdmReservationViewController: UIViewController {
             }
             else{
                 if let snapDocs = querySnapshot?.documents{
-                    if all{
-                        for doc in snapDocs{
-                            let resUser = doc.data()[Constants.FStoreField.Reservation.user] as! String
-                            let date = doc.data()[Constants.FStoreField.Reservation.date] as! String
-                            let time = doc.data()[Constants.FStoreField.Reservation.time] as! String
-                            let duration = doc.data()[Constants.FStoreField.Reservation.duration] as! String
-                            let tableNum = doc.data()[Constants.FStoreField.Reservation.tableNumber] as! String
-                            let reservationID = doc.data()[Constants.FStoreField.Reservation.reservationID] as! Int
-                            let createRes = Reservation(user: resUser, date: date, time: time, duration: duration, tableNumber: tableNum, reservationID: reservationID)
+                    for doc in snapDocs{
+                        let curDate = doc.data()[Constants.FStoreField.Reservation.date] as! String
+                        let resUser = doc.data()[Constants.FStoreField.Reservation.user] as! String
+                        let date = doc.data()[Constants.FStoreField.Reservation.date] as! String
+                        let time = doc.data()[Constants.FStoreField.Reservation.time] as! String
+                        let duration = doc.data()[Constants.FStoreField.Reservation.duration] as! String
+                        let tableNum = doc.data()[Constants.FStoreField.Reservation.tableNumber] as! String
+                        let reservationID = doc.data()[Constants.FStoreField.Reservation.reservationID] as! Int
+                        let completed = doc.data()[Constants.FStoreField.Reservation.completed] as! Bool
+                        let createRes = Reservation(user: resUser, date: date, time: time, duration: duration, tableNumber: tableNum, reservationID: reservationID, completed: completed)
+                        if all{
+                            self.reservations.append(createRes)
+                        }
+                        else if date == curDate{
                             self.reservations.append(createRes)
                         }
                     }
-                    else{
-                        for doc in snapDocs{
-                            let curDate = doc.data()[Constants.FStoreField.Reservation.date] as! String
-                            if date == curDate { //if input date = current selected reservation date
-                                let resUser = doc.data()[Constants.FStoreField.Reservation.user] as! String
-                                let date = doc.data()[Constants.FStoreField.Reservation.date] as! String
-                                let time = doc.data()[Constants.FStoreField.Reservation.time] as! String
-                                let duration = doc.data()[Constants.FStoreField.Reservation.duration] as! String
-                                let tableNum = doc.data()[Constants.FStoreField.Reservation.tableNumber] as! String
-                                let reservationID = doc.data()[Constants.FStoreField.Reservation.reservationID] as! Int
-                                let createRes = Reservation(user: resUser, date: date, time: time, duration: duration, tableNumber: tableNum, reservationID: reservationID)
-                                self.reservations.append(createRes)
-                            }
-                        }
-                    }
-
                     DispatchQueue.main.async {
                         self.reservationTable.reloadData()
                     }

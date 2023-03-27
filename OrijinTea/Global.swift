@@ -115,6 +115,55 @@ struct Global {
         return totalPrice
     }
     
+    // Turn Date() into seconds since 1970
+    static func dateToSeconds(for date: Date) -> Int{
+        return Int(date.timeIntervalSince1970)
+    }
+    
+    // Turn time and date string into Date object
+    static func stringToDate(for date: String, for time: String) -> Date{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        return dateFormatter.date(from: "\(date) \(time)")!
+    }
+    
+    // Updates the status of each reservation.
+    static func updateReservations(){
+        let db = Firestore.firestore()
+        let colRef = db.collection(Constants.FStoreCollection.reservations)
+        colRef.getDocuments { qSnap, error in
+            if let e = error{
+                print("Error retreiving reservations in loading screen! \(e.localizedDescription)")
+            }
+            else{
+                if let docSnap = qSnap?.documents{
+                    for res in docSnap{
+                        let resData = res.data()
+                        do{
+                            let dat = try JSONSerialization.data(withJSONObject: resData)
+                            let reservation = try JSONDecoder().decode(Reservation.self, from: dat)
+                            // Based on time, set the complete status
+                            let curDate = Int(Date().timeIntervalSince1970)
+                            let resDate = Global.dateToSeconds(for: Global.stringToDate(for: reservation.date, for: reservation.time))
+                            if(resDate < curDate){
+                                reservation.setCompleted()
+                            }
+                            do{
+                                try db.collection(Constants.FStoreCollection.reservations).document(String(reservation.reservationID)).setData(from:reservation)
+                            }
+                            catch let error{
+                                print("Error changing reservation status: \(error)")
+                            }
+                        }
+                        catch let error{
+                            print("Error creating table object \(error)")
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     
 }
 

@@ -122,6 +122,7 @@ class Constants{
             static let time: String = "time"
             static let user: String = "user"
             static let reservationID: String = "reservationID"
+            static let completed: String = "completed"
         }
         
         struct AdminFields{

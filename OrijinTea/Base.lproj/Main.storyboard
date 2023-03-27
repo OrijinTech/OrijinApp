@@ -1349,7 +1349,7 @@
                                 <rect key="frame" x="0.0" y="59" width="430" height="150"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3J-9d-b4c">
-                                        <rect key="frame" x="8" y="8" width="62" height="35"/>
+                                        <rect key="frame" x="7.9999999999999964" y="8" width="61.666666666666657" height="35"/>
                                         <color key="tintColor" red="0.55942234850000006" green="0.52984675569999995" blue="0.17300596930000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Back" cornerStyle="capsule">
@@ -2477,13 +2477,13 @@ this reservation?</string>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reservation Details" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="3kV-d5-8Od">
-                                        <rect key="frame" x="91.000000000000014" y="224.66666666666666" width="248.33333333333337" height="35.999999999999972"/>
+                                        <rect key="frame" x="91.000000000000014" y="225" width="248.33333333333337" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Kj-5E-L8A">
-                                        <rect key="frame" x="90" y="303.66666666666669" width="250" height="255.00000000000006"/>
+                                        <rect key="frame" x="90" y="304" width="250" height="255"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="xHZ-iK-xhg" userLabel="Label">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="255"/>
@@ -2534,7 +2534,7 @@ this reservation?</string>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Address:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L5P-Ur-oXP" userLabel="Address">
-                                                        <rect key="frame" x="0.0" y="224.99999999999994" width="100" height="30"/>
+                                                        <rect key="frame" x="0.0" y="225" width="100" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="100" id="GE3-Th-eZa"/>
                                                             <constraint firstAttribute="height" constant="30" id="sB0-LG-g7F"/>
@@ -2593,7 +2593,7 @@ this reservation?</string>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FrL-vV-QKu" userLabel="Date">
-                                                        <rect key="frame" x="0.0" y="224.99999999999994" width="150" height="30"/>
+                                                        <rect key="frame" x="0.0" y="225" width="150" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="3Pe-qh-Fgq"/>
                                                             <constraint firstAttribute="width" constant="150" id="h26-yL-J5F"/>
@@ -2674,7 +2674,7 @@ this reservation?</string>
                                 <rect key="frame" x="0.0" y="59" width="430" height="150"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7D-lT-mMF">
-                                        <rect key="frame" x="8" y="9.6666666666666714" width="62" height="34.333333333333336"/>
+                                        <rect key="frame" x="7.9999999999999964" y="9.6666666666666714" width="61.666666666666657" height="34.333333333333343"/>
                                         <color key="tintColor" red="0.55942234850000006" green="0.52984675569999995" blue="0.17300596930000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Back" cornerStyle="capsule">
@@ -4586,12 +4586,12 @@ this reservation?</string>
         <segue reference="aeF-A3-q2X"/>
         <segue reference="UNL-yL-buP"/>
         <segue reference="4fw-6U-pV6"/>
-        <segue reference="xTl-to-6bm"/>
+        <segue reference="S4s-EG-PEl"/>
         <segue reference="djS-QS-1dH"/>
         <segue reference="X2U-9P-vUP"/>
         <segue reference="l1Q-rF-Bnc"/>
         <segue reference="Y9h-el-hac"/>
-        <segue reference="dxa-FZ-NEv"/>
+        <segue reference="9uv-2X-in3"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Tea Icon" width="252" height="214"/>

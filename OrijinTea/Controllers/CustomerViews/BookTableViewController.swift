@@ -206,7 +206,7 @@ class BookTableViewController: UIViewController{
                     self.table = self.tableTxt.text!
                     self.bookingNum = bookingID
                     // Add booking information for the user to Firestore
-                    let reservation = Reservation(user: messageSender, date: self.dateTxt.text!, time: self.timeTxt.text!, duration: self.durationTxt.text!, tableNumber: self.tableTxt.text!, reservationID: bookingID)
+                    let reservation = Reservation(user: messageSender, date: self.dateTxt.text!, time: self.timeTxt.text!, duration: self.durationTxt.text!, tableNumber: self.tableTxt.text!, reservationID: bookingID, completed: false)
                     do{
                         try self.db.collection(Constants.FStoreCollection.reservations).document(String(bookingID)).setData(from:reservation)
                         self.performSegue(withIdentifier: Constants.bookTableToComfirm, sender: self)
@@ -362,7 +362,8 @@ class BookTableViewController: UIViewController{
                                 let duration = doc.data()[Constants.FStoreField.Reservation.duration] as! String
                                 let tableNum = doc.data()[Constants.FStoreField.Reservation.tableNumber] as! String
                                 let reservationID = doc.data()[Constants.FStoreField.Reservation.reservationID] as! Int
-                                let createRes = Reservation(user: curUser, date: date, time: time, duration: duration, tableNumber: tableNum, reservationID: reservationID)
+                                let completed = doc.data()[Constants.FStoreField.Reservation.completed] as! Bool
+                                let createRes = Reservation(user: curUser, date: date, time: time, duration: duration, tableNumber: tableNum, reservationID: reservationID, completed: completed)
                                 self.reservations.append(createRes)
                             }
                         }
@@ -518,7 +519,9 @@ class BookTableViewController: UIViewController{
         case 1: // user is selecting table
             enableAllTextFields(true)
         case 2: // user is selecting date
-            textField.text = dateToStr(Date())
+            if(textField.text == ""){
+                textField.text = dateToStr(Date())
+            }
             if(dateTxt.text != ""){
                 timeTxt.isUserInteractionEnabled = true
             }

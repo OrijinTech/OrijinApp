@@ -18,6 +18,11 @@ class LoginViewController: UIViewController {
     
     let db = Firestore.firestore()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        Global.updateReservations()
+    }
+    
     // here we log in the users using email and password
     @IBAction func loginPressed(_ sender: UIButton) {
         if let email = usernameField.text, let password = passwordField.text{
@@ -75,7 +80,7 @@ class LoginViewController: UIViewController {
             }
         }
     }
-
+    
     
     
     @IBAction func signUpPressed(_ sender: UIButton) {
