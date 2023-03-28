@@ -765,7 +765,7 @@
                                 <rect key="frame" x="0.0" y="114" width="430" height="738"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cO2-YU-8ux" userLabel="Scroll Content">
-                                        <rect key="frame" x="0.0" y="0.0" width="430" height="738"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="430" height="758"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qge-Z8-WLr">
                                                 <rect key="frame" x="0.0" y="0.0" width="430" height="285"/>
@@ -774,12 +774,12 @@
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6i2-7i-MVy">
-                                                <rect key="frame" x="15" y="443" width="275" height="120"/>
+                                                <rect key="frame" x="15" y="443" width="275" height="140"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IwZ-2X-fNs" userLabel="Label">
-                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="140"/>
                                                         <subviews>
-                                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Production Year:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4GN-0Q-rs6" userLabel="ReserveID">
+                                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Product Class:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4GN-0Q-rs6" userLabel="ReserveID">
                                                                 <rect key="frame" x="0.0" y="0.0" width="120" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="t69-Zn-nxT"/>
@@ -788,8 +788,17 @@
                                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
-                                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Product Tag:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GKE-2d-0Kv" userLabel="ReserveID">
+                                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Production Year:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pGW-ZM-6Gf" userLabel="ReserveID">
                                                                 <rect key="frame" x="0.0" y="20" width="120" height="20"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="120" id="41e-RV-gHl"/>
+                                                                    <constraint firstAttribute="height" constant="20" id="L5s-Ph-ZEr"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Product Tag:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GKE-2d-0Kv" userLabel="ReserveID">
+                                                                <rect key="frame" x="0.0" y="40" width="120" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="120" id="2tq-Xj-Dcc"/>
                                                                     <constraint firstAttribute="height" constant="20" id="FPK-S4-aqv"/>
@@ -798,7 +807,7 @@
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Product Category:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1bF-wN-0Tt" userLabel="Time">
-                                                                <rect key="frame" x="0.0" y="40" width="120" height="20"/>
+                                                                <rect key="frame" x="0.0" y="60" width="120" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="120" id="HnI-On-Lz6"/>
                                                                     <constraint firstAttribute="height" constant="20" id="Wt4-Zq-0AL"/>
@@ -807,7 +816,7 @@
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Production Place:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bh1-NV-kHg" userLabel="Duration">
-                                                                <rect key="frame" x="0.0" y="60" width="120" height="20"/>
+                                                                <rect key="frame" x="0.0" y="80" width="120" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="2Tv-fa-1mu"/>
                                                                     <constraint firstAttribute="width" constant="120" id="zIe-x3-bgH"/>
@@ -816,7 +825,7 @@
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Price:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mhM-en-ZRB" userLabel="Duration">
-                                                                <rect key="frame" x="0.0" y="80" width="120" height="20"/>
+                                                                <rect key="frame" x="0.0" y="100" width="120" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="120" id="Ejt-rd-sH5"/>
                                                                     <constraint firstAttribute="height" constant="20" id="qGO-yl-7TH"/>
@@ -825,7 +834,7 @@
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Unit:" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qIA-th-wxl" userLabel="Duration">
-                                                                <rect key="frame" x="0.0" y="100" width="120" height="20"/>
+                                                                <rect key="frame" x="0.0" y="120" width="120" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="WmB-EY-2e0"/>
                                                                     <constraint firstAttribute="width" constant="120" id="oMz-NL-8QC"/>
@@ -836,9 +845,9 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="m4F-dt-zbM">
-                                                        <rect key="frame" x="125" y="0.0" width="150" height="120"/>
+                                                        <rect key="frame" x="125" y="0.0" width="150" height="140"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KNM-fv-tjG" userLabel="ReserveID">
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KNM-fv-tjG" userLabel="prodClass">
                                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="150" id="D7g-dx-gWi"/>
@@ -847,8 +856,17 @@
                                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ce-KY-dri" userLabel="ReserveID">
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Exd-hE-GEW" userLabel="prodYear">
                                                                 <rect key="frame" x="0.0" y="20" width="150" height="20"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="20" id="G7Z-iD-MmC"/>
+                                                                    <constraint firstAttribute="width" constant="150" id="jpZ-mr-7wF"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ce-KY-dri" userLabel="prodTag">
+                                                                <rect key="frame" x="0.0" y="40" width="150" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="JK4-Vn-02J"/>
                                                                     <constraint firstAttribute="width" constant="150" id="u85-Ff-Ctf"/>
@@ -856,8 +874,8 @@
                                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rqO-Ma-nma" userLabel="Time">
-                                                                <rect key="frame" x="0.0" y="40" width="150" height="20"/>
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rqO-Ma-nma" userLabel="prodCategory">
+                                                                <rect key="frame" x="0.0" y="60" width="150" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="150" id="6F1-rS-XGC"/>
                                                                     <constraint firstAttribute="height" constant="20" id="zan-HP-m46"/>
@@ -865,8 +883,8 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W0R-d4-xat" userLabel="Date">
-                                                                <rect key="frame" x="0.0" y="60" width="150" height="20"/>
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W0R-d4-xat" userLabel="prodPlace">
+                                                                <rect key="frame" x="0.0" y="80" width="150" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="150" id="45q-j9-D3a"/>
                                                                     <constraint firstAttribute="height" constant="20" id="5eq-i0-YaZ"/>
@@ -874,8 +892,8 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LZO-bg-hIx" userLabel="Date">
-                                                                <rect key="frame" x="0.0" y="80" width="150" height="20"/>
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LZO-bg-hIx" userLabel="prodPrice">
+                                                                <rect key="frame" x="0.0" y="100" width="150" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="150" id="O8i-xR-IsU"/>
                                                                     <constraint firstAttribute="height" constant="20" id="cys-Y3-mb3"/>
@@ -883,8 +901,8 @@
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fkr-1L-2ph" userLabel="Date">
-                                                                <rect key="frame" x="0.0" y="100" width="150" height="20"/>
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fkr-1L-2ph" userLabel="prodUnit">
+                                                                <rect key="frame" x="0.0" y="120" width="150" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="0Jm-S4-0YT"/>
                                                                     <constraint firstAttribute="width" constant="150" id="i6g-RB-W2b"/>
@@ -898,10 +916,9 @@
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" id="pSC-Ms-Mmm"/>
-                                                    <constraint firstAttribute="height" constant="120" id="xbm-4J-Nex"/>
                                                 </constraints>
                                             </stackView>
-                                            <textView multipleTouchEnabled="YES" contentMode="scaleAspectFit" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUU-oJ-JBX">
+                                            <textView multipleTouchEnabled="YES" contentMode="scaleAspectFit" scrollEnabled="NO" text="Write description for this product." translatesAutoresizingMaskIntoConstraints="NO" id="aUU-oJ-JBX">
                                                 <rect key="frame" x="15" y="335" width="400" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="eub-4Z-YmA"/>
@@ -920,7 +937,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add To Menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8r2-vu-gpw">
-                                                <rect key="frame" x="15.000000000000007" y="583" width="103.66666666666669" height="31"/>
+                                                <rect key="frame" x="15.000000000000007" y="603" width="103.66666666666669" height="31"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="31" id="pmi-TK-Ybj"/>
                                                 </constraints>
@@ -929,14 +946,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cvZ-7i-lek">
-                                                <rect key="frame" x="168.66666666666666" y="583" width="51" height="31"/>
+                                                <rect key="frame" x="168.66666666666666" y="603" width="51" height="31"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="31" id="WlX-JH-EYq"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="31" id="kP6-wT-urp"/>
                                                 </constraints>
                                             </switch>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="aEp-a9-jTS">
-                                                <rect key="frame" x="15" y="629" width="275" height="40"/>
+                                                <rect key="frame" x="15" y="649" width="275" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pOf-Xv-imy" userLabel="Label">
                                                         <rect key="frame" x="0.0" y="0.0" width="120" height="40"/>
@@ -1137,10 +1154,11 @@
                         <outlet property="drinkPriceTxt" destination="VoE-UY-Ad8" id="6E1-1r-UK9"/>
                         <outlet property="priceTxt" destination="LZO-bg-hIx" id="gIM-PF-aud"/>
                         <outlet property="prodCategoryTxt" destination="rqO-Ma-nma" id="CQh-5x-sep"/>
+                        <outlet property="prodClass" destination="KNM-fv-tjG" id="rUW-qG-f03"/>
                         <outlet property="prodImgView" destination="Qge-Z8-WLr" id="GaY-Wf-DCJ"/>
                         <outlet property="prodPlaceTxt" destination="W0R-d4-xat" id="aZn-YR-orT"/>
                         <outlet property="prodTagTxt" destination="4Ce-KY-dri" id="LDu-er-8sZ"/>
-                        <outlet property="prodYearTxt" destination="KNM-fv-tjG" id="qcz-fW-h3Q"/>
+                        <outlet property="prodYearTxt" destination="Exd-hE-GEW" id="FbO-or-as0"/>
                         <outlet property="productNameTxt" destination="dld-sG-CMV" id="i6E-HD-giQ"/>
                         <outlet property="searchBar" destination="3t4-rg-T0q" id="EIu-PH-Gok"/>
                         <outlet property="searchTbView" destination="POb-Wa-kH6" id="mEw-pD-gRj"/>
@@ -1484,7 +1502,7 @@
                                 <rect key="frame" x="0.0" y="59" width="430" height="55"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bwi-vS-WsI">
-                                        <rect key="frame" x="8" y="10" width="62" height="35"/>
+                                        <rect key="frame" x="7.9999999999999964" y="10" width="61.666666666666657" height="35"/>
                                         <color key="tintColor" red="0.55942234850000006" green="0.52984675569999995" blue="0.17300596930000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Back" cornerStyle="capsule">
@@ -2683,7 +2701,7 @@ this reservation?</string>
                                 <rect key="frame" x="0.0" y="59" width="430" height="150"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7D-lT-mMF">
-                                        <rect key="frame" x="7.9999999999999964" y="9.6666666666666714" width="61.666666666666657" height="34.333333333333336"/>
+                                        <rect key="frame" x="7.9999999999999964" y="9.6666666666666714" width="61.666666666666657" height="34.333333333333343"/>
                                         <color key="tintColor" red="0.55942234850000006" green="0.52984675569999995" blue="0.17300596930000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Back" cornerStyle="capsule">
@@ -3396,7 +3414,7 @@ this reservation?</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHo-Ep-DMx">
-                                        <rect key="frame" x="372" y="8" width="50" height="34"/>
+                                        <rect key="frame" x="372.33333333333331" y="8" width="49.666666666666686" height="34"/>
                                         <color key="tintColor" red="0.26922931210000001" green="0.26439181699999997" blue="0.15646969199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="gobackward" catalog="system" title=""/>
