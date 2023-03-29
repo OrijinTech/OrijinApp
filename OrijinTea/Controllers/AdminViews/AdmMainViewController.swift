@@ -33,7 +33,10 @@ class AdmMainViewController: UIViewController {
         inventoryView.layer.borderWidth = 1
         inventoryView.layer.borderColor = UIColor.lightGray.cgColor
         inventoryImg.layer.cornerRadius = 12
-        
+        // set profile picture
+        if let img = Global.User.profileImg{
+            self.profileImg.image = img
+        }
     }
     
     

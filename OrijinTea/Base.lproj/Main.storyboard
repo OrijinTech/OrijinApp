@@ -159,7 +159,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xcc-eg-guh" userLabel="Profile Pic">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xcc-eg-guh" userLabel="Profile Pic">
                                 <rect key="frame" x="165" y="150.66666666666666" width="100" height="97.333333333333343"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -378,7 +378,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="eYM-tt-pK1" userLabel="Profile Pic">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="eYM-tt-pK1" userLabel="Profile Pic">
                                         <rect key="frame" x="308" y="23.666666666666664" width="100" height="103.33333333333334"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -595,7 +595,7 @@
                                 <rect key="frame" x="0.0" y="59" width="430" height="55"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wK9-Fi-MvO">
-                                        <rect key="frame" x="8" y="10" width="62" height="35"/>
+                                        <rect key="frame" x="7.9999999999999964" y="10" width="61.666666666666657" height="35"/>
                                         <color key="tintColor" red="0.55942234850000006" green="0.52984675569999995" blue="0.17300596930000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Back" cornerStyle="capsule">
@@ -2003,7 +2003,7 @@
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="PuK-9a-EYh" userLabel="Profile Pic">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="PuK-9a-EYh" userLabel="Profile Pic">
                                         <rect key="frame" x="302" y="23.666666666666664" width="106" height="103.33333333333334"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -2212,7 +2212,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="p68-W8-0DE" userLabel="Profile Pic">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="p68-W8-0DE" userLabel="Profile Pic">
                                 <rect key="frame" x="165" y="150.66666666666666" width="100" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -2332,7 +2332,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="430" height="149"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6Yj-YB-kjD" userLabel="Profile Pic">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6Yj-YB-kjD" userLabel="Profile Pic">
                                     <rect key="frame" x="308" y="23.666666666666664" width="100" height="102.33333333333334"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
@@ -2420,6 +2420,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="A7V-UH-Uta"/>
                     <connections>
+                        <outlet property="profileImg" destination="6Yj-YB-kjD" id="nax-Vt-4gZ"/>
                         <segue destination="KNR-Dk-0v2" kind="popoverPresentation" identifier="reservationPopup" popoverAnchorView="UZi-xo-LRs" id="jKd-Mr-WeJ">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
@@ -2701,7 +2702,7 @@ this reservation?</string>
                                 <rect key="frame" x="0.0" y="59" width="430" height="150"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7D-lT-mMF">
-                                        <rect key="frame" x="7.9999999999999964" y="9.6666666666666714" width="61.666666666666657" height="34.333333333333343"/>
+                                        <rect key="frame" x="7.9999999999999964" y="9.6666666666666714" width="61.666666666666657" height="34.333333333333336"/>
                                         <color key="tintColor" red="0.55942234850000006" green="0.52984675569999995" blue="0.17300596930000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Back" cornerStyle="capsule">
@@ -2812,7 +2813,7 @@ this reservation?</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cFO-1g-NNN" userLabel="Profile Pic">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cFO-1g-NNN" userLabel="Profile Pic">
                                         <rect key="frame" x="303" y="24.666666666666664" width="106" height="103.33333333333334"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -2855,7 +2856,6 @@ this reservation?</string>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Change Username"/>
                                         <connections>
-                                            <action selector="profileInfoPressed:" destination="pLn-nJ-SSm" eventType="touchUpInside" id="apT-2b-K2J"/>
                                             <action selector="usernameBtn:" destination="oOq-a6-TMq" eventType="touchUpInside" id="g2T-tn-KCt"/>
                                         </connections>
                                     </button>
@@ -2951,10 +2951,6 @@ this reservation?</string>
                                     <constraint firstItem="WXe-g6-Z1K" firstAttribute="top" secondItem="Iak-OG-YAd" secondAttribute="bottom" constant="20" id="mdx-zB-f3z"/>
                                     <constraint firstItem="Iak-OG-YAd" firstAttribute="top" secondItem="UYd-ME-rER" secondAttribute="top" constant="40" id="tTg-t9-5zp"/>
                                 </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NgC-pq-Kp7" userLabel="Profile Pic View">
-                                <rect key="frame" x="0.0" y="209" width="430" height="723"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MVd-gC-LhG" userLabel="Password View">
                                 <rect key="frame" x="0.0" y="209" width="430" height="723"/>
@@ -3077,9 +3073,12 @@ this reservation?</string>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BEJ-rh-3Dm">
-                                        <rect key="frame" x="133" y="391" width="164" height="171"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BEJ-rh-3Dm">
+                                        <rect key="frame" x="132.66666666666666" y="391" width="164.99999999999997" height="165"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="165" id="O03-gG-W2f"/>
+                                            <constraint firstAttribute="width" constant="165" id="YPF-iL-ZK0"/>
+                                        </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -3087,13 +3086,102 @@ this reservation?</string>
                                     <constraint firstItem="4YX-8c-mR8" firstAttribute="leading" relation="lessThanOrEqual" secondItem="xQE-d5-l0R" secondAttribute="leading" constant="90" id="5Bl-QM-Pt8"/>
                                     <constraint firstItem="f3N-00-euN" firstAttribute="leading" secondItem="xQE-d5-l0R" secondAttribute="leading" constant="8" id="HS8-xZ-LtC"/>
                                     <constraint firstItem="gQM-Bi-raL" firstAttribute="centerX" secondItem="xQE-d5-l0R" secondAttribute="centerX" id="MEN-RA-q5X"/>
+                                    <constraint firstItem="BEJ-rh-3Dm" firstAttribute="centerX" secondItem="xQE-d5-l0R" secondAttribute="centerX" id="NUs-vS-DlQ"/>
                                     <constraint firstItem="f3N-00-euN" firstAttribute="top" secondItem="xQE-d5-l0R" secondAttribute="top" constant="8" id="SQW-ns-Y97"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="4YX-8c-mR8" secondAttribute="trailing" constant="90" id="T7A-vk-yoM"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="f3N-00-euN" secondAttribute="trailing" constant="360.32999999999998" id="bis-PP-xbb"/>
                                     <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="4YX-8c-mR8" secondAttribute="bottom" constant="533" id="e0o-3B-cFP"/>
+                                    <constraint firstAttribute="bottom" secondItem="BEJ-rh-3Dm" secondAttribute="bottom" constant="167" id="eWj-kI-Tc2"/>
                                     <constraint firstItem="4YX-8c-mR8" firstAttribute="centerX" secondItem="xQE-d5-l0R" secondAttribute="centerX" id="g7n-UB-mKR"/>
                                     <constraint firstItem="gQM-Bi-raL" firstAttribute="top" secondItem="xQE-d5-l0R" secondAttribute="top" constant="50" id="kyZ-8T-Nf8"/>
                                     <constraint firstItem="4YX-8c-mR8" firstAttribute="top" secondItem="gQM-Bi-raL" secondAttribute="bottom" constant="8" id="tyw-UK-S0h"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NgC-pq-Kp7" userLabel="Profile Pic View">
+                                <rect key="frame" x="0.0" y="209" width="430" height="723"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JA0-HN-gXT">
+                                        <rect key="frame" x="8" y="8" width="62" height="35"/>
+                                        <color key="tintColor" red="0.55942234850000006" green="0.52984675569999995" blue="0.17300596930000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Back" cornerStyle="capsule">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" red="0.23552735280000001" green="0.22307547080000001" blue="0.072838773930000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </backgroundConfiguration>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="profilePicBackBtn:" destination="oOq-a6-TMq" eventType="touchUpInside" id="pkY-YD-Jt4"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Profile Picture" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="xqp-iM-Tg9">
+                                        <rect key="frame" x="95.666666666666671" y="36" width="238.66666666666663" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kay-NV-4oN">
+                                        <rect key="frame" x="115" y="97" width="200" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="WAB-Rp-jhj"/>
+                                            <constraint firstAttribute="height" constant="200" id="ozd-b1-7PR"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k84-s3-4Gn">
+                                        <rect key="frame" x="135" y="305" width="160" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="jCV-pp-Psf"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.26922931210000001" green="0.26439181699999997" blue="0.15646969199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Select Image" cornerStyle="capsule">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" red="0.65839440049999998" green="0.64656441200000003" blue="0.38264321309999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </backgroundConfiguration>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="selectImgBtn:" destination="oOq-a6-TMq" eventType="touchUpInside" id="TMF-Sm-Mjz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htf-iG-ne0">
+                                        <rect key="frame" x="165" y="628.66666666666663" width="100" height="34.333333333333371"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Omd-EA-wHZ"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.55942234850000006" green="0.52984675569999995" blue="0.17300596930000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Save" cornerStyle="capsule">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" red="0.23552735280000001" green="0.22307547080000001" blue="0.072838773930000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </backgroundConfiguration>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="profilePicSave:" destination="oOq-a6-TMq" eventType="touchUpInside" id="tXo-p4-KyL"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkf-ix-gPz">
+                                        <rect key="frame" x="215" y="348" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="kay-NV-4oN" firstAttribute="centerX" secondItem="NgC-pq-Kp7" secondAttribute="centerX" id="2b3-w6-YlB"/>
+                                    <constraint firstItem="xqp-iM-Tg9" firstAttribute="top" secondItem="NgC-pq-Kp7" secondAttribute="top" constant="36" id="Ikh-Rd-brD"/>
+                                    <constraint firstItem="k84-s3-4Gn" firstAttribute="top" secondItem="kay-NV-4oN" secondAttribute="bottom" constant="8" id="NJG-G2-xSQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="htf-iG-ne0" secondAttribute="bottom" constant="60" id="RtA-F2-waE"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="JA0-HN-gXT" secondAttribute="trailing" constant="360" id="UTx-pa-e7A"/>
+                                    <constraint firstItem="kay-NV-4oN" firstAttribute="top" secondItem="xqp-iM-Tg9" secondAttribute="bottom" constant="31" id="eKR-lF-snB"/>
+                                    <constraint firstItem="JA0-HN-gXT" firstAttribute="top" secondItem="NgC-pq-Kp7" secondAttribute="top" constant="8" id="eOP-7X-tNo"/>
+                                    <constraint firstItem="xqp-iM-Tg9" firstAttribute="centerX" secondItem="NgC-pq-Kp7" secondAttribute="centerX" id="iz5-s3-rK7"/>
+                                    <constraint firstItem="JA0-HN-gXT" firstAttribute="leading" secondItem="NgC-pq-Kp7" secondAttribute="leading" constant="8" id="kLx-11-yf8"/>
+                                    <constraint firstItem="k84-s3-4Gn" firstAttribute="centerX" secondItem="NgC-pq-Kp7" secondAttribute="centerX" id="kch-mk-Isr"/>
+                                    <constraint firstItem="htf-iG-ne0" firstAttribute="centerX" secondItem="NgC-pq-Kp7" secondAttribute="centerX" id="lHp-tI-q8c"/>
+                                    <constraint firstItem="dkf-ix-gPz" firstAttribute="centerX" secondItem="NgC-pq-Kp7" secondAttribute="centerX" id="oiB-Ac-blp"/>
+                                    <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="k84-s3-4Gn" secondAttribute="bottom" constant="383" id="oof-GR-aTl"/>
+                                    <constraint firstItem="dkf-ix-gPz" firstAttribute="top" secondItem="k84-s3-4Gn" secondAttribute="bottom" constant="8" symbolic="YES" id="sfD-5Z-muS"/>
+                                    <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="JA0-HN-gXT" secondAttribute="bottom" constant="680" id="wg3-eD-oIs"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -3130,6 +3218,7 @@ this reservation?</string>
                         <outlet property="barcodeImgView" destination="BEJ-rh-3Dm" id="fcs-uC-OLh"/>
                         <outlet property="barcodeView" destination="xQE-d5-l0R" id="vbB-Vh-rTn"/>
                         <outlet property="collapsViewHeight" destination="zhc-bB-1e8" id="DOk-Rn-F9g"/>
+                        <outlet property="confirmationTxt" destination="dkf-ix-gPz" id="RTc-ST-uvO"/>
                         <outlet property="headerBack" destination="WYz-zj-oga" id="uEP-nj-B2G"/>
                         <outlet property="headerView" destination="sLC-GN-RW4" id="Jgh-o2-63j"/>
                         <outlet property="passResetConfirmationTxt" destination="4ze-a8-LEe" id="ZUT-zG-qRe"/>
@@ -3138,9 +3227,12 @@ this reservation?</string>
                         <outlet property="passwordChange" destination="jHP-Rz-rLA" id="UXJ-fR-wCg"/>
                         <outlet property="passwordHeight" destination="zzH-QE-i5X" id="lqE-Tf-lEp"/>
                         <outlet property="passwordView" destination="MVd-gC-LhG" id="e8C-dU-Yoj"/>
-                        <outlet property="profileChange" destination="tm0-6t-ZRn" id="B0o-yz-139"/>
+                        <outlet property="profileBack" destination="JA0-HN-gXT" id="A1Z-y7-Yex"/>
+                        <outlet property="profileChange" destination="52O-zg-2Jb" id="Qyc-ED-0QV"/>
+                        <outlet property="profileImg" destination="cFO-1g-NNN" id="P5y-0s-ajc"/>
                         <outlet property="profileNameTxt" destination="ajR-hO-8Sx" id="ory-SC-GNr"/>
                         <outlet property="profilePicHeight" destination="d6I-DP-FIF" id="y14-Ig-JSN"/>
+                        <outlet property="profilePicPreview" destination="kay-NV-4oN" id="Mlk-FT-DTq"/>
                         <outlet property="profilePicView" destination="NgC-pq-Kp7" id="hnR-TM-fGj"/>
                         <outlet property="qrcodeBack" destination="f3N-00-euN" id="do1-IC-KkC"/>
                         <outlet property="sendResetLink" destination="jh4-gD-sGG" id="OHM-RO-i4E"/>
@@ -3175,7 +3267,7 @@ this reservation?</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RVv-01-iVr" userLabel="Collapsible View">
                                 <rect key="frame" x="0.0" y="59" width="430" height="150"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9af-R3-4LY" userLabel="Profile Pic">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9af-R3-4LY" userLabel="Profile Pic">
                                         <rect key="frame" x="302" y="23.666666666666664" width="106" height="103.33333333333334"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -3514,7 +3606,7 @@ this reservation?</string>
                                             <action selector="backPressed:" destination="kfN-tV-Qp1" eventType="touchUpInside" id="eqi-XO-DJW"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="UjK-xS-1GQ" userLabel="Profile Pic">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="UjK-xS-1GQ" userLabel="Profile Pic">
                                         <rect key="frame" x="302" y="23.666666666666664" width="106" height="103.33333333333334"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -3713,6 +3805,7 @@ this reservation?</string>
                         <outlet property="errorTxt" destination="ThD-A3-v75" id="H5g-HG-DZ2"/>
                         <outlet property="pickView" destination="NoF-Ba-izQ" id="fSk-Xt-pwg"/>
                         <outlet property="pickViewHeight" destination="LHc-mt-JLk" id="VET-aR-X9h"/>
+                        <outlet property="profileImg" destination="UjK-xS-1GQ" id="7bJ-05-sR9"/>
                         <outlet property="stackDist" destination="lg0-t9-14C" id="oOX-Qp-ZwP"/>
                         <outlet property="tablePicker" destination="VAW-9I-mcG" id="5k1-IX-ggx"/>
                         <outlet property="tableTxt" destination="Bpz-7G-4Zh" id="hMp-QV-5wZ"/>
@@ -4603,22 +4696,22 @@ this reservation?</string>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="OeB-q9-DXH"/>
-        <segue reference="x7A-cV-mN1"/>
+        <segue reference="gTs-Ms-bhZ"/>
         <segue reference="dMQ-Xd-1Bh"/>
         <segue reference="8bt-8N-bs4"/>
-        <segue reference="hbK-Mo-Cr0"/>
-        <segue reference="ZIq-KY-k4c"/>
-        <segue reference="KYR-ci-nDL"/>
+        <segue reference="lpo-BE-qJD"/>
+        <segue reference="hsD-AN-HfA"/>
+        <segue reference="jKd-Mr-WeJ"/>
         <segue reference="hRU-Co-kmm"/>
         <segue reference="aeF-A3-q2X"/>
         <segue reference="UNL-yL-buP"/>
         <segue reference="4fw-6U-pV6"/>
         <segue reference="xTl-to-6bm"/>
-        <segue reference="djS-QS-1dH"/>
-        <segue reference="X2U-9P-vUP"/>
-        <segue reference="l1Q-rF-Bnc"/>
+        <segue reference="R3m-rl-0EF"/>
+        <segue reference="kj6-8O-om5"/>
+        <segue reference="Dz6-VG-Y6h"/>
         <segue reference="Y9h-el-hac"/>
-        <segue reference="02e-8h-Les"/>
+        <segue reference="dxa-FZ-NEv"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Tea Icon" width="252" height="214"/>

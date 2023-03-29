@@ -61,7 +61,10 @@ class BookingViewController: UIViewController, UIScrollViewDelegate{
         collapsibleView.layer.shadowOpacity = 0.8
         collapsibleView.layer.shadowRadius = 6
         collapsibleView.clipsToBounds = true
-
+        // set profile picture
+        if let img = Global.User.profileImg{
+            self.profileImg.image = img
+        }
         
     }
     

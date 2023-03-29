@@ -10,6 +10,8 @@ import FirebaseCore
 import FirebaseFirestore
 import FirebaseAuth
 import FirebaseFirestoreSwift
+import FirebaseStorage
+import SDWebImage
 
 class InfoViewController: UIViewController{
     
@@ -17,6 +19,8 @@ class InfoViewController: UIViewController{
     // Timer variables
     var timer = Timer()
     var secondsRemaining = 60
+    // ImagePicker
+    let imagePicker = UIImagePickerController()
     
     // View Outlets
     @IBOutlet weak var usernameView: UIView!
@@ -24,7 +28,6 @@ class InfoViewController: UIViewController{
     @IBOutlet weak var passwordView: UIView!
     @IBOutlet weak var barcodeView: UIView!
     @IBOutlet weak var headerView: UIView!
-    
     
     // Textview Outlets
     @IBOutlet weak var profileNameTxt: UITextView!
@@ -35,10 +38,12 @@ class InfoViewController: UIViewController{
     
     // Label Outlets
     @IBOutlet weak var passResetConfirmationTxt: UILabel!
+    @IBOutlet weak var confirmationTxt: UILabel!
     
     // Image Outlet
     @IBOutlet weak var barcodeImgView: UIImageView!
-    
+    @IBOutlet weak var profilePicPreview: UIImageView!
+    @IBOutlet weak var profileImg: UIImageView!
     
     // Button Outlets
     @IBOutlet weak var profileChange: UIButton!
@@ -51,8 +56,7 @@ class InfoViewController: UIViewController{
     @IBOutlet weak var passwordBack: UIButton!
     @IBOutlet weak var sendResetLink: UIButton!
     @IBOutlet weak var qrcodeBack: UIButton!
-    
-    
+    @IBOutlet weak var profileBack: UIButton!
     
     // Constraints Outlets
     @IBOutlet weak var usernameHeight: NSLayoutConstraint!
@@ -67,6 +71,21 @@ class InfoViewController: UIViewController{
         profileNameTxt.text = Global.User.userName
         btnTagSetup()
         hideAll()
+        imagePicker.delegate = self
+        if let img = Global.User.profileImg{
+            self.profileImg.image = img
+        }
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        Global.getUserProfilePicture { image in
+            if let image = image{
+                Global.User.profileImg = image
+            }
+            self.profileImg.layoutIfNeeded()
+            print("back to main menu")
+        }
     }
     
     func btnTagSetup(){
@@ -78,6 +97,7 @@ class InfoViewController: UIViewController{
         userSave.tag = 6
         passwordBack.tag = 7
         qrcodeBack.tag = 8
+        profileBack.tag = 9
     }
     
 
@@ -108,7 +128,7 @@ class InfoViewController: UIViewController{
                 hideAll()
                 headerBack.isHidden = true
                 barcodeView.isHidden = false
-            case 5, 6, 7, 8: // popup backbuttons
+            case 5, 6, 7, 8, 9: // popup backbuttons
                 hideAll()
                 headerBack.isHidden = false
             default:
@@ -127,6 +147,8 @@ class InfoViewController: UIViewController{
     
     
     @IBAction func profilePicBtn(_ sender: UIButton) {
+        profilePicPreview.layer.borderWidth = 1.0
+        profilePicPreview.layer.borderColor = UIColor.gray.cgColor
         changeScene(for: sender)
     }
     
@@ -147,6 +169,7 @@ class InfoViewController: UIViewController{
         performSegue(withIdentifier: Constants.Me.profileInfoToMe, sender: self)
     }
     
+    // Username Change
     @IBAction func userBackBtn(_ sender: UIButton) {
         changeScene(for: sender)
     }
@@ -156,7 +179,7 @@ class InfoViewController: UIViewController{
         changeScene(for: sender)
     }
     
-    
+    // Password Change
     @IBAction func passwordBackBtn(_ sender: UIButton) {
         changeScene(for: sender)
     }
@@ -172,6 +195,48 @@ class InfoViewController: UIViewController{
         changeScene(for: sender)
     }
     
+    // Profile Pic Change
+    @IBAction func profilePicBackBtn(_ sender: UIButton) {
+        profilePicPreview.image = nil
+        changeScene(for: sender)
+    }
+    
+    @IBAction func selectImgBtn(_ sender: UIButton) {
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func profilePicSave(_ sender: UIButton) {
+        if profilePicPreview.image != nil{
+            let storageRef = Storage.storage().reference()
+            let imageName = Global.User.email + "profileImg"
+            let imageData = profilePicPreview.image!.jpegData(compressionQuality: 0.8)
+            let imageRef = storageRef.child("images/\(imageName)")
+            let docRef = db.collection(Constants.FStoreCollection.users).document(Global.User.email)
+            // Create a dictionary with the image metadata or download URL
+            _ = imageRef.putData(imageData!, metadata: nil) { (metadata, error) in
+                if let error = error {
+                    print("Error uploading image: \(error.localizedDescription)")
+                } else {
+                    // Image uploaded successfully, save the download URL to Firestore, to the current user
+                    imageRef.downloadURL { (url, error) in
+                        if let error = error {
+                            print("Error retrieving download URL: \(error.localizedDescription)")
+                        } else if let url = url {
+                            // Save the download URL to Firestore
+                            docRef.setData(["profileImg": url.absoluteString], merge: true) { error in
+                                if let error = error {
+                                    print("Error saving profile image URL: \(error.localizedDescription)")
+                                } else {
+                                    print("Profile image URL saved to Firestore")
+                                    self.confirmationTxt.text = "Profile image saved successfully!"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     
     
     @objc func updateTimer(){
@@ -265,5 +330,18 @@ class InfoViewController: UIViewController{
         barcodeImgView.image = barcodeImg
     }
     
+
+}
+
+extension InfoViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        // Get the selected image from the info dictionary.
+        let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        profilePicPreview.image = image
+        profilePicPreview.clipsToBounds = true
+        // Dismiss the image picker.
+        picker.dismiss(animated: true, completion: nil)
+    }
     
 }

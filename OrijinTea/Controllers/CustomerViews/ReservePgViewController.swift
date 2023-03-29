@@ -21,6 +21,8 @@ class ReservePgViewController: UITableViewController{
     var reservations = [Reservation]()
     let curUser = ""
     
+    @IBOutlet weak var profileImg: UIImageView!
+    
     // Reservation Fields
     var date: String = ""
     var time: String = ""
@@ -32,6 +34,10 @@ class ReservePgViewController: UITableViewController{
         print("Loading the ReservePG Controller")
         super.viewDidLoad()
         getReservations()
+        // set profile picture
+        if let img = Global.User.profileImg{
+            self.profileImg.image = img
+        }
     }
     
     // MARK: - Data Source Methods

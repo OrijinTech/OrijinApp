@@ -139,6 +139,7 @@ class Constants{
             static let favoriteProducts: String = "favoriteProducts"
             static let note: String = "note"
             static let userType: String = "userType"
+            static let profileImg: String = "profileImg"
         }
         
         struct Menu{

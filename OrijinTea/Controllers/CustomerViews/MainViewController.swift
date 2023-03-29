@@ -73,38 +73,21 @@ class MainViewController: UIViewController, UIScrollViewDelegate{
         Global.getFavoriteProducts {
             Global.convertFavProdctToObj()
         }
-
+        // set profile picture
+        if let img = Global.User.profileImg{
+            self.profilePicImg.image = img
+        }
+        scrollView.refreshControl = UIRefreshControl()
+        scrollView.refreshControl?.addTarget(self, action: #selector(didPullForRefresh), for: .valueChanged)
     }
     
-
-    // SCROLLING ISSUE!!!
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        // Scrolling events
-//        if (scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height)) {
-//            //Scrolled to bottom
-//            UIView.animate(withDuration: 0.3) {
-//                self.viewHeight.constant = self.minHeaderHeight
-//                self.view.layoutIfNeeded()
-//            }
-//
-//        }
-//        else if (scrollView.contentOffset.y == 0 && self.viewHeight.constant <= maxHeaderHeight){
-//            // scrolled to top --> https://stackoverflow.com/questions/56557078/how-to-implement-a-collapsing-header
-//            UIView.animate(withDuration: 0.3) {
-//                self.viewHeight.constant = self.maxHeaderHeight
-//                self.view.layoutIfNeeded()
-//            }
-//        }
-//
-//        else if (scrollView.contentOffset.y > self.lastContentOffset) && self.viewHeight.constant != minHeaderHeight {
-//            //Scrolling down
-//            UIView.animate(withDuration: 0.3) {
-//                self.viewHeight.constant = self.minHeaderHeight
-//                self.view.layoutIfNeeded()
-//            }
-//        }
-//        self.lastContentOffset = scrollView.contentOffset.y
-//    }
+    
+    @objc private func didPullForRefresh(){
+        DispatchQueue.main.asyncAfter(deadline: .now()+1){
+            self.profilePicImg.image = Global.User.profileImg
+            self.scrollView.refreshControl?.endRefreshing()
+        }
+    }
     
     
     @IBAction func onlineShoppingPressed(_ sender: UIButton) {

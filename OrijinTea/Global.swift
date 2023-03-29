@@ -9,6 +9,7 @@ import Foundation
 import FirebaseCore
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+import FirebaseStorage
 
 
 struct Global {
@@ -22,6 +23,7 @@ struct Global {
         static var userName: String = ""
         static var favoriteProducs: [DocumentReference] = []
         static var userType: String = ""
+        static var profileImg: UIImage?
     }
     
     // Enum for Admin Product Editing mode
@@ -159,6 +161,36 @@ struct Global {
                             print("Error creating table object \(error)")
                         }
                     }
+                }
+            }
+        }
+    }
+
+    
+    // Get user's profile picture
+    static func getUserProfilePicture(completion: @escaping (UIImage?) -> Void){
+        let db = Firestore.firestore()
+        let docRef = db.collection(Constants.FStoreCollection.users).document(Global.User.email)
+        docRef.getDocument { docSnap, error in
+            if let e = error{
+                print("Error retreiving download link for profile image. \(e.localizedDescription)")
+            }
+            else{
+                let data = docSnap?.data()
+                let downloadLink = data![Constants.FStoreField.Users.profileImg] as! String
+                print("Download Link: \(downloadLink)")
+                let storageRef = Storage.storage().reference(forURL: downloadLink)
+                storageRef.getData(maxSize: 10 * 1024 * 1024) { data, error in
+                    if let error = error {
+                        print("Error downloading image: \(error.localizedDescription)")
+                        completion(UIImage(systemName: "person2"))
+                    }
+                    guard let imageData = data else {
+                        print("Error retrieving image data")
+                        return
+                    }
+                    let image = UIImage(data: imageData)
+                    completion(image)
                 }
             }
         }

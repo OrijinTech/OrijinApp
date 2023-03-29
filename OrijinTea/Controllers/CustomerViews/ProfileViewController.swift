@@ -27,6 +27,10 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         userNameTxt.text = Global.User.userName
+        // set profile picture
+        if let img = Global.User.profileImg{
+            self.profileImg.image = img
+        }
     }
     
     

@@ -62,15 +62,33 @@ class LoginViewController: UIViewController {
                         Global.User.id = uid
                         Global.User.teaPoints = teaPts
                         Global.User.userType = userType
-                        print("success pulling the user")
-                        if userType == "admin"{
-                            self.performSegue(withIdentifier: Constants.Admin.loginToAdmAcc, sender: self)
-                        }
-                        else if userType == "customer"{
-                            self.performSegue(withIdentifier: Constants.loginToMain, sender: self)
-                        }
-                        else{
-                            print("ERROR: Unable to fetch user type.")
+                        Global.getUserProfilePicture { image in
+                            if let image = image {
+                                Global.User.profileImg = image
+                                print("success pulling the user")
+                                if userType == "admin"{
+                                    self.performSegue(withIdentifier: Constants.Admin.loginToAdmAcc, sender: self)
+                                }
+                                else if userType == "customer"{
+                                    self.performSegue(withIdentifier: Constants.loginToMain, sender: self)
+                                }
+                                else{
+                                    print("ERROR: Unable to fetch user type.")
+                                }
+                            }
+                            else {
+                                print("success pulling the user")
+                                if userType == "admin"{
+                                    self.performSegue(withIdentifier: Constants.Admin.loginToAdmAcc, sender: self)
+                                }
+                                else if userType == "customer"{
+                                    self.performSegue(withIdentifier: Constants.loginToMain, sender: self)
+                                }
+                                else{
+                                    print("ERROR: Unable to fetch user type.")
+                                }
+                                print("No image found for the user.")
+                            }
                         }
                     }
                     else{

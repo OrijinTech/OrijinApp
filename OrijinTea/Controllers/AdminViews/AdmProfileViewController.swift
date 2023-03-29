@@ -15,8 +15,10 @@ class AdmProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        // set profile picture
+        if let img = Global.User.profileImg{
+            self.profileImg.image = img
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -42,6 +42,9 @@ class BookTableViewController: UIViewController{
     // Button outlets
     @IBOutlet weak var bookBtnOutlet: UIButton!
     
+    // Image outlet
+    @IBOutlet weak var profileImg: UIImageView!
+    
     // Global Variables and Constants
     var freeTables = [String](repeating: "", count: 5)
     var reservations = [Reservation]()
@@ -96,6 +99,10 @@ class BookTableViewController: UIViewController{
         // set textfield input view
         tableTxt.inputView = tablePicker
         durationTxt.inputView = durationPicker
+        // set profile picture
+        if let img = Global.User.profileImg{
+            self.profileImg.image = img
+        }
     }
     
     
