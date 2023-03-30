@@ -9,6 +9,8 @@ import UIKit
 import FirebaseCore
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+import SDWebImage
+import FirebaseStorage
 
 class AdmSpecificProductViewController: UIViewController {
     
@@ -45,7 +47,8 @@ class AdmSpecificProductViewController: UIViewController {
     @IBOutlet weak var searchView: UIView!
     // ViewHeight
     @IBOutlet weak var searchViewHeight: NSLayoutConstraint!
-    
+    // Image Picker
+    let imagePicker = UIImagePickerController()
     
     // Var from incomming segues
     var chosenProduct: Product? = nil
@@ -74,6 +77,7 @@ class AdmSpecificProductViewController: UIViewController {
         prodCategoryTxt.delegate = self
         unitTxt.delegate = self
         prodClass.delegate = self
+        imagePicker.delegate = self
     }
     
     func loadProductView(){
@@ -283,7 +287,7 @@ class AdmSpecificProductViewController: UIViewController {
     
     // Add product picture
     @IBAction func addBtn(_ sender: UIButton) {
-        
+        present(imagePicker, animated: true, completion: nil)
     }
     
     @IBAction func createPdBtn(_ sender: UIButton) {
@@ -338,6 +342,16 @@ extension AdmSpecificProductViewController: UITextFieldDelegate, UITableViewDele
             print("unknown txt")
         }
     }
-    
+}
+
+extension AdmSpecificProductViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        // Get the selected image from the info dictionary.
+        let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        prodImgView.image = image
+        prodImgView.clipsToBounds = true
+        // Dismiss the image picker.
+        picker.dismiss(animated: true, completion: nil)
+    }
     
 }

@@ -767,7 +767,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cO2-YU-8ux" userLabel="Scroll Content">
                                         <rect key="frame" x="0.0" y="0.0" width="430" height="758"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qge-Z8-WLr">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qge-Z8-WLr">
                                                 <rect key="frame" x="0.0" y="0.0" width="430" height="285"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="285" id="hw1-Oh-FJQ"/>
@@ -1012,7 +1012,7 @@
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBf-4j-L3g">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBf-4j-L3g" userLabel="Add Img Button">
                                                 <rect key="frame" x="375" y="238" width="35" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="K7M-4o-DTI"/>
@@ -4170,7 +4170,7 @@ this reservation?</string>
                                 <rect key="frame" x="0.0" y="59" width="430" height="55"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUw-Ns-vfR">
-                                        <rect key="frame" x="7.9999999999999964" y="10.333333333333329" width="61.666666666666657" height="34.333333333333336"/>
+                                        <rect key="frame" x="7.9999999999999964" y="10.333333333333329" width="61.666666666666657" height="34.333333333333329"/>
                                         <color key="tintColor" red="0.55942234850000006" green="0.52984675569999995" blue="0.17300596930000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Back" cornerStyle="capsule">
@@ -4709,7 +4709,7 @@ this reservation?</string>
         <segue reference="xTl-to-6bm"/>
         <segue reference="R3m-rl-0EF"/>
         <segue reference="kj6-8O-om5"/>
-        <segue reference="Dz6-VG-Y6h"/>
+        <segue reference="l1Q-rF-Bnc"/>
         <segue reference="Y9h-el-hac"/>
         <segue reference="dxa-FZ-NEv"/>
     </inferredMetricsTieBreakers>

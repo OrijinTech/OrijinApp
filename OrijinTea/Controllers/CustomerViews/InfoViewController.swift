@@ -69,6 +69,7 @@ class InfoViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         profileNameTxt.text = Global.User.userName
+        profileImg.layer.cornerRadius = 6.0
         btnTagSetup()
         hideAll()
         imagePicker.delegate = self
