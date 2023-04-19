@@ -27,11 +27,10 @@ IOS
 3. Manage Reservations
 4. Manage Current Tables
 
-### Other Functionalities
+### Upcomming Functionalities and Improvements
 1. Language Selection (Not Developed)
 2. Graphic Improvements (Not Developed)
 3. Other Improvements (Not Developed)
-
 
 
 ## Key Tech Stack
