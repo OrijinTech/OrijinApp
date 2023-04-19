@@ -25,10 +25,12 @@
 3. Other Improvements (Not Developed)
 
 
+
 ## Key Tech Stack
 1. Google Cloud Services (Firebase Auth, Cloud Firestore)
 2. SWIFT 5 with XCode
 4. Pods
+
 
 
 ## Functionality Preview
