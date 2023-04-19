@@ -1,5 +1,13 @@
 # OrijinTeaApp
 
+## Application Description
+This application is made for the Orijin Tea teahoue in Prague, Czech Republic. You can check out the shop at https://orijintea.com/. The purpose of this application is to increase customer interaction with the tea house. 
+
+## Planned Initial Release Date
+July 1st, 2023
+
+## Platform
+IOS
 
 ## Major Functionalities
 ### Customer Functionalities
