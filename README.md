@@ -41,8 +41,10 @@
 <img src="https://user-images.githubusercontent.com/32666867/223474212-9441fa7b-dae0-44a7-bdee-2d384a00fa3b.png" width="200" height="450" />         <img src="https://user-images.githubusercontent.com/32666867/223474227-1cfb1d5c-13b4-4543-8e7a-ef9333186c3b.png" width="200" height="450" />         <img src="https://user-images.githubusercontent.com/32666867/223474238-1e2c115f-5c11-4158-bc3a-e54d6974f783.png" width="200" height="450" />         <img src="https://user-images.githubusercontent.com/32666867/223474275-e4a02d22-d624-4c60-a4d2-69e499d2b858.png" width="200" height="450" />         <img src="https://user-images.githubusercontent.com/32666867/223474277-a0242fc1-3b3a-4eaa-9082-698570d2948a.png" width="200" height="450" />
 
 
+
 ### Profile Page
-<img src="https://user-images.githubusercontent.com/32666867/223474224-3f3d1c58-9da5-452c-a818-f43f7c95b9e1.png" width="200" height="450" />         <img src="https://user-images.githubusercontent.com/32666867/223474260-9e89838c-527e-4d62-a17d-b6440225c9c6.png" width="200" height="450" />         <img src="https://user-images.githubusercontent.com/32666867/223474273-f57e5a9a-831f-4cdb-ba38-811dafe9cfd3.png" width="200" height="450" />
+<img src="https://user-images.githubusercontent.com/32666867/223474224-3f3d1c58-9da5-452c-a818-f43f7c95b9e1.png" width="200" height="450" />         <img src="https://user-images.githubusercontent.com/32666867/223474260-9e89838c-527e-4d62-a17d-b6440225c9c6.png" width="200" height="450" />         <img src="https://user-images.githubusercontent.com/32666867/223474273-f57e5a9a-831f-4cdb-ba38-811dafe9cfd3.png" width="200" height="450" />         <img src="https://user-images.githubusercontent.com/32666867/233092789-19b21806-6c96-4c24-aae6-8355757d39ad.png" width="200" height="450" />         <img src="https://user-images.githubusercontent.com/32666867/233092800-3fc5d4be-a304-411e-81ab-a96c6b1eba42.png" width="200" height="450" />         <img src="https://user-images.githubusercontent.com/32666867/233092808-7fd2c509-5918-4777-b493-9a9d51204c4e.png" width="200" height="450" />         <img src="https://user-images.githubusercontent.com/32666867/233092814-a432e2ca-4d0c-4635-9450-af02133115ab.png" width="200" height="450" />
+
 
 
 ### View Products
