@@ -40,6 +40,9 @@ struct Global {
     // For ADMIN
     static var allProducts: [Product] = []
     
+    // View Modes
+    static var menuMode = false
+    
     
     // MARK: - GLOBAL FUNCTIONS
     static func textLimiter(_ inpTxt: String, _ numOfChars:Int) -> String{

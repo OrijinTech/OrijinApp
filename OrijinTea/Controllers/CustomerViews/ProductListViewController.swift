@@ -86,6 +86,7 @@ class ProductListViewController: UIViewController {
             destinationVC?.productType = productType
             destinationVC?.subCollectionName = subCollectionName
             destinationVC?.incomingSegue = Constants.Shop.toSpecificProduct
+            
         }
         
     }

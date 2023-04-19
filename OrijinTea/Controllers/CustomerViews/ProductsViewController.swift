@@ -56,7 +56,12 @@ class ProductsViewController: UIViewController {
     
     // MARK: - Button
     @IBAction func backBtn(_ sender: UIButton) {
-        performSegue(withIdentifier: Constants.Shop.toProductOverview, sender: self)
+        if Global.menuMode{
+            performSegue(withIdentifier: Constants.Shop.menuToTeashop, sender: self)
+        }
+        else{
+            performSegue(withIdentifier: Constants.Shop.toProductOverview, sender: self)
+        }
     }
     
 }

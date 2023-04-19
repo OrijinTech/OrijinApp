@@ -47,6 +47,8 @@ class Constants{
         static let toSpecificProduct: String = "toSpecificProduct"
         static let specificToProductList: String = "specificToProductList"
         static let toMyTeaBook: String = "toMyTeaBook"
+        static let teashopToMenu: String = "teashopToMenu"
+        static let menuToTeashop: String = "menuToTeashop"
     }
     
     struct Admin{

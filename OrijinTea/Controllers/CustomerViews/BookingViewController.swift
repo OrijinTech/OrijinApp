@@ -68,6 +68,13 @@ class BookingViewController: UIViewController, UIScrollViewDelegate{
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.Shop.teashopToMenu{
+            let destinationVC = segue.destination as? ProductsViewController
+            destinationVC?.titleTxt = "Tea"
+            Global.menuMode = true
+        }
+    }
 
     // SCROLLING ISSUE !!!
 //    func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -112,6 +119,11 @@ class BookingViewController: UIViewController, UIScrollViewDelegate{
     
     @IBAction func bookTablePressed(_ sender: UIButton) {
         performSegue(withIdentifier: Constants.bookToBookTable, sender: self)
+    }
+    
+    
+    @IBAction func viewMenuPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: Constants.Shop.teashopToMenu, sender: self)
     }
     
     

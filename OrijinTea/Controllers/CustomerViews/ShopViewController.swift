@@ -59,6 +59,7 @@ class ShopViewController: UIViewController{
         if segue.identifier == Constants.Shop.toProducts{
             let destinationVC = segue.destination as? ProductsViewController
             destinationVC?.titleTxt = clickedChoice
+            Global.menuMode = false
         }
     }
     

@@ -45,6 +45,7 @@
 		54B2E5AB29BB373C004558A4 /* Tables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B2E5AA29BB373C004558A4 /* Tables.swift */; };
 		54B2E5AD29BB7B80004558A4 /* AdmSpecificTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B2E5AC29BB7B80004558A4 /* AdmSpecificTableViewController.swift */; };
 		54B2E5AF29BBA232004558A4 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B2E5AE29BBA231004558A4 /* MenuItem.swift */; };
+		54B5182B29EFF63F00580645 /* TeaMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B5182A29EFF63F00580645 /* TeaMenuViewController.swift */; };
 		54D6060429BF7A31003D986D /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D6060329BF7A31003D986D /* Order.swift */; };
 		54D6060629C07A83003D986D /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D6060529C07A83003D986D /* InventoryViewController.swift */; };
 		54D6060829C0EF47003D986D /* AdmSpecificProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D6060729C0EF47003D986D /* AdmSpecificProductViewController.swift */; };
@@ -95,6 +96,7 @@
 		54B2E5AA29BB373C004558A4 /* Tables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tables.swift; sourceTree = "<group>"; };
 		54B2E5AC29BB7B80004558A4 /* AdmSpecificTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmSpecificTableViewController.swift; sourceTree = "<group>"; };
 		54B2E5AE29BBA231004558A4 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		54B5182A29EFF63F00580645 /* TeaMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaMenuViewController.swift; sourceTree = "<group>"; };
 		54D6060329BF7A31003D986D /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		54D6060529C07A83003D986D /* InventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
 		54D6060729C0EF47003D986D /* AdmSpecificProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmSpecificProductViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				540C881829B22EF600B8D6C2 /* SpecificProductViewController.swift */,
 				5452A61829B4A2CC00B7BD2C /* TeaBookViewController.swift */,
 				5414064229CC7286007A8DD6 /* OccupancyViewController.swift */,
+				54B5182A29EFF63F00580645 /* TeaMenuViewController.swift */,
 			);
 			path = CustomerViews;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				5402693029AE6852006D4E05 /* Product.swift in Sources */,
 				545392EC29C881BE00887A41 /* ViewOrderViewController.swift in Sources */,
 				5452A61929B4A2CC00B7BD2C /* TeaBookViewController.swift in Sources */,
+				54B5182B29EFF63F00580645 /* TeaMenuViewController.swift in Sources */,
 				549547832993E4CC008E458B /* ShopViewController.swift in Sources */,
 				545392EE29C882B600887A41 /* AdmProfileViewController.swift in Sources */,
 				5488E50429916E3600788259 /* LoginViewController.swift in Sources */,
