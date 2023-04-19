@@ -27,15 +27,14 @@
 
 
 ## Key Tech Stack
-1. Google Cloud Services (Firebase Auth, Cloud Firestore)
+1. Google Cloud Services: Firebase Authentication, Cloud Firestore, Firebase Storage
 2. SWIFT 5 with XCode
-4. Pods
+3. Pods
 
 
-
-## Functionality Preview
+## Customer Functionality Preview
 ### Authentication Services
-<img src="https://user-images.githubusercontent.com/32666867/223474203-53aef56d-74ae-4b57-a0e6-79c9009a628e.png" width="200" height="450" />         <img src="https://user-images.githubusercontent.com/32666867/223474213-c7bc9694-6c57-4f23-8994-3ba0702e0e0a.png" width="200" height="450" />
+<img src="https://user-images.githubusercontent.com/32666867/233091953-3a9ddda4-9f92-4673-b856-fa369badc8ae.png" width="200" height="450" />         <img src="https://user-images.githubusercontent.com/32666867/233091938-6b4b7a3f-e14f-40a2-9da2-291e2eb6e086.png" width="200" height="450" />
 
 
 ### Booking System
@@ -53,5 +52,11 @@
 ### Other Pictures
 <img src="https://user-images.githubusercontent.com/32666867/223474217-5ff726b0-594e-4164-baf5-fac46a2394dc.png" width="200" height="450" />
 
+
+## Customer Functionality Preview
+### Authentication Services (Login, Logout)
+### Manage Products
+### Manage Reservations
+### Manage Current Tables
 
 
