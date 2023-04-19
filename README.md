@@ -2,16 +2,27 @@
 
 
 ## Major Functionalities
+### Customer Functionalities
 1. Authentication Services (Login, Logout)
 2. Booking System
-3. Managing Favorite Products
-4. Browsing Products
-5. Profile Functionalities (Change profile info, QR Code Purchase...)
-6. Community Functionalities (Not Developed)
-7. Admin Version (Not Developed)
-8. Language Selection (Not Developed)
-9. Graphic Improvements (Not Developed)
-10. Other Improvements (Not Developed)
+3. Managing Reservations
+4. Managing Favorite Products
+5. Browsing Products
+6. Profile Functionalities (Change profile info, Personal QR Code, Personal Tea Book)
+7. Community Functionalities (Not Developed)
+8. Browse Menu
+9. View Current Tea Shop Occupancy
+
+### Admin Functionalities
+1. Authentication Services (Login, Logout)
+2. Manage Products
+3. Manage Reservations
+4. Manage Current Tables
+
+### Other Functionalities
+1. Language Selection (Not Developed)
+2. Graphic Improvements (Not Developed)
+3. Other Improvements (Not Developed)
 
 
 ## Key Tech Stack
