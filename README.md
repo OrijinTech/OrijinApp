@@ -48,17 +48,27 @@
 
 
 ### View Products
-<img src="https://user-images.githubusercontent.com/32666867/223474245-befd39b8-df92-46f0-bc42-bbfc9839ffc6.png" width="200" height="450" />         <img src="https://user-images.githubusercontent.com/32666867/223474251-f5937fbb-6289-4ee8-9be9-d0f9e89fbed5.png" width="200" height="450" />         <img src="https://user-images.githubusercontent.com/32666867/223474261-d669a214-b223-4ebf-8bed-35fa38099150.png" width="200" height="450" />
+<img src="https://user-images.githubusercontent.com/32666867/223474245-befd39b8-df92-46f0-bc42-bbfc9839ffc6.png" width="200" height="450" />         <img src="https://user-images.githubusercontent.com/32666867/223474261-d669a214-b223-4ebf-8bed-35fa38099150.png" width="200" height="450" />         <img src="https://user-images.githubusercontent.com/32666867/233094580-5618e09f-6824-4534-922d-375046c2f23e.png" width="200" height="450" />
 
 
 ### Other Pictures
 <img src="https://user-images.githubusercontent.com/32666867/223474217-5ff726b0-594e-4164-baf5-fac46a2394dc.png" width="200" height="450" />
 
 
-## Customer Functionality Preview
-### Authentication Services (Login, Logout)
-### Manage Products
-### Manage Reservations
-### Manage Current Tables
+### Teashop Table Occupancy
+<img src="https://user-images.githubusercontent.com/32666867/233095122-6ba206f3-684c-43c5-bdfa-23c0b9ab4740.png" width="200" height="450" />
 
+
+
+
+## Customer Functionality Preview
+### Manage Products
+<img src="https://user-images.githubusercontent.com/32666867/233097403-a35f4de7-7c1c-4010-9303-546b744ede9b.png" width="200" height="450" />         <img src="https://user-images.githubusercontent.com/32666867/233097409-a58d8f52-261c-4de2-8e83-81cac3b1c4eb.png" width="200" height="450" />         <img src="https://user-images.githubusercontent.com/32666867/233097417-dbfbd2d6-4433-41cc-a982-ed412ff0e6e2.png" width="200" height="450" />
+
+
+### Manage Current Tables
+<img src="https://user-images.githubusercontent.com/32666867/233098367-d25c8fc4-00d0-4ddc-89f0-7ec2d2976a89.png" width="200" height="450" />         <img src="https://user-images.githubusercontent.com/32666867/233098390-237bb30c-8289-4a53-a0e8-8597e762a0eb.png" width="200" height="450" />         <img src="https://user-images.githubusercontent.com/32666867/233098392-15f1ec13-48c8-473c-94ef-8541107734d1.png" width="200" height="450" />         <img src="https://user-images.githubusercontent.com/32666867/233098387-16a556d1-a7e5-488e-80ea-02031619595b.png" width="200" height="450" />
+
+
+Please contact me if you would like to join my work :)
 
